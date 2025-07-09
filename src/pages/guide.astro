@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const keunggulan = [
+  { icon: "🎯", text: "100% lokal, bersertifikat HPI" },
+  { icon: "🗺️", text: "Fasih cerita sejarah, spot hidden gem & budaya" },
+  { icon: "👨‍👩‍👧‍👦", text: "Ramah, profesional, sabar bawa keluarga & grup" },
+  { icon: "📸", text: "Mau jadi tukang foto dadakan? Siap banget!" },
+  { icon: "⏰", text: "Fleksibel, bisa jadi time keeper & anti molor itinerary" },
+];
+
+const fasilitas = [
+  { icon: "🤝", text: "Pendampingan trip seharian (max 12 jam)" },
+  { icon: "🔊", text: "Free info sejarah, cerita lokal, dan tips wisata" },
+  { icon: "📞", text: "Bisa bantu booking tiket/destinasi lokal" },
+  { icon: "👨‍🎓", text: "Bahasa Indonesia/Jawa, basic English" },
+  { icon: "📷", text: "Bisa minta bantuan foto/video di setiap spot" },
+];
+
+const testimoni = [
+  { nama: "Fajar – Jakarta", pesan: "Guidenya seru, nggak ngebosenin, tau banget spot hidden gem. Foto-foto juga dibantu, trip jadi lebih santai!" },
+  { nama: "Linda & Family", pesan: "Bawa keluarga, dijelasin semua sejarah Dieng. Anak-anak happy, itinerary rapih, guide ramah dan profesional." },
+];
+
+const faq = [
+  {
+    q: "Apakah guide Dieng ini harus booking jauh-jauh hari?",
+    a: "Idealnya booking H-2, tapi H-1 atau bahkan dadakan juga bisa asal kuota masih ada. Silakan chat admin untuk cek ketersediaan."
+  },
+  {
+    q: "Guide bisa bahasa Inggris?",
+    a: "Mayoritas guide kami fasih Bahasa Indonesia & Jawa, sebagian sudah basic English. Khusus full English guide, silakan request saat booking."
+  },
+  {
+    q: "Apa saja yang termasuk jasa guide ini?",
+    a: "Semua pendampingan trip 1 hari penuh, bantuan foto, info sejarah, rekomendasi kuliner & tips wisata lokal. Tidak termasuk transport atau tiket masuk."
+  },
+  {
+    q: "Berapa harga jasa guide Dieng per hari?",
+    a: "Harga fix: Rp 500.000/hari (untuk grup s/d 10 orang). Untuk grup besar silakan konsultasi dulu."
+  },
+  {
+    q: "Meeting point atau penjemputan guide di mana?",
+    a: "Guide bisa jemput di hotel, penginapan, atau meeting point Dieng (akan dikonfirmasi saat booking)."
+  },
+];
+
+const harga = "Rp 500.000 / hari (max 10 orang)";
+---
+
+<Layout title="Jasa Guide Dieng 2025 - Guide Lokal, Trip Lebih Berkesan, Harga Jelas">
+  <section class="guide-hero">
+    <h1 class="guide-title">Jasa Guide Dieng<br>
+      <span class="guide-highlight">Lokal, Ramah, Trip Lebih Seru!</span>
+    </h1>
+    <p class="guide-desc">
+      🎤 Ingin trip ke Dieng lebih bermakna & nggak cuma “numpang foto”? Pakai <b>Jasa Guide Dieng</b> dari tim lokal asli.  
+      Jelajahi semua destinasi, dengar cerita unik, explore hidden gem & dibantu dokumentasi.  
+      <span class="guide-harga">Harga: <b>{harga}</b></span>
+    </p>
+    <a href="https://paketdieng.id/guide" class="guide-btn">
+      👨‍💼 Booking Guide Sekarang
+    </a>
+  </section>
+
+  <section class="guide-keunggulan">
+    <h2 class="guide-section-title">Keunggulan Guide Dieng.Travel</h2>
+    <ul class="guide-keunggulan-list">
+      {keunggulan.map((k) => (
+        <li><span class="guide-keunggulan-emoji">{k.icon}</span>{k.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="guide-fasilitas">
+    <h2 class="guide-section-title">Fasilitas & Layanan</h2>
+    <ul class="guide-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="guide-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="guide-review">
+    <h2 class="guide-section-title">Testimoni Tamu</h2>
+    <div class="guide-review-list">
+      {testimoni.map((r) => (
+        <div class="guide-review-card">
+          <div class="guide-review-nama">{r.nama}</div>
+          <div class="guide-review-pesan">{r.pesan}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="guide-faq">
+    <h2 class="guide-section-title">FAQ Jasa Guide Dieng</h2>
+    <div class="guide-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="guide-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  /* HERO */
+  .guide-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #e6f9ff 0%, #fffbe2 100%);
+    padding: 44px 13px 27px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 28px #a0e0fc15;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .guide-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #157fb2;
+    margin-bottom: 13px;
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+  }
+  .guide-highlight {
+    font-size: 1.08em;
+    background: linear-gradient(90deg, #00b5c2 0%, #ffd600 85%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .guide-desc {
+    font-size: 1.12rem;
+    color: #27779e;
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    line-height: 1.7;
+  }
+  .guide-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 7px;
+  }
+  .guide-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b5c2, #ffd600 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 12px 30px;
+    border-radius: 99px;
+    font-size: 1.13rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #ffd60020;
+    margin: 13px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .guide-btn:hover {
+    background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+    color: #00b5c2;
+    box-shadow: 0 7px 18px #00b5c228;
+  }
+  /* KEUNGGULAN */
+  .guide-keunggulan { margin: 28px 0 14px 0; text-align: center; }
+  .guide-section-title {
+    text-align: center;
+    font-size: 1.19rem;
+    font-weight: 800;
+    color: #00b5c2;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+  .guide-keunggulan-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 420px;
+  }
+  .guide-keunggulan-emoji {
+    font-size: 1.2em; margin-right: 10px;
+  }
+  .guide-keunggulan-list li {
+    font-size: 1.07rem;
+    color: #22758b;
+    font-weight: 600;
+    background: #f2fffd;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex; align-items: center;
+  }
+  /* FASILITAS */
+  .guide-fasilitas { margin: 18px 0 13px 0; text-align: center; }
+  .guide-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: 420px;
+  }
+  .guide-fasilitas-emoji { font-size: 1.13em; margin-right: 9px; }
+  .guide-fasilitas-list li {
+    font-size: 1.06rem;
+    color: #257894;
+    font-weight: 600;
+    background: #fffbe9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex; align-items: center;
+  }
+  /* REVIEW */
+  .guide-review { margin: 26px 0 14px 0; }
+  .guide-review-list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .guide-review-card {
+    background: linear-gradient(90deg, #fffde2 0%, #e6f9ff 100%);
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px #ffe66615;
+    padding: 14px 20px 12px 18px;
+    max-width: 230px;
+    min-width: 100px;
+    min-height: 70px;
+    font-size: 0.96rem;
+    color: #2a5072;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1.1px solid #e9eed6;
+    gap: 4px;
+  }
+  .guide-review-nama { color: #00b5c2; font-weight: 700; font-size: 1.01em; }
+  .guide-review-pesan { color: #264055; font-weight: 500; font-size: 0.96em; }
+  /* FAQ */
+  .guide-faq { max-width: 700px; margin: 38px auto 0 auto; padding: 0 12px 26px 12px; }
+  .guide-faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .guide-faq-card {
+    background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ffd60019;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #1b4477;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .guide-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b5c2;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .guide-faq-card[open] { box-shadow: 0 6px 22px #00b5c239; border-color: #ffd600; }
+  .guide-faq-card[open] summary { color: #ffd600; }
+  .guide-faq-card div { padding-top: 3px; color: #134075; }
+  @media (max-width: 780px) {
+    .guide-review-list { flex-direction: column; align-items: center; }
+    .guide-review-card { max-width: 94vw; width: 100%; }
+    .guide-faq { padding: 0 5vw 20px 5vw; }
+  }
+  </style>
+</Layout>
