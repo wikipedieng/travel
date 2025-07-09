@@ -1,21 +1,117 @@
----
----
-<footer class="w-full border-t bg-white/90 mt-20">
-  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2 px-5 pt-10 pb-8 sm:pt-16 sm:pb-10">
-    <p class="text-lg font-semibold text-blue-800 tracking-wide">
-      Dieng.<span class="text-blue-500">Travel</span>
-    </p>
-    <p class="text-sm text-slate-500">
-      © {new Date().getFullYear()} Dieng.Travel &bull; All rights reserved.
-    </p>
-    <div class="flex gap-4 mt-2">
-      <a href="https://docs.netlify.com/frameworks/astro/" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 transition font-medium underline underline-offset-4 decoration-dashed">
-        Astro on Netlify
-      </a>
-      <span class="text-slate-400">|</span>
-      <a href="https://github.com/wikipedieng/travel" target="_blank" rel="noopener" class="text-slate-500 hover:text-blue-600 transition font-medium underline underline-offset-4 decoration-dashed">
-        GitHub
-      </a>
+<footer class="dieng-footer-cartoon">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">
+        <span class="icon-candi">🏯</span>
+        Dieng.<span class="accent">Travel</span>
+        <span class="icon-mobil">🚐</span>
+      </span>
+      <span class="footer-love">Dieng, fun, and happy! <span class="icon-love">💛</span></span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/wikipedieng/travel" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+      <a href="https://wa.me/628" target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+      <a href="mailto:wikipedieng@gmail.com" class="footer-link">Email</a>
+    </div>
+    <div class="footer-copyright">
+      <span>© {new Date().getFullYear()} Dieng.Travel &nbsp;|&nbsp; All rights reserved.</span>
     </div>
   </div>
 </footer>
+
+<style>
+.dieng-footer-cartoon {
+  width: 100%;
+  background: linear-gradient(90deg, #e9fbff 0%, #d0fbea 80%, #fffde2 100%);
+  border-top: 0.5px solid #9beef44e;
+  padding: 0;
+  box-shadow: 0 -2px 20px #29d6ee0a;
+  margin-top: 64px;
+  position: relative;
+}
+.footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 36px 20px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.footer-logo {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #23a9c8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1.2px;
+  margin-bottom: 3px;
+  text-shadow: 0 2px 8px #fff9;
+}
+.footer-logo .accent {
+  color: #ffd600;
+  font-weight: 900;
+  text-shadow: 0 2px 10px #fff6;
+}
+.icon-candi,
+.icon-mobil {
+  font-size: 1.4rem;
+  filter: drop-shadow(0 2px 5px #ffeaa966);
+}
+.footer-love {
+  font-size: 1.07rem;
+  color: #39bcae;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.icon-love {
+  font-size: 1.2em;
+  margin-left: 2px;
+  filter: drop-shadow(0 1px 3px #ffd60080);
+}
+.footer-links {
+  display: flex;
+  gap: 1.7rem;
+  margin: 16px 0 2px 0;
+}
+.footer-link {
+  color: #23a9c8;
+  font-weight: 600;
+  font-size: 1.03rem;
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.77);
+  border: 1px solid #d2faff88;
+  box-shadow: 0 2px 9px #23a9c80e;
+  transition: background 0.17s, color 0.15s, box-shadow 0.16s;
+  opacity: 0.97;
+}
+.footer-link:hover,
+.footer-link:focus {
+  background: #ffd60022;
+  color: #ffd600;
+  box-shadow: 0 4px 18px #ffd60026;
+  text-decoration: none;
+}
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 0.96rem;
+  color: #7b899c;
+  text-align: center;
+  opacity: 0.74;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 600px) {
+  .footer-inner { padding: 22px 4px 16px 4px; }
+  .footer-logo { font-size: 1.19rem; }
+  .footer-links { gap: 0.85rem; margin: 12px 0 0 0; }
+}
+</style>
