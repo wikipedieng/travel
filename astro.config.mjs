@@ -14,6 +14,5 @@ export default defineConfig({
         react(),
         sitemap(),    // <--- aktifkan plugin sitemap
     ],
-// adapter: netlify(), // matikan dulu
-
+    adapter: netlify(), // <-- HARUS AKTIF jika mau deploy Netlify
 });
