@@ -2,101 +2,121 @@
 const navItems = [
   { linkText: 'Home', href: '/' },
   { linkText: 'Paket', href: '/paket' },
-  { linkText: 'Homestay', href: '/opentrip' },
+  { linkText: 'Homestay', href: '/homestay' },
   { linkText: 'Kontak', href: '/kontak' }
 ];
 ---
-<nav class="dieng-header">
-  <div class="dieng-header-inner">
-    <a href="/" class="dieng-logo">
-      Dieng.<span>Travel</span>
+<nav class="dieng-header-cartoon">
+  <div class="dieng-header-inner-cartoon">
+    <a href="/" class="dieng-logo-cartoon">
+      <span class="icon-candi">🏯</span>
+      Dieng.<span class="accent">Travel</span>
+      <span class="icon-mobil">🚐</span>
     </a>
-    <ul class="dieng-nav">
+    <ul class="dieng-nav-cartoon">
       {navItems.map((item) => (
         <li>
-          <a href={item.href} class="dieng-link">{item.linkText}</a>
+          <a href={item.href} class="dieng-link-cartoon">{item.linkText}</a>
         </li>
       ))}
     </ul>
   </div>
+  <!-- Wave SVG (nyatu ke gambar bawah) -->
+  <div class="dieng-header-wave">
+    <svg width="100%" height="40" viewBox="0 0 1600 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60 Q800 120 1600 60 V80 H0 V60Z" fill="#fff"/>
+    </svg>
+  </div>
 </nav>
-<div style="margin-bottom: 2.4rem"></div>
+<div style="margin-bottom:0;"></div>
 
 <style>
-.dieng-header {
+.dieng-header-cartoon {
   width: 100%;
-  background: linear-gradient(90deg, #0071c2 75%, #0097c2 100%);
-  box-shadow: 0 2px 16px 0 #0001;
-  padding: 0; margin: 0;
-  position: relative; z-index: 30;
+  background: linear-gradient(90deg, #62e4ff 0%, #4de1c7 60%, #ffe666 100%);
+  box-shadow: 0 2px 22px #00b8d814;
+  position: relative;
+  z-index: 100;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-.dieng-header-inner {
-  max-width: 1260px;
+.dieng-header-inner-cartoon {
+  max-width: 1220px;
   margin: 0 auto;
+  padding: 28px 32px 20px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 32px 28px 32px;
 }
-.dieng-logo {
+.dieng-logo-cartoon {
   color: #fff;
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.3rem;
   letter-spacing: 1px;
   text-decoration: none;
   user-select: none;
   transition: letter-spacing 0.16s;
-}
-.dieng-logo span {
-  color: #ffd600; /* gold ala Booking/Traveloka */
-  font-weight: 900;
-}
-.dieng-nav {
   display: flex;
-  gap: 2.4rem;
+  align-items: center;
+  gap: 9px;
+  text-shadow: 0 2px 8px #36ffe455;
+}
+.dieng-logo-cartoon .accent {
+  color: #ffd600;
+  font-weight: 900;
+  text-shadow: 0 2px 12px #fff5;
+}
+.icon-candi,
+.icon-mobil {
+  font-size: 1.55rem;
+  filter: drop-shadow(0 1.5px 3px #ffd60060);
+  margin: 0 2px;
+}
+.dieng-nav-cartoon {
+  display: flex;
+  gap: 2.2rem;
   list-style: none;
   margin: 0; padding: 0;
 }
-.dieng-link {
+.dieng-link-cartoon {
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.09rem;
   text-decoration: none;
-  border-radius: 8px;
-  padding: 9px 14px 9px 14px;
+  border-radius: 15px;
+  padding: 10px 19px;
   display: inline-block;
-  position: relative;
-  opacity: 0.96;
-  transition: color 0.16s, background 0.15s;
-  /* animasi underline */
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 2px 7px #ffd60022;
+  transition: color 0.14s, background 0.16s, box-shadow 0.16s;
+  letter-spacing: 0.02em;
 }
-.dieng-link::after {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 0;
-  background: linear-gradient(90deg, #ffd600, #fff2);
-  border-radius: 2px;
-  margin: 0 auto;
-  transition: width 0.25s cubic-bezier(.4,0,.2,1);
-}
-.dieng-link:hover,
-.dieng-link:focus {
+.dieng-link-cartoon:hover,
+.dieng-link-cartoon:focus {
   color: #ffd600;
-  background: rgba(255,255,255,0.07);
+  background: #fff5;
+  box-shadow: 0 7px 24px #ffd60033;
+  text-decoration: none;
 }
-.dieng-link:hover::after,
-.dieng-link:focus::after {
-  width: 70%;
+.dieng-header-wave {
+  width: 100%;
+  line-height: 0;
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  z-index: 1;
+  pointer-events: none;
 }
 @media (max-width: 900px) {
-  .dieng-header-inner { flex-direction: column; align-items: flex-start; gap: 13px; padding: 18px 10px; }
-  .dieng-nav { gap: 0.9rem; }
+  .dieng-header-inner-cartoon {
+    flex-direction: column; align-items: flex-start; gap: 13px; padding: 16px 9px 8px 9px;
+  }
+  .dieng-logo-cartoon { font-size: 1.3rem; }
+  .dieng-nav-cartoon { gap: 0.8rem; }
 }
 @media (max-width: 480px) {
-  .dieng-header-inner { padding: 13px 4px; }
-  .dieng-logo { font-size: 1.2rem; }
-  .dieng-link { font-size: 0.97rem; padding: 8px 7px; }
+  .dieng-header-inner-cartoon { padding: 12px 4px 5px 4px; }
+  .dieng-logo-cartoon { font-size: 1.02rem; }
+  .dieng-link-cartoon { font-size: 0.97rem; padding: 7px 8px; }
 }
 </style>
