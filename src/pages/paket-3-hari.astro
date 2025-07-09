@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "Hari 1", kegiatan: "Penjemputan peserta di kota asal / meeting point pagi/sore" },
+  { jam: "12.00", kegiatan: "Tiba di Dieng, check-in homestay, makan siang" },
+  { jam: "13.00", kegiatan: "Explore Kawah Sikidang & area edukasi vulkanik" },
+  { jam: "14.30", kegiatan: "Tour Candi Arjuna & area heritage" },
+  { jam: "16.00", kegiatan: "Batu Ratapan Angin, Telaga Warna, kuliner sore" },
+  { jam: "18.00", kegiatan: "Check in homestay, makan malam, free time/istirahat" },
+  { jam: "Hari 2", kegiatan: "Sunrise Sikunir & Telaga Cebong (start 04.00)" },
+  { jam: "07.00", kegiatan: "Sarapan & bersantai di homestay" },
+  { jam: "08.00", kegiatan: "Air Terjun Sikarim, spot foto Swiss van Java" },
+  { jam: "10.00", kegiatan: "Tour Kebun Teh, wisata edukasi, hunting foto" },
+  { jam: "12.00", kegiatan: "Makan siang & kuliner lokal" },
+  { jam: "14.00", kegiatan: "Kahyangan Skyline atau Bukit Scooter (opsional)" },
+  { jam: "16.30", kegiatan: "Wisata belanja & oleh-oleh khas Dieng" },
+  { jam: "18.00", kegiatan: "Kembali ke homestay, makan malam, api unggun/fun time" },
+  { jam: "Hari 3", kegiatan: "Sarapan pagi, packing & check out" },
+  { jam: "08.30", kegiatan: "Wisata Telaga Dringo & Savana (hidden gem)" },
+  { jam: "11.00", kegiatan: "Pemberangkatan pulang ke kota asal, trip selesai" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport AC & driver lokal" },
+  { icon: "🏡", text: "Homestay private 2 malam (bisa upgrade villa/hotel)" },
+  { icon: "⛽", text: "BBM, parkir, tol, tiket wisata utama" },
+  { icon: "🍽️", text: "5x makan utama + snack" },
+  { icon: "🧑‍🤝‍🧑", text: "Tour guide ramah & dokumentasi" },
+  { icon: "🔥", text: "Api unggun/fun night (by request)" },
+  { icon: "💧", text: "Air mineral setiap hari" },
+];
+
+const faq = [
+  {
+    q: "Destinasi bisa diubah sesuai keinginan?",
+    a: "Bisa banget! Semua trip privat & fleksibel. Rute bisa dikustom sesuai request, bahkan bisa tambah/kurangi spot selama waktu cukup.",
+  },
+  {
+    q: "Homestay seperti apa yang didapat?",
+    a: "Homestay standar Dieng: nyaman, air panas, dekat destinasi. Bisa upgrade ke villa/hotel jika ingin lebih premium. Silakan request ke admin.",
+  },
+  {
+    q: "Bagaimana jika ada peserta lansia atau anak kecil?",
+    a: "Tim kami terbiasa handle grup keluarga besar. Itinerary bisa disesuaikan, request fasilitas khusus (extra selimut, kursi bayi, dll) juga bisa.",
+  },
+  {
+    q: "Bisa gabung trip dari beberapa kota?",
+    a: "Bisa, meeting point dan penjemputan bisa diatur. Silakan infokan peserta & kota asal saat booking.",
+  },
+  {
+    q: "Harga sudah all in atau ada biaya tambahan?",
+    a: "Harga sudah termasuk semua yang tertulis: tiket, makan, homestay, dokumentasi, guide, BBM, parkir, dll. Kecuali request ekstra di luar paket.",
+  },
+];
+
+const harga = "Rp 1.950.000 / orang (min. 10 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng 3 Hari 2 Malam 2025 - Fun Trip, Sunrise, All-in, Fasilitas Lengkap!">
+  <section class="three-hero">
+    <h1 class="three-title">Paket Wisata Dieng 3 Hari 2 Malam</h1>
+    <p class="three-desc">
+      🌈 Trip 3 hari paling lengkap untuk yang suka wisata santai dan hunting view indah.  
+      Sunrise, kawah, telaga, candi, api unggun, sampai hidden gem semua dijelajahi.  
+      <span class="three-harga">Harga: <b>{harga}</b></span>
+    </p>
+    <a href="https://paketdieng.id/paket-wisata/" class="three-btn">
+      🌈 Booking Paket 3 Hari Sekarang
+    </a>
+  </section>
+
+  <section class="three-itinerary">
+    <h2 class="three-section-title">Itinerary 3 Hari 2 Malam</h2>
+    <div class="three-itin-list">
+      {itinerary.map((item) => (
+        <div class="three-itin-item">
+          <span class="three-itin-jam">{item.jam}</span>
+          <span class="three-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="three-fasilitas">
+    <h2 class="three-section-title">Fasilitas & Layanan</h2>
+    <ul class="three-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="three-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="three-faq">
+    <h2 class="three-section-title">FAQ Paket 3 Hari 2 Malam</h2>
+    <div class="three-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="three-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .three-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #ffe2f8 0%, #e2fff5 100%);
+    padding: 44px 13px 26px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #e6ceec18;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .three-title {
+    font-size: 2.13rem;
+    font-weight: 900;
+    color: #92358b;
+    margin-bottom: 13px;
+    line-height: 1.13;
+    letter-spacing: 0.5px;
+  }
+  .three-desc {
+    font-size: 1.11rem;
+    color: #7c3796;
+    max-width: 570px;
+    margin: 0 auto 13px auto;
+    line-height: 1.7;
+  }
+  .three-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .three-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff8ed5, #6ee6c6 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 13px 30px;
+    border-radius: 99px;
+    font-size: 1.13rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #c473b320;
+    margin: 13px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .three-btn:hover {
+    background: linear-gradient(90deg, #6ee6c6 20%, #ff8ed5 100%);
+    color: #8b3478;
+    box-shadow: 0 7px 18px #ff8ed528;
+  }
+  /* ITINERARY */
+  .three-itinerary { margin: 32px 0 18px 0; }
+  .three-section-title {
+    text-align: center;
+    font-size: 1.16rem;
+    font-weight: 800;
+    color: #7c3796;
+    letter-spacing: 0;
+    margin-bottom: 27px;
+  }
+  .three-itin-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .three-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #fbe7ff 0%, #e2fff5 100%);
+    box-shadow: 0 1px 8px #a16bd110;
+    border-radius: 0.85rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #872a98;
+    border: 1.1px solid #f3e6f8;
+  }
+  .three-itin-jam {
+    background: #ffe0fa98;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #1abda6;
+    min-width: 62px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .three-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .three-fasilitas {
+    margin: 24px 0 14px 0;
+    text-align: center;
+  }
+  .three-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 350px;
+  }
+  .three-fasilitas-emoji { font-size: 1.18em; margin-right: 9px; }
+  .three-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #872a98;
+    font-weight: 600;
+    background: #fff0fb;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #ff8ed51a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .three-faq { max-width: 700px; margin: 38px auto 0 auto; padding: 0 12px 26px 12px; }
+  .three-faq-list { display: flex; flex-direction: column; gap: 17px; }
+  .three-faq-card {
+    background: linear-gradient(90deg, #fbe7ff 80%, #e2fff5 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ff8ed51a;
+    border: 1.1px solid #f3e6f8;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #7c3796;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .three-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #b73d97;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .three-faq-card[open] { box-shadow: 0 6px 22px #ff8ed530; border-color: #c473b3; }
+  .three-faq-card[open] summary { color: #872a98; }
+  .three-faq-card div { padding-top: 3px; color: #872a98; }
+  @media (max-width: 600px) {
+    .three-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .three-title { font-size: 1.12rem; }
+    .three-section-title { font-size: 1.01rem; }
+    .three-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

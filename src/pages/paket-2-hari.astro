@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "Hari 1", kegiatan: "Penjemputan peserta di kota asal / meeting point (pagi)" },
+  { jam: "09.30", kegiatan: "Check in homestay, istirahat sebentar" },
+  { jam: "11.00", kegiatan: "Tour Candi Arjuna & Komplek Candi" },
+  { jam: "12.30", kegiatan: "Makan siang & kuliner lokal" },
+  { jam: "14.00", kegiatan: "Kawah Sikidang (fenomena alam & edukasi)" },
+  { jam: "15.30", kegiatan: "Batu Ratapan Angin & Telaga Warna" },
+  { jam: "17.00", kegiatan: "Explore Bukit Scooter & sunset santai" },
+  { jam: "18.30", kegiatan: "Check in homestay, makan malam, istirahat" },
+  { jam: "Hari 2", kegiatan: "Sunrise Sikunir & Telaga Cebong (mulai jam 04.00)" },
+  { jam: "07.00", kegiatan: "Sarapan & free time, packing" },
+  { jam: "09.30", kegiatan: "Wisata Air Terjun Sikarim / Kebun Teh (opsional)" },
+  { jam: "11.00", kegiatan: "Check out, wisata oleh-oleh & pulang ke kota asal" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport AC & driver lokal" },
+  { icon: "🏡", text: "Homestay private 1 malam" },
+  { icon: "⛽", text: "BBM, parkir, tol, tiket wisata utama" },
+  { icon: "🍽️", text: "3x makan (sarapan, makan siang, malam)" },
+  { icon: "🧑‍🤝‍🧑", text: "Tour guide ramah" },
+  { icon: "💧", text: "Air mineral setiap hari" },
+  { icon: "📸", text: "Free dokumentasi by crew" },
+];
+
+const faq = [
+  {
+    q: "Apakah bisa pilih homestay sendiri?",
+    a: "Bisa! Ada beberapa pilihan homestay — tinggal request preferensi (view, kamar, lokasi). Admin bantu carikan yang sesuai budget & selera.",
+  },
+  {
+    q: "Bisa tambah/ubah destinasi selama trip?",
+    a: "Bisa banget, semua trip private. Silakan request custom itinerary atau tambah destinasi selama masih memungkinkan waktu & rute.",
+  },
+  {
+    q: "Harga per orang sama untuk semua kota?",
+    a: "Harga bervariasi tergantung kota berangkat & jumlah peserta. Konsultasi dulu biar dapat penawaran termurah sesuai grup & start point.",
+  },
+  {
+    q: "Paket sudah termasuk tiket & makan?",
+    a: "Sudah! Semua tiket utama, makan, homestay, transport, guide, dan dokumentasi sudah include. Tidak ada biaya tersembunyi.",
+  },
+  {
+    q: "Minimal & maksimal peserta berapa?",
+    a: "Minimal 2 orang, maksimal 30+ peserta (rombongan bisa booking khusus). Harga makin hemat untuk grup besar.",
+  },
+];
+
+const harga = "Rp 975.000 / orang (min. 20 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng 2 Hari 1 Malam 2025 - Sunrise, Kawah, Homestay, All-in!">
+  <section class="two-hero">
+    <h1 class="two-title">Paket Wisata Dieng 2 Hari 1 Malam</h1>
+    <p class="two-desc">
+      🏞️ Pilihan tepat buat kamu yang mau full eksplor Dieng plus menginap di homestay nyaman.  
+      Sunrise, candi, kawah, telaga, dan kuliner—all-in tanpa ribet!  
+      <span class="two-harga">Harga: <b>{harga}</b></span>
+    </p>
+    <a href="https://www.wikipedieng.com/dieng/paket-wisata/2-hari/" class="two-btn">
+      🏞️ Booking Paket 2 Hari Sekarang
+    </a>
+  </section>
+
+  <section class="two-itinerary">
+    <h2 class="two-section-title">Itinerary 2 Hari 1 Malam</h2>
+    <div class="two-itin-list">
+      {itinerary.map((item) => (
+        <div class="two-itin-item">
+          <span class="two-itin-jam">{item.jam}</span>
+          <span class="two-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="two-fasilitas">
+    <h2 class="two-section-title">Fasilitas & Layanan</h2>
+    <ul class="two-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="two-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="two-faq">
+    <h2 class="two-section-title">FAQ Paket 2 Hari 1 Malam</h2>
+    <div class="two-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="two-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .two-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #f0fcff 0%, #fffde2 100%);
+    padding: 44px 13px 26px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #6ee6c614;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .two-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #176e7e;
+    margin-bottom: 13px;
+    line-height: 1.13;
+    letter-spacing: 0.5px;
+  }
+  .two-desc {
+    font-size: 1.11rem;
+    color: #3c7e88;
+    max-width: 570px;
+    margin: 0 auto 13px auto;
+    line-height: 1.7;
+  }
+  .two-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .two-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b5c2, #ffd600 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 13px 30px;
+    border-radius: 99px;
+    font-size: 1.13rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #ffd60020;
+    margin: 13px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .two-btn:hover {
+    background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+    color: #00b5c2;
+    box-shadow: 0 7px 18px #00b5c228;
+  }
+  /* ITINERARY */
+  .two-itinerary { margin: 32px 0 18px 0; }
+  .two-section-title {
+    text-align: center;
+    font-size: 1.16rem;
+    font-weight: 800;
+    color: #00b5c2;
+    letter-spacing: 0;
+    margin-bottom: 27px;
+  }
+  .two-itin-list {
+    max-width: 570px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .two-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #e7faff 0%, #f8f5e0 100%);
+    box-shadow: 0 1px 8px #00b5c210;
+    border-radius: 0.85rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #23757e;
+    border: 1.1px solid #f1f8f4;
+  }
+  .two-itin-jam {
+    background: #ffd60018;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #00b5c2;
+    min-width: 62px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .two-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .two-fasilitas {
+    margin: 24px 0 14px 0;
+    text-align: center;
+  }
+  .two-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 330px;
+  }
+  .two-fasilitas-emoji { font-size: 1.18em; margin-right: 9px; }
+  .two-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #21846a;
+    font-weight: 600;
+    background: #fffbe9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .two-faq { max-width: 700px; margin: 38px auto 0 auto; padding: 0 12px 26px 12px; }
+  .two-faq-list { display: flex; flex-direction: column; gap: 17px; }
+  .two-faq-card {
+    background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ffd60019;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #1b4477;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .two-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b5c2;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .two-faq-card[open] { box-shadow: 0 6px 22px #00b5c239; border-color: #ffd600; }
+  .two-faq-card[open] summary { color: #ffd600; }
+  .two-faq-card div { padding-top: 3px; color: #134075; }
+  @media (max-width: 600px) {
+    .two-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .two-title { font-size: 1.12rem; }
+    .two-section-title { font-size: 1.01rem; }
+    .two-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

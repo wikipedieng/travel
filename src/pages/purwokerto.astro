@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "00.15", kegiatan: "Kumpul & berangkat dari Purwokerto (bisa jemput rumah/hotel/kampus)" },
+  { jam: "03.45", kegiatan: "Tiba di Dieng, istirahat sejenak, snack pagi" },
+  { jam: "04.30", kegiatan: "Sunrise Sikunir & Telaga Cebong – vibes happy pagi-pagi" },
+  { jam: "07.00", kegiatan: "Sarapan khas Dieng" },
+  { jam: "08.30", kegiatan: "Eksplor Kawah Sikidang & foto-foto ceria" },
+  { jam: "10.00", kegiatan: "Wisata Candi Arjuna & area heritage" },
+  { jam: "11.30", kegiatan: "Batu Ratapan Angin & view Telaga Warna" },
+  { jam: "12.30", kegiatan: "Makan siang & santai bareng grup" },
+  { jam: "14.00", kegiatan: "Oleh-oleh, wisata kuliner, lanjut kebun teh atau Bukit Scooter" },
+  { jam: "15.30", kegiatan: "Pulang ke Purwokerto, full cerita happy di perjalanan!" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport AC dari Purwokerto (Elf/Hiace nyaman)" },
+  { icon: "🧑‍✈️", text: "Driver & crew friendly, siap seru-seruan" },
+  { icon: "🎟️", text: "Tiket wisata utama & parkir gratis" },
+  { icon: "🍽️", text: "2x makan: sarapan & makan siang" },
+  { icon: "🥤", text: "Air mineral sepanjang trip" },
+  { icon: "📸", text: "Free dokumentasi (HP/DSLR) by guide" },
+  { icon: "🎈", text: "Games seru, quiz, & fun challenge selama trip" },
+];
+
+const faq = [
+  {
+    q: "Bisa jemput peserta di luar kota Purwokerto?",
+    a: "Bisa! Penjemputan fleksibel: Sokaraja, Ajibarang, Stasiun, kampus, bahkan rumah. Cukup info lokasi waktu booking.",
+  },
+  {
+    q: "Berangkat selalu dini hari?",
+    a: "Mayoritas trip start dini hari agar sunrise Sikunir tidak terlewat. Tapi bisa request berangkat pagi/siang jika mau wisata lebih santai.",
+  },
+  {
+    q: "Paket ini cocok untuk siapa?",
+    a: "Cocok banget buat teman, keluarga, komunitas, hingga outing kantor. Itinerary bisa diubah sesuai vibes rombongan.",
+  },
+  {
+    q: "Apa keunikan trip via Purwokerto?",
+    a: "Waktu tempuh lebih singkat (3,5 jam), crew lokal, dan support banyak rute (via Wonosobo/Banjarnegara). Cocok buat yang pengen short escape tanpa ribet.",
+  },
+  {
+    q: "Semua biaya sudah include atau ada tambahan?",
+    a: "Harga sudah termasuk transport, tiket utama, makan, dokumentasi, guide, dan air mineral. Tidak ada biaya mendadak di lokasi.",
+  },
+];
+
+const harga = "Mulai Rp 525.000 / orang (min. 6 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng dari Purwokerto 2025 - Sunrise, Happy Trip, All-in!">
+  <section class="pwt-hero">
+    <h1 class="pwt-title">Paket Wisata Dieng <span>dari Purwokerto</span></h1>
+    <p class="pwt-desc">
+      😍 Mau liburan super happy dari Purwokerto ke Dieng?  
+      <b>Paket full fasilitas ini siap bikin pengalaman seru: sunrise, kawah, candi, view, kuliner, semua all-in!</b>
+      <span class="pwt-harga">Harga: <b>{harga}</b></span>
+    </p>
+  </section>
+
+  <section class="pwt-itinerary">
+    <h2 class="pwt-section-title">Itinerary Trip Purwokerto – Dieng</h2>
+    <div class="pwt-itin-list">
+      {itinerary.map((item) => (
+        <div class="pwt-itin-item">
+          <span class="pwt-itin-jam">{item.jam}</span>
+          <span class="pwt-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="pwt-fasilitas">
+    <h2 class="pwt-section-title">Fasilitas Trip Bahagia</h2>
+    <ul class="pwt-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="pwt-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="pwt-faq">
+    <h2 class="pwt-section-title">FAQ Paket Purwokerto – Dieng</h2>
+    <div class="pwt-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="pwt-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .pwt-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #fffbe2 0%, #f2fff9 100%);
+    padding: 44px 13px 22px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #7fd9a818;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pwt-title {
+    font-size: 2.14rem;
+    font-weight: 900;
+    color: #199c60;
+    margin-bottom: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .pwt-title span {
+    color: #ff8a19;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 6px;
+  }
+  .pwt-desc {
+    font-size: 1.13rem;
+    color: #1e9967;
+    max-width: 570px;
+    margin: 0 auto 10px auto;
+    line-height: 1.7;
+  }
+  .pwt-harga {
+    display: inline-block;
+    background: #eaffec;
+    color: #199c60;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+    box-shadow: 0 2px 10px #7fd9a826;
+  }
+  /* ITINERARY */
+  .pwt-itinerary { margin: 30px 0 15px 0; }
+  .pwt-section-title {
+    text-align: center;
+    font-size: 1.14rem;
+    font-weight: 800;
+    color: #199c60;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+  }
+  .pwt-itin-list {
+    max-width: 570px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .pwt-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #f2fff9 0%, #fffbe2 100%);
+    box-shadow: 0 1px 8px #199c6010;
+    border-radius: 0.9rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.07rem;
+    font-weight: 600;
+    color: #199c60;
+    border: 1.1px solid #eaffec;
+  }
+  .pwt-itin-jam {
+    background: #199c6015;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #ff8a19;
+    min-width: 72px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .pwt-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .pwt-fasilitas {
+    margin: 21px 0 14px 0;
+    text-align: center;
+  }
+  .pwt-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 340px;
+  }
+  .pwt-fasilitas-emoji { font-size: 1.2em; margin-right: 9px; }
+  .pwt-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #1e9967;
+    font-weight: 600;
+    background: #f2fff9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #7fd9a81a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .pwt-faq { max-width: 700px; margin: 35px auto 0 auto; padding: 0 12px 22px 12px; }
+  .pwt-faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .pwt-faq-card {
+    background: linear-gradient(90deg, #eaffec 80%, #fffbe2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #7fd9a816;
+    border: 1.1px solid #eaffec;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #1e9967;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pwt-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #ff8a19;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .pwt-faq-card[open] { box-shadow: 0 6px 22px #ff8a1930; border-color: #ff8a19; }
+  .pwt-faq-card[open] summary { color: #199c60; }
+  .pwt-faq-card div { padding-top: 3px; color: #199c60; }
+  @media (max-width: 600px) {
+    .pwt-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .pwt-title { font-size: 1.11rem; }
+    .pwt-section-title { font-size: 1.01rem; }
+    .pwt-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const ruteJeep = [
+  { nama: 'Sunrise Sikunir', emoji: '🌄', desc: 'Nikmati sunrise legendaris & view Telaga Cebong' },
+  { nama: 'Batu Pandang', emoji: '🪨', desc: 'Spot selfie di atas bukit, view Telaga Warna & Pengilon' },
+  { nama: 'Bukit Scooter', emoji: '🛵', desc: 'Sensasi offroad fun di padang rumput, view Dieng cityscape' },
+  { nama: 'Kawah Sikidang', emoji: '🌋', desc: 'Jelajah kawah aktif unik, aroma belerang, dan wisata edukasi' },
+];
+
+const fasilitas = [
+  { item: 'Jeep wisata (driver lokal ramah)', emoji: '🚙' },
+  { item: 'Tiket masuk destinasi', emoji: '🎟️' },
+  { item: 'Air mineral', emoji: '🥤' },
+  { item: 'Dokumentasi by driver', emoji: '📱' },
+  { item: 'Asuransi wisata', emoji: '🛡️' },
+];
+
+const faq = [
+  {
+    q: "Apakah Jeep Dieng boleh untuk 1 orang atau keluarga saja?",
+    a: "Boleh! Satu Jeep bisa untuk 1-4 orang, tanpa digabung peserta lain. Trip private, bebas atur rute & waktu.",
+  },
+  {
+    q: "Start & finish-nya di mana?",
+    a: "Meeting point fleksibel: area Dieng, penginapan, atau sesuai request kamu. Finish juga bisa di lokasi yang sama atau beda.",
+  },
+  {
+    q: "Bisa booking dadakan atau untuk sunrise besok?",
+    a: "Bisa banget! Tim kami standby 24 jam, booking H-1 atau H-0 pagi pun dilayani asal masih ada unit.",
+  },
+  {
+    q: "Paket Jeep Dieng ini cocok untuk siapa saja?",
+    a: "Cocok buat keluarga, pasangan, grup kecil, atau solo trip. Anak-anak & lansia juga aman karena rute bisa dipilih.",
+  },
+  {
+    q: "Apakah Jeep boleh berhenti foto-foto bebas?",
+    a: "Boleh banget! Driver ramah, siap bantu spot foto kece, dan nggak ngebut-ngebut kaya fast & furious.",
+  },
+];
+
+const hargaMulai = "175.000/orang (min. 3 peserta)";
+---
+
+<Layout title="Paket Jeep Dieng 2025 - Sunrise, Offroad, & Fun Adventure">
+  <section class="jeep-hero">
+    <h1 class="jeep-title">Paket Jeep Dieng<br>
+      <span class="jeep-highlight">Fun Sunrise & Adventure</span>
+    </h1>
+    <p class="jeep-desc">
+      🚙 Eksplor Dieng lebih seru dan anti-mainstream dengan <b>Paket Jeep Dieng</b>.<br>
+      Offroad ke spot sunrise, bukit keren, kawah, dan padang rumput – semua bebas request!  
+      Nikmati perjalanan fun, driver ramah, dan sensasi “adventure” di atas awan.<br>
+      <span class="jeep-harga">Harga mulai: <b>Rp {hargaMulai}</b></span>
+    </p>
+    <a href="https://www.putratour.com/paket-wisata-dieng/paket-jeep-dieng/" class="jeep-btn">
+      🚙 Pesan Paket Jeep Sekarang
+    </a>
+  </section>
+
+  <section class="jeep-rute">
+    <h2 class="jeep-section-title">Pilihan Rute Jeep Dieng</h2>
+    <div class="jeep-rute-grid">
+      {ruteJeep.map((rute) => (
+        <div class="jeep-rute-card">
+          <span class="jeep-rute-emoji">{rute.emoji}</span>
+          <div>
+            <h3>{rute.nama}</h3>
+            <p>{rute.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="jeep-fasilitas">
+    <h2 class="jeep-section-title">Fasilitas Paket Jeep</h2>
+    <ul class="jeep-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="jeep-fasilitas-emoji">{f.emoji}</span> {f.item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="jeep-faq">
+    <h2 class="jeep-section-title">FAQ Paket Jeep Dieng</h2>
+    <div class="jeep-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="jeep-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  /* HERO */
+  .jeep-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #e7fcff 0%, #fffce9 100%);
+    padding: 48px 14px 28px 14px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 38px #20e0f80e;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .jeep-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #16749c;
+    margin-bottom: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .jeep-highlight {
+    font-size: 1.09em;
+    color: #ffd600;
+    background: linear-gradient(90deg, #00b5c2 0%, #ffd600 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .jeep-desc {
+    font-size: 1.15rem;
+    color: #207080;
+    max-width: 600px;
+    margin: 0 auto 18px auto;
+    line-height: 1.7;
+  }
+  .jeep-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .jeep-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b5c2, #ffd600 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 13px 32px;
+    border-radius: 99px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #ffd60020;
+    margin: 14px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .jeep-btn:hover {
+    background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+    color: #00b5c2;
+    box-shadow: 0 9px 28px #00b5c228;
+  }
+
+  /* RUTE */
+  .jeep-rute {
+    margin: 30px 0 26px 0;
+  }
+  .jeep-section-title {
+    text-align: center;
+    font-size: 1.29rem;
+    font-weight: 800;
+    color: #0091e6;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+  }
+  .jeep-rute-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .jeep-rute-card {
+    background: linear-gradient(120deg, #e6f8ff 0%, #faffed 100%);
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 22px #00b5c212;
+    padding: 22px 23px 20px 22px;
+    max-width: 240px;
+    min-width: 185px;
+    min-height: 116px;
+    font-size: 1rem;
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    border: 1.2px solid #c2f4e6;
+    position: relative;
+    transition: box-shadow .13s, transform .11s, border .13s;
+  }
+  .jeep-rute-card:hover {
+    transform: translateY(-5px) scale(1.025);
+    border-color: #00b5c2;
+    box-shadow: 0 8px 26px #ffd6001b;
+  }
+  .jeep-rute-emoji {
+    font-size: 2.1rem;
+    opacity: 0.29;
+    position: absolute;
+    right: 16px; top: 14px;
+    pointer-events: none;
+  }
+  .jeep-rute-card h3 {
+    font-size: 1.06rem;
+    font-weight: 800;
+    margin: 0 0 7px 0;
+    color: #00b5c2;
+  }
+  .jeep-rute-card p {
+    font-size: 0.98rem;
+    color: #214a59;
+    margin: 0;
+  }
+  @media (max-width: 800px) {
+    .jeep-rute-grid { flex-direction: column; align-items: center; gap: 15px; }
+    .jeep-rute-card { max-width: 98vw; min-width: 0; }
+  }
+
+  /* FASILITAS */
+  .jeep-fasilitas {
+    margin: 26px 0 16px 0;
+    text-align: center;
+  }
+  .jeep-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-start;
+    max-width: 310px;
+  }
+  .jeep-fasilitas-emoji {
+    font-size: 1.18em;
+    margin-right: 9px;
+  }
+  .jeep-fasilitas-list li {
+    font-size: 1.09rem;
+    color: #226077;
+    font-weight: 600;
+    background: #e5fbfc;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex;
+    align-items: center;
+  }
+
+  /* FAQ */
+  .jeep-faq {
+    max-width: 700px;
+    margin: 52px auto 0 auto;
+    padding: 0 12px 30px 12px;
+  }
+  .jeep-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+  }
+  .jeep-faq-card {
+    background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+    border-radius: 1rem;
+    padding: 19px 23px 12px 22px;
+    box-shadow: 0 2px 16px #00b5c219;
+    border: 1.2px solid #e3ecfa;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #1b4477;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .jeep-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b5c2;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.08rem;
+    transition: color 0.12s;
+  }
+  .jeep-faq-card[open] { box-shadow: 0 6px 28px #00b5c239; border-color: #00b5c2; }
+  .jeep-faq-card[open] summary { color: #ffd600; }
+  .jeep-faq-card div { padding-top: 4px; color: #134075; }
+
+  @media (max-width: 600px) {
+    .jeep-hero { padding: 29px 3vw 18px 3vw; border-radius: 0 0 1rem 1rem; }
+    .jeep-title { font-size: 1.13rem; }
+    .jeep-section-title { font-size: 1.05rem; }
+  }
+  </style>
+</Layout>

@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "23.30", kegiatan: "Kumpul & persiapan keberangkatan di Jogja (area kota/terminal/hotel)" },
+  { jam: "00.01", kegiatan: "Berangkat menuju Dieng, perjalanan malam yang seru!" },
+  { jam: "04.30", kegiatan: "Tiba di Dieng, langsung sunrise di Bukit Sikunir & Telaga Cebong" },
+  { jam: "07.00", kegiatan: "Sarapan khas Dieng di homestay/resto lokal" },
+  { jam: "08.30", kegiatan: "Eksplor Kawah Sikidang – lihat aktivitas vulkanik legendaris" },
+  { jam: "09.45", kegiatan: "Tour Candi Arjuna, spot heritage & sejarah" },
+  { jam: "11.00", kegiatan: "Batu Ratapan Angin – view Telaga Warna & foto gokil" },
+  { jam: "12.30", kegiatan: "Makan siang & rehat sejenak" },
+  { jam: "14.00", kegiatan: "Oleh-oleh, wisata kuliner, pulang ke Jogja sore/malam" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport Elf/Hiace full AC dari Jogja" },
+  { icon: "🧑‍✈️", text: "Driver & crew profesional, fun banget" },
+  { icon: "⛽", text: "BBM, parkir, retribusi, tiket wisata utama" },
+  { icon: "🍚", text: "2x makan (sarapan & makan siang)" },
+  { icon: "🥤", text: "Air mineral free flow" },
+  { icon: "📸", text: "Free dokumentasi by guide (HP/DSLR)" },
+  { icon: "🎉", text: "Perjalanan fun, banyak ice breaking & cerita lokal" },
+];
+
+const faq = [
+  {
+    q: "Meeting point di Jogja di mana saja?",
+    a: "Bebas pilih: area kota, stasiun, hotel, atau bahkan rumah peserta. Bisa request jemputan private atau titik kumpul bareng."
+  },
+  {
+    q: "Berangkat sendiri atau grup gabungan?",
+    a: "Semua trip private/grup sendiri. Tidak digabung dengan peserta lain kecuali ada permintaan open trip khusus."
+  },
+  {
+    q: "Apakah trip ini kuat buat lansia/anak kecil?",
+    a: "Itinerary dibuat fleksibel & ramah keluarga. Crew siap menyesuaikan tempo trip biar semua peserta tetap happy."
+  },
+  {
+    q: "Destinasi bisa diubah sesuai request?",
+    a: "Bisa! Cukup info saat booking, bisa tambah destinasi seperti Telaga Menjer, Kebun Teh, atau request hidden gem lokal."
+  },
+  {
+    q: "Apakah harga sudah include semua biaya?",
+    a: "Sudah, mulai dari transport, tiket, makan, guide, hingga dokumentasi. Tidak ada biaya mendadak di lokasi."
+  },
+];
+
+const harga = "Mulai Rp 525.000 / orang (min. 6 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng dari Jogja 2025 - Sunrise Sikunir, Kawah, All-in, Paling Seru!">
+  <section class="jogja-hero">
+    <h1 class="jogja-title">Paket Wisata Dieng <span>dari Jogja</span></h1>
+    <p class="jogja-desc">
+      🎉 Pengen healing dari Jogja ke Negeri di Atas Awan?  
+      <b>Paket Trip Dieng dari Jogja</b> ini solusinya: jalan malam, sunrise kece, rute gokil, dan full fasilitas!  
+      <span class="jogja-harga">Harga: <b>{harga}</b></span>
+    </p>
+  </section>
+
+  <section class="jogja-itinerary">
+    <h2 class="jogja-section-title">Itinerary Seru dari Jogja</h2>
+    <div class="jogja-itin-list">
+      {itinerary.map((item) => (
+        <div class="jogja-itin-item">
+          <span class="jogja-itin-jam">{item.jam}</span>
+          <span class="jogja-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="jogja-fasilitas">
+    <h2 class="jogja-section-title">Fasilitas All-In</h2>
+    <ul class="jogja-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="jogja-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="jogja-faq">
+    <h2 class="jogja-section-title">FAQ Trip Jogja – Dieng</h2>
+    <div class="jogja-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="jogja-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .jogja-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #fffbe2 0%, #e2f6ff 100%);
+    padding: 44px 13px 22px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #ffe07118;
+    margin-bottom: 23px;
+    position: relative;
+    overflow: hidden;
+  }
+  .jogja-title {
+    font-size: 2.14rem;
+    font-weight: 900;
+    color: #d1a000;
+    margin-bottom: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .jogja-title span {
+    color: #199cc7;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 6px;
+  }
+  .jogja-desc {
+    font-size: 1.13rem;
+    color: #b48b04;
+    max-width: 570px;
+    margin: 0 auto 10px auto;
+    line-height: 1.7;
+  }
+  .jogja-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  /* ITINERARY */
+  .jogja-itinerary { margin: 30px 0 15px 0; }
+  .jogja-section-title {
+    text-align: center;
+    font-size: 1.14rem;
+    font-weight: 800;
+    color: #199cc7;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+  }
+  .jogja-itin-list {
+    max-width: 570px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .jogja-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #e3faff 0%, #fffbe2 100%);
+    box-shadow: 0 1px 8px #199cc710;
+    border-radius: 0.9rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.07rem;
+    font-weight: 600;
+    color: #228ab9;
+    border: 1.1px solid #f1f8f4;
+  }
+  .jogja-itin-jam {
+    background: #ffd60019;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #199cc7;
+    min-width: 72px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .jogja-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .jogja-fasilitas {
+    margin: 21px 0 14px 0;
+    text-align: center;
+  }
+  .jogja-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 340px;
+  }
+  .jogja-fasilitas-emoji { font-size: 1.2em; margin-right: 9px; }
+  .jogja-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #b48b04;
+    font-weight: 600;
+    background: #fffbe9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #ffe0661a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .jogja-faq { max-width: 700px; margin: 35px auto 0 auto; padding: 0 12px 22px 12px; }
+  .jogja-faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .jogja-faq-card {
+    background: linear-gradient(90deg, #e3faff 80%, #fffbe2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ffe0661a;
+    border: 1.1px solid #ecf7ff;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #199cc7;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .jogja-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #199cc7;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .jogja-faq-card[open] { box-shadow: 0 6px 22px #ffe06630; border-color: #ffd600; }
+  .jogja-faq-card[open] summary { color: #ffd600; }
+  .jogja-faq-card div { padding-top: 3px; color: #228ab9; }
+  @media (max-width: 600px) {
+    .jogja-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .jogja-title { font-size: 1.11rem; }
+    .jogja-section-title { font-size: 1.01rem; }
+    .jogja-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

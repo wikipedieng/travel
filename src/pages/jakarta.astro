@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const fasilitas = [
+  { icon: "✈️", text: "Tiket kereta/pesawat (opsional, bisa bantu booking sesuai kebutuhan)" },
+  { icon: "🚐", text: "Transport full AC antar-jemput dari stasiun/bandara Jogja/Semarang/Solo ke Dieng (Elf/Hiace/Bus Mini)" },
+  { icon: "🏨", text: "Penginapan Dieng (homestay, villa, hotel sesuai request)" },
+  { icon: "🍽️", text: "Makan selama tour (3x/hari untuk paket inap, menu lokal & tradisional)" },
+  { icon: "🎟️", text: "Tiket masuk destinasi utama & objek wisata Dieng" },
+  { icon: "🥤", text: "Air mineral free sepanjang trip" },
+  { icon: "🧑‍✈️", text: "Driver + guide lokal profesional, ramah & informatif" },
+  { icon: "📸", text: "Free dokumentasi standar (kamera HP/DSLR, siap bantu spot foto)" },
+  { icon: "🧳", text: "Bisa custom itinerary, fleksibel meeting point & rute" },
+];
+
+const faq = [
+  {
+    q: "Bagaimana cara berangkat ke Dieng dari Jakarta?",
+    a: "Paling mudah menggunakan kereta atau pesawat ke Jogja, Semarang, atau Solo. Tim kami akan menjemput dari bandara/stasiun lalu perjalanan darat ke Dieng."
+  },
+  {
+    q: "Berapa jam perjalanan total dari Jakarta ke Dieng?",
+    a: "Perjalanan kereta/pesawat ke Jawa Tengah 1 jam, lanjut darat ke Dieng sekitar 3-4 jam. Rombongan bisa memilih waktu sesuai kenyamanan, tidak ada jadwal baku."
+  },
+  {
+    q: "Apakah bisa trip keluarga besar, anak-anak, orang tua?",
+    a: "Bisa! Unit armada & itinerary kami fleksibel, bisa private untuk family, anak-anak, lansia, hingga company trip skala besar. Crew siap bantu ekstra kebutuhan."
+  },
+  {
+    q: "Apa keunggulan trip privat dibanding open trip?",
+    a: "Semua rute dan jadwal sesuai request, tidak perlu berbagi armada atau itinerary dengan peserta lain. Lebih nyaman, privasi terjaga, dan pengalaman lebih maksimal."
+  },
+  {
+    q: "Apa destinasi unggulan yang biasa dikunjungi di Dieng?",
+    a: "Kawah Sikidang, Komplek Candi Arjuna, Batu Ratapan Angin, Telaga Warna, Bukit Sikunir (sunrise), Savana Pangonan, Dieng Plateau Theater, Telaga Menjer, dan wisata kuliner/oleh-oleh lokal."
+  },
+  {
+    q: "Bagaimana jika ingin upgrade penginapan atau tambah destinasi?",
+    a: "Tinggal infokan ke tim booking, semua bisa diatur custom: penginapan, hidden gem, wisata edukasi, atau bahkan sesi foto profesional."
+  },
+  {
+    q: "Berapa kisaran biaya paket dari Jakarta?",
+    a: "Mulai dari Rp 1,2 juta per orang untuk paket 2 hari 1 malam (exclude tiket ke Jawa Tengah). Harga bervariasi sesuai jumlah peserta, lama trip, dan kelas penginapan."
+  },
+];
+
+---
+
+<Layout title="Paket Wisata Dieng dari Jakarta 2025 - Private Trip, Fasilitas Lengkap, Fleksibel">
+  <section class="jakarta-hero">
+    <h1 class="jakarta-title">Paket Wisata Dieng <span>dari Jakarta</span></h1>
+    <p class="jakarta-desc">
+      Mau liburan beda dari Jakarta?  
+      Dieng selalu jadi destinasi favorit untuk short escape keluarga, gathering kantor, hingga group traveler yang cari suasana alam, sunrise, dan wisata budaya dengan suhu sejuk. Paket ini dirancang untuk peserta dari Jakarta—semua urusan transport, penginapan, makan, dan destinasi utama sudah beres tanpa ribet.
+    </p>
+    <p class="jakarta-desc">
+      <b>Trip dari Jakarta ke Dieng selalu private, bebas atur itinerary dan meeting point.</b>  
+      Biasanya rombongan memilih start dari stasiun/bandara (Jogja, Semarang, Solo), langsung dijemput tim kami, lanjut perjalanan nyaman ke Dieng Plateau. Nggak perlu khawatir soal waktu, semua menyesuaikan request, termasuk untuk keluarga dengan anak kecil atau orang tua.
+    </p>
+    <p class="jakarta-desc">
+      Setibanya di Dieng, Anda langsung disambut view pegunungan, udara segar, serta destinasi hits seperti Kawah Sikidang, Candi Arjuna, Telaga Warna, dan sunrise di Bukit Sikunir. Tim guide lokal siap jadi teman eksplorasi, bantu dokumentasi, hingga jaga kenyamanan.  
+      <br /><br />
+      <b>Kelebihan trip dari Jakarta:</b>
+      <ul class="jakarta-list">
+        <li>Rute dan durasi fleksibel, itinerary bebas request</li>
+        <li>Pilihan penginapan dari homestay ekonomis sampai villa eksklusif</li>
+        <li>Paket cocok untuk rombongan kecil sampai perusahaan besar</li>
+        <li>Bisa tambah agenda adventure, fun games, atau city tour sekitar Dieng</li>
+        <li>Pilihan makan: menu tradisional, halal, vegetarian, atau request khusus</li>
+      </ul>
+    </p>
+    <p class="jakarta-desc">
+      Semua transport, tiket, dan makan sudah include. Tidak ada biaya dadakan, harga transparan, bisa upgrade kapan saja.  
+      **Bawa koper, tinggal duduk manis—liburan dijamin nyaman dan memorable!**
+    </p>
+  </section>
+
+  <section class="jakarta-fasilitas">
+    <h2 class="jakarta-section-title">Fasilitas Paket Jakarta – Dieng</h2>
+    <ul class="jakarta-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="jakarta-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="jakarta-faq">
+    <h2 class="jakarta-section-title">FAQ Paket Wisata Jakarta – Dieng</h2>
+    <div class="jakarta-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="jakarta-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .jakarta-hero {
+    text-align: left;
+    background: linear-gradient(90deg, #fffdf4 0%, #f4fbff 100%);
+    padding: 42px 22px 18px 22px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #c7eaff19;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .jakarta-title {
+    font-size: 2.17rem;
+    font-weight: 900;
+    color: #19335a;
+    margin-bottom: 13px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  .jakarta-title span {
+    color: #2ab7ca;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 7px;
+  }
+  .jakarta-desc {
+    font-size: 1.12rem;
+    color: #223a4f;
+    margin: 0 0 14px 0;
+    line-height: 1.7;
+    max-width: 780px;
+  }
+  .jakarta-list {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    padding-left: 24px;
+  }
+  .jakarta-list li {
+    font-size: 1.08rem;
+    color: #1c6f7c;
+    margin-bottom: 4px;
+    list-style: disc;
+  }
+  .jakarta-section-title {
+    text-align: center;
+    font-size: 1.14rem;
+    font-weight: 800;
+    color: #2ab7ca;
+    margin-bottom: 26px;
+    margin-top: 32px;
+    letter-spacing: 0;
+  }
+  .jakarta-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto 18px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+  .jakarta-fasilitas-emoji { font-size: 1.23em; margin-right: 11px; }
+  .jakarta-fasilitas-list li {
+    font-size: 1.09rem;
+    color: #213a4d;
+    font-weight: 600;
+    background: #f4fbff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #2ab7ca14;
+    display: flex; align-items: center;
+  }
+  .jakarta-faq { max-width: 700px; margin: 37px auto 0 auto; padding: 0 12px 28px 12px; }
+  .jakarta-faq-list { display: flex; flex-direction: column; gap: 18px; }
+  .jakarta-faq-card {
+    background: linear-gradient(90deg, #f4fbff 80%, #fffdf4 100%);
+    border-radius: 1rem;
+    padding: 18px 23px 11px 23px;
+    box-shadow: 0 2px 14px #2ab7ca12;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #213a4d;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .jakarta-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #2ab7ca;
+    outline: none;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .jakarta-faq-card[open] { box-shadow: 0 6px 22px #2ab7ca29; border-color: #2ab7ca; }
+  .jakarta-faq-card[open] summary { color: #19335a; }
+  .jakarta-faq-card div { padding-top: 4px; color: #213a4d; }
+  @media (max-width: 700px) {
+    .jakarta-hero { padding: 26px 2vw 13px 2vw; border-radius: 0 0 1rem 1rem; }
+    .jakarta-title { font-size: 1.14rem; }
+    .jakarta-section-title { font-size: 1.02rem; }
+  }
+  </style>
+</Layout>

@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "06.00", kegiatan: "Penjemputan di kota Wonosobo (rumah, stasiun, terminal, hotel)" },
+  { jam: "06.15", kegiatan: "Berangkat ke Dieng, perjalanan pagi lebih segar & hemat waktu" },
+  { jam: "07.15", kegiatan: "Sarapan lokal di Dieng (sudah include paket)" },
+  { jam: "07.45", kegiatan: "Tour sunrise (jika request), lanjut ke Kawah Sikidang" },
+  { jam: "09.00", kegiatan: "Eksplor Komplek Candi Arjuna" },
+  { jam: "10.00", kegiatan: "Batu Ratapan Angin – foto di spot view Telaga Warna" },
+  { jam: "11.30", kegiatan: "Wisata kuliner & oleh-oleh" },
+  { jam: "12.30", kegiatan: "Makan siang & istirahat" },
+  { jam: "14.00", kegiatan: "Tour Telaga Menjer/Kebun Teh/opsional (request tanpa biaya tambahan)" },
+  { jam: "15.30", kegiatan: "Kembali ke kota Wonosobo, trip selesai & happy!" },
+];
+
+const fasilitas = [
+  { icon: "🚗", text: "Transport nyaman (Avanza/Innova/Elf/Hiace) sesuai jumlah peserta" },
+  { icon: "🧑‍✈️", text: "Driver lokal ramah, paham rute & spot murah meriah" },
+  { icon: "🎟️", text: "Tiket masuk destinasi utama (sudah include)" },
+  { icon: "🍽️", text: "2x makan (sarapan & makan siang)" },
+  { icon: "🥤", text: "Air mineral free flow" },
+  { icon: "📸", text: "Foto dokumentasi by crew" },
+  { icon: "💸", text: "Tanpa biaya tersembunyi, hemat maksimal!" },
+];
+
+const faq = [
+  {
+    q: "Bisa berangkat dari hotel, rumah, atau stasiun di Wonosobo?",
+    a: "Bisa banget! Penjemputan fleksibel, tinggal info lokasi saat booking."
+  },
+  {
+    q: "Kenapa harga trip dari Wonosobo lebih murah?",
+    a: "Karena jarak lebih dekat, tanpa biaya antar-jemput luar kota, dan crew langsung dari basecamp Wonosobo. Semua biaya lebih hemat."
+  },
+  {
+    q: "Apa saja destinasi yang bisa dikunjungi?",
+    a: "Destinasi utama Dieng: Kawah Sikidang, Candi Arjuna, Batu Ratapan Angin, plus bonus ke Telaga Menjer/Kebun Teh jika waktu cukup (bisa request)."
+  },
+  {
+    q: "Minimal peserta berapa? Bisa untuk keluarga kecil?",
+    a: "Bisa untuk 2-3 orang (pakai city car), bisa juga rombongan (Elf/Hiace). Harga menyesuaikan jumlah peserta."
+  },
+  {
+    q: "Semua biaya sudah include? Ada tambahan biaya lain?",
+    a: "Harga sudah termasuk transport, tiket, makan, dokumentasi. Tidak ada biaya mendadak di lokasi. Semua transparan, ramah di kantong!"
+  },
+];
+
+const harga = "Mulai Rp 350.000 / orang (min. 25 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng dari Wonosobo 2025 - Murah, Lengkap, Gak Pake Ribet!">
+  <section class="wno-hero">
+    <h1 class="wno-title">Paket Wisata Dieng <span>dari Wonosobo</span></h1>
+    <p class="wno-desc">
+      🏔️ Cari paket wisata paling murah ke Dieng?  
+      <b>Paket dari Wonosobo</b> ini andalannya! Start dekat, harga super hemat, itinerary lengkap, cocok untuk keluarga, teman, sampai trip privat kecil!
+      <span class="wno-harga">Harga: <b>{harga}</b></span>
+    </p>
+  </section>
+
+  <section class="wno-itinerary">
+    <h2 class="wno-section-title">Itinerary Trip Wonosobo – Dieng</h2>
+    <div class="wno-itin-list">
+      {itinerary.map((item) => (
+        <div class="wno-itin-item">
+          <span class="wno-itin-jam">{item.jam}</span>
+          <span class="wno-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="wno-fasilitas">
+    <h2 class="wno-section-title">Fasilitas Murah Meriah</h2>
+    <ul class="wno-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="wno-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="wno-faq">
+    <h2 class="wno-section-title">FAQ Paket Wonosobo – Dieng</h2>
+    <div class="wno-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="wno-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .wno-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #faffec 0%, #eaf7ff 100%);
+    padding: 44px 13px 22px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #d4f4fe15;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .wno-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #218038;
+    margin-bottom: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .wno-title span {
+    color: #1e81b0;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 6px;
+  }
+  .wno-desc {
+    font-size: 1.13rem;
+    color: #218038;
+    max-width: 590px;
+    margin: 0 auto 10px auto;
+    line-height: 1.7;
+  }
+  .wno-harga {
+    display: inline-block;
+    background: #eaf7ff;
+    color: #218038;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+    box-shadow: 0 2px 10px #1e81b014;
+  }
+  /* ITINERARY */
+  .wno-itinerary { margin: 30px 0 15px 0; }
+  .wno-section-title {
+    text-align: center;
+    font-size: 1.13rem;
+    font-weight: 800;
+    color: #1e81b0;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+  .wno-itin-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .wno-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #eaf7ff 0%, #faffec 100%);
+    box-shadow: 0 1px 8px #1e81b012;
+    border-radius: 0.9rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.07rem;
+    font-weight: 600;
+    color: #218038;
+    border: 1.1px solid #eaf7ff;
+  }
+  .wno-itin-jam {
+    background: #1e81b012;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #1e81b0;
+    min-width: 72px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .wno-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .wno-fasilitas {
+    margin: 21px 0 14px 0;
+    text-align: center;
+  }
+  .wno-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 340px;
+  }
+  .wno-fasilitas-emoji { font-size: 1.2em; margin-right: 9px; }
+  .wno-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #218038;
+    font-weight: 600;
+    background: #faffec;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #1e81b012;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .wno-faq { max-width: 700px; margin: 35px auto 0 auto; padding: 0 12px 22px 12px; }
+  .wno-faq-list { display: flex; flex-direction: column; gap: 16px; }
+  .wno-faq-card {
+    background: linear-gradient(90deg, #eaf7ff 80%, #faffec 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #1e81b010;
+    border: 1.1px solid #eaf7ff;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #218038;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .wno-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #1e81b0;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .wno-faq-card[open] { box-shadow: 0 6px 22px #1e81b033; border-color: #218038; }
+  .wno-faq-card[open] summary { color: #218038; }
+  .wno-faq-card div { padding-top: 3px; color: #218038; }
+  @media (max-width: 600px) {
+    .wno-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .wno-title { font-size: 1.11rem; }
+    .wno-section-title { font-size: 1.01rem; }
+    .wno-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

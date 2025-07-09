@@ -1,30 +1,122 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
+  { linkText: 'Home', href: '/' },
+  { linkText: 'Jeep', href: '/jeep' },
+  { linkText: 'Homestay', href: '/homestay' },
+  { linkText: 'Guide', href: '/guide' }
 ];
 ---
-
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
-        <Logo />
+<nav class="dieng-header-cartoon">
+  <div class="dieng-header-inner-cartoon">
+    <a href="/" class="dieng-logo-cartoon">
+      <span class="icon-candi">🏯</span>
+      Dieng.<span class="accent">Travel</span>
+      <span class="icon-mobil">🚐</span>
     </a>
-    {
-        !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1">
-                {navItems.map((item) => (
-                    <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
-                            {item.linkText}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+    <ul class="dieng-nav-cartoon">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class="dieng-link-cartoon">{item.linkText}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <!-- Wave SVG (nyatu ke gambar bawah) -->
+  <div class="dieng-header-wave">
+    <svg width="100%" height="40" viewBox="0 0 1600 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 60 Q800 120 1600 60 V80 H0 V60Z" fill="#fff"/>
+    </svg>
+  </div>
 </nav>
+<div style="margin-bottom:0;"></div>
+
+<style>
+.dieng-header-cartoon {
+  width: 100%;
+  background: linear-gradient(90deg, #62e4ff 0%, #4de1c7 60%, #ffe666 100%);
+  box-shadow: 0 2px 22px #00b8d814;
+  position: relative;
+  z-index: 100;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dieng-header-inner-cartoon {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 28px 32px 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dieng-logo-cartoon {
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  user-select: none;
+  transition: letter-spacing 0.16s;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-shadow: 0 2px 8px #36ffe455;
+}
+.dieng-logo-cartoon .accent {
+  color: #ffd600;
+  font-weight: 900;
+  text-shadow: 0 2px 12px #fff5;
+}
+.icon-candi,
+.icon-mobil {
+  font-size: 1.55rem;
+  filter: drop-shadow(0 1.5px 3px #ffd60060);
+  margin: 0 2px;
+}
+.dieng-nav-cartoon {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.dieng-link-cartoon {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.09rem;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px 19px;
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 2px 7px #ffd60022;
+  transition: color 0.14s, background 0.16s, box-shadow 0.16s;
+  letter-spacing: 0.02em;
+}
+.dieng-link-cartoon:hover,
+.dieng-link-cartoon:focus {
+  color: #ffd600;
+  background: #fff5;
+  box-shadow: 0 7px 24px #ffd60033;
+  text-decoration: none;
+}
+.dieng-header-wave {
+  width: 100%;
+  line-height: 0;
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .dieng-header-inner-cartoon {
+    flex-direction: column; align-items: flex-start; gap: 13px; padding: 16px 9px 8px 9px;
+  }
+  .dieng-logo-cartoon { font-size: 1.3rem; }
+  .dieng-nav-cartoon { gap: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .dieng-header-inner-cartoon { padding: 12px 4px 5px 4px; }
+  .dieng-logo-cartoon { font-size: 1.02rem; }
+  .dieng-link-cartoon { font-size: 0.97rem; padding: 7px 8px; }
+}
+</style>

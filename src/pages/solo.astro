@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "22.30", kegiatan: "Meeting point Solo Kota (rumah, hotel, bandara/stasiun)" },
+  { jam: "22.50", kegiatan: "Persiapan, briefing & loading barang peserta" },
+  { jam: "23.00", kegiatan: "Berangkat dari Solo – perjalanan malam seru bareng driver & guide" },
+  { jam: "01.00", kegiatan: "Rest area Banjarnegara/Wonosobo – coffee break, snack & games ringan" },
+  { jam: "03.30", kegiatan: "Tiba di area Dieng, sholat Subuh, rehat, persiapan sunrise" },
+  { jam: "04.15", kegiatan: "Start naik ke Bukit Sikunir – sunrise hunting (bawa jaket biar hangat!)" },
+  { jam: "06.30", kegiatan: "Turun, lanjut sarapan khas lokal (nasi jagung, mie ongklok, dll)" },
+  { jam: "07.45", kegiatan: "Kawah Sikidang – edukasi vulkanik & foto-foto seru" },
+  { jam: "09.00", kegiatan: "Tour Komplek Candi Arjuna – heritage, sejarah & selfie bareng rombongan" },
+  { jam: "10.30", kegiatan: "Batu Ratapan Angin, view Telaga Warna & sesi foto ceria" },
+  { jam: "12.00", kegiatan: "Makan siang bersama di resto lokal, menu tradisional Dieng" },
+  { jam: "13.00", kegiatan: "Wisata oleh-oleh, kuliner, atau mampir ke Kebun Teh/spot opsional" },
+  { jam: "14.30", kegiatan: "Santai di Telaga Menjer atau Bukit Scooter (bisa request hidden gem!)" },
+  { jam: "16.00", kegiatan: "Kembali ke kendaraan, istirahat & snack sore" },
+  { jam: "16.30", kegiatan: "Perjalanan pulang ke Solo, full cerita happy & sharing selama perjalanan" },
+  { jam: "21.00", kegiatan: "Tiba kembali di Solo, trip selesai & see you next trip!" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport Elf/Hiace/Bis Mini – AC nyaman, reclining seat" },
+  { icon: "🧑‍✈️", text: "Driver lokal & crew profesional, ramah, suka cerita" },
+  { icon: "🍚", text: "2x makan (sarapan, makan siang) + snack malam & sore" },
+  { icon: "🎟️", text: "Tiket masuk destinasi utama & parkir" },
+  { icon: "🥤", text: "Air mineral sepanjang perjalanan" },
+  { icon: "📸", text: "Free dokumentasi (HP/DSLR) oleh guide" },
+  { icon: "🎊", text: "Games interaktif, kuis, hadiah kecil & fun story telling" },
+];
+
+const faq = [
+  {
+    q: "Penjemputan bisa dari mana saja di Solo?",
+    a: "Bisa jemput rumah, hotel, bandara Adi Soemarmo, stasiun, atau titik sesuai request. Private, tidak digabung grup lain."
+  },
+  {
+    q: "Trip ini cocok untuk siapa?",
+    a: "Bisa buat keluarga, teman, komunitas, outing kantor, bahkan solo traveler. Itinerary fleksibel, crew siap menyesuaikan gaya trip rombongan."
+  },
+  {
+    q: "Perjalanan malam aman & nyaman?",
+    a: "Sangat nyaman. Armada bersih, driver berpengalaman, istirahat cukup di rest area, dan selalu ada snack, air mineral, serta crew yang siap ngobrol seru."
+  },
+  {
+    q: "Kalau ingin extend atau tambah destinasi?",
+    a: "Bisa, tinggal diskusikan saat booking. Bisa tambah Bukit Pangonan, Savana, Telaga Dringo, Kebun Teh, dan hidden gem lokal."
+  },
+  {
+    q: "Harga sudah termasuk apa saja?",
+    a: "Sudah include transportasi, crew, makan, snack, tiket wisata utama, dokumentasi, air mineral, dan fun games. Tidak ada biaya mendadak di lokasi."
+  },
+];
+
+const harga = "Mulai Rp 525.000 / orang (min. 6 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng dari Solo 2025 - Sunrise, Fun Trip, Games, Full Ceria!">
+  <section class="solo-hero">
+    <h1 class="solo-title">Paket Wisata Dieng <span>dari Solo</span></h1>
+    <p class="solo-desc">
+      🌟 Liburan anti-boring dari Solo ke Dieng!  
+      <b>Paket penuh cerita: jalan malam, sunrise Sikunir, games seru, kuliner khas, & semua destinasi utama Dieng!</b>
+      <span class="solo-harga">Harga: <b>{harga}</b></span>
+    </p>
+  </section>
+
+  <section class="solo-itinerary">
+    <h2 class="solo-section-title">Itinerary Real Trip Solo – Dieng</h2>
+    <div class="solo-itin-list">
+      {itinerary.map((item) => (
+        <div class="solo-itin-item">
+          <span class="solo-itin-jam">{item.jam}</span>
+          <span class="solo-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="solo-fasilitas">
+    <h2 class="solo-section-title">Fasilitas Lengkap & Ceria</h2>
+    <ul class="solo-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="solo-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="solo-faq">
+    <h2 class="solo-section-title">FAQ Paket Solo – Dieng</h2>
+    <div class="solo-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="solo-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .solo-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #f6fff8 0%, #e3f2ff 100%);
+    padding: 44px 13px 22px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #58cbff16;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .solo-title {
+    font-size: 2.14rem;
+    font-weight: 900;
+    color: #0061b0;
+    margin-bottom: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .solo-title span {
+    color: #fd5b63;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 6px;
+  }
+  .solo-desc {
+    font-size: 1.13rem;
+    color: #008398;
+    max-width: 590px;
+    margin: 0 auto 10px auto;
+    line-height: 1.7;
+  }
+  .solo-harga {
+    display: inline-block;
+    background: #f2fff9;
+    color: #fd5b63;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+    box-shadow: 0 2px 10px #fd5b6328;
+  }
+  /* ITINERARY */
+  .solo-itinerary { margin: 30px 0 15px 0; }
+  .solo-section-title {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #fd5b63;
+    letter-spacing: 0;
+    margin-bottom: 27px;
+  }
+  .solo-itin-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .solo-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #e3f2ff 0%, #f6fff8 100%);
+    box-shadow: 0 1px 8px #58cbff10;
+    border-radius: 0.9rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.07rem;
+    font-weight: 600;
+    color: #0061b0;
+    border: 1.1px solid #f3e6f8;
+  }
+  .solo-itin-jam {
+    background: #fd5b6319;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #fd5b63;
+    min-width: 72px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .solo-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .solo-fasilitas {
+    margin: 21px 0 14px 0;
+    text-align: center;
+  }
+  .solo-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 370px;
+  }
+  .solo-fasilitas-emoji { font-size: 1.2em; margin-right: 9px; }
+  .solo-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #008398;
+    font-weight: 600;
+    background: #f6fff8;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #fd5b631a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .solo-faq { max-width: 720px; margin: 37px auto 0 auto; padding: 0 12px 24px 12px; }
+  .solo-faq-list { display: flex; flex-direction: column; gap: 17px; }
+  .solo-faq-card {
+    background: linear-gradient(90deg, #f6fff8 80%, #e3f2ff 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #fd5b6316;
+    border: 1.1px solid #e3f2ff;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #0061b0;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .solo-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #fd5b63;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .solo-faq-card[open] { box-shadow: 0 6px 22px #fd5b6330; border-color: #fd5b63; }
+  .solo-faq-card[open] summary { color: #0061b0; }
+  .solo-faq-card div { padding-top: 3px; color: #0061b0; }
+  @media (max-width: 600px) {
+    .solo-hero { padding: 29px 3vw 13px 3vw; border-radius: 0 0 1rem 1rem; }
+    .solo-title { font-size: 1.11rem; }
+    .solo-section-title { font-size: 1.01rem; }
+    .solo-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>

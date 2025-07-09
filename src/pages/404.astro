@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Halaman Tidak Ditemukan | Dieng.Travel">
+  <section class="notfound-hero">
+    <div class="notfound-emoji">🥶🚫</div>
+    <h1 class="notfound-title">Ups! Halaman Tidak Ditemukan</h1>
+    <p class="notfound-desc">
+      Waduh, kayaknya kamu nyasar ke negeri di atas awan yang belum ke-index Google.<br>
+      Link ini sudah tidak aktif atau mungkin sudah “pensiun dini”.
+    </p>
+    <p class="notfound-fun">
+      Tapi tenang, <b>Dieng.Travel</b> siap bawa kamu kembali ke jalur wisata yang benar.<br>
+      <span style="color:#f0b400;">Lebih baik booking trip ke Dieng daripada nyasar di 404 😁</span>
+    </p>
+    <a href="/" class="notfound-btn">Kembali ke Beranda Dieng.Travel</a>
+    <div class="notfound-small">
+      Masih penasaran?  
+      <a href="/">Lihat Paket Wisata</a> &bull;  
+      <a href="/kontak">Tanya Admin</a>
+    </div>
+  </section>
+
+  <style>
+    .notfound-hero {
+      max-width: 600px;
+      margin: 60px auto 0 auto;
+      background: linear-gradient(90deg, #fffef8 60%, #f4fbff 100%);
+      border-radius: 2rem;
+      padding: 46px 22px 40px 22px;
+      text-align: center;
+      box-shadow: 0 6px 32px #0071c218;
+    }
+    .notfound-emoji {
+      font-size: 3.6rem;
+      margin-bottom: 13px;
+      filter: drop-shadow(0 3px 18px #fff4);
+    }
+    .notfound-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #0071c2;
+      margin-bottom: 10px;
+      letter-spacing: 0.2px;
+    }
+    .notfound-desc {
+      font-size: 1.12rem;
+      color: #133562;
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+    .notfound-fun {
+      font-size: 1.09rem;
+      color: #174889;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .notfound-btn {
+      display: inline-block;
+      padding: 13px 36px;
+      background: linear-gradient(90deg, #0071c2, #00b5c2 80%);
+      color: #fff;
+      font-size: 1.12rem;
+      font-weight: 800;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 2px 10px #00b5c215;
+      margin-bottom: 13px;
+      transition: background .17s, box-shadow .17s;
+    }
+    .notfound-btn:hover {
+      background: linear-gradient(90deg, #0058a8, #06b 80%);
+      color: #ffe082;
+      box-shadow: 0 6px 18px #0071c220;
+      transform: scale(1.045);
+    }
+    .notfound-small {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #888;
+    }
+    .notfound-small a {
+      color: #0071c2;
+      font-weight: 700;
+      text-decoration: underline dotted;
+      margin: 0 5px;
+      transition: color 0.13s;
+    }
+    .notfound-small a:hover {
+      color: #f0b400;
+    }
+    @media (max-width: 600px) {
+      .notfound-hero { padding: 22px 2vw 23px 2vw; border-radius: 1rem; }
+      .notfound-title { font-size: 1.19rem; }
+      .notfound-btn { font-size: 0.98rem; padding: 10px 17px; }
+      .notfound-emoji { font-size: 2.1rem; }
+    }
+  </style>
+</Layout>
