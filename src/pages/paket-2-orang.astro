@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const paket = {
+  title: "Paket Wisata Dieng 2 Orang",
+  subtitle: "Private trip eksklusif untuk 2 orang — fleksibel, lengkap, dan seru!",
+  price: "Mulai dari Rp 2.550.000 / pax",
+  duration: "2 Hari 1 Malam",
+  meetingPoints: ["Jogja", "Semarang", "Purwokerto", "Solo", "Wonosobo"],
+  itinerary: [
+    "Hari 1: Penjemputan, Sunrise Sikunir, Telaga Cebong, Kawah Sikidang, Candi Arjuna",
+    "Hari 2: Kebun Teh, Telaga Menjer, Kuliner Lokal, Pulang"
+  ],
+  facilities: [
+    "Kendaraan private AC",
+    "BBM, parkir, tol",
+    "Tiket masuk objek wisata",
+    "1 malam penginapan nyaman",
+    "4x makan",
+    "Driver dan guide profesional",
+    "Air mineral",
+    "Dokumentasi foto gratis"
+  ],
+  bookingLink: "https://paketdieng.id/"
+};
+---
+
+<Layout title={paket.title}>
+  <section class="paket-2-orang">
+    <h1>{paket.title}</h1>
+    <p class="subtitle">{paket.subtitle}</p>
+    <div class="paket-main">
+      <div class="paket-info">
+        <p class="price">{paket.price}</p>
+        <p class="duration">Durasi: {paket.duration}</p>
+        <p><strong>Meeting Point:</strong> {paket.meetingPoints.join(", ")}</p>
+        <h3>Itinerary Singkat</h3>
+        <ul>
+          {paket.itinerary.map(item => <li>{item}</li>)}
+        </ul>
+        <h3>Fasilitas Lengkap</h3>
+        <ul>
+          {paket.facilities.map(item => <li>{item}</li>)}
+        </ul>
+        <a href={paket.bookingLink} class="btn-booking">Booking Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  /* styling sama seperti tadi */
+  .paket-2-orang {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    background: #e0f2fe;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgb(0 113 194 / 0.25);
+    font-family: 'Inter', sans-serif;
+    color: #0c3c67;
+  }
+  .paket-2-orang h1 {
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: #005eaa;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #084c8d;
+  }
+  .paket-info p.price {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #0071c2;
+    margin: 0 0 0.8rem 0;
+  }
+  .paket-info p.duration,
+  .paket-info p strong {
+    font-weight: 700;
+  }
+  .paket-info ul {
+    list-style-type: disc;
+    padding-left: 1.3rem;
+    margin-bottom: 1.6rem;
+  }
+  .paket-info ul li {
+    margin-bottom: 0.5rem;
+  }
+  .btn-booking {
+    display: inline-block;
+    background: linear-gradient(90deg, #0071c2, #00b5c2);
+    color: white;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgb(0 113 194 / 0.4);
+    text-align: center;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    display: block;
+  }
+  .btn-booking:hover {
+    background: linear-gradient(90deg, #005b9a, #009ba5);
+    box-shadow: 0 8px 36px rgb(0 113 194 / 0.6);
+  }
+  @media (max-width: 480px) {
+    .paket-2-orang {
+      padding: 1rem;
+    }
+    .paket-2-orang h1 {
+      font-size: 1.6rem;
+    }
+    .paket-info p.price {
+      font-size: 1.5rem;
+    }
+  }
+  </style>
+</Layout>
