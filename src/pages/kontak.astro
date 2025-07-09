@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Kontak Dieng.Travel – Booking & Konsultasi Paket Wisata Dieng">
+  <section class="kontak-hero">
+    <h1 class="kontak-title">Kontak <span>Dieng.Travel</span></h1>
+    <p class="kontak-desc">
+      Mau tanya-tanya paket wisata, booking trip privat, konsultasi itinerary, atau cuma cek harga?
+      <b>Tim Dieng.Travel</b> siap bantu semua kebutuhanmu!  
+      Silakan isi form gokil di bawah, pesanmu langsung kami proses tanpa nunggu lama.<br /><br />
+      <span style="font-size:1.1em;">Yuk, liburan ke Dieng makin gampang — mulai dari tanya, nego, sampai booking, semua di satu web!</span>
+    </p>
+  </section>
+
+  <div class="kontak-form-container">
+    <h2 class="form-title">Form Cek Harga & Konsultasi Trip</h2>
+    <p class="form-subtitle">Tinggal isi, langsung dapat info lengkap tanpa ribet. Semua custom, bisa request apa saja!</p>
+
+    <form class="form-box" onsubmit="sendToWhatsApp(); return false;">
+      <div class="form-field">
+        <label><i class="fa-solid fa-map-pin"></i> Meeting Point</label>
+        <select id="mepo" required>
+          <option value="">Pilih kota keberangkatan</option>
+          <option>Dieng</option>
+          <option>Wonosobo</option>
+          <option>Purwaokerto</option>
+          <option>Semarang</option>
+          <option>Yogyakarta</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-calendar-days"></i> Pilih Paket</label>
+        <select id="paket" required>
+          <option value="">Durasi paket</option>
+          <option>1 Hari</option>
+          <option>2 Hari 1 Malam</option>
+          <option>3 Hari 2 Malam</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-user-group"></i> Jumlah Peserta</label>
+        <input type="number" id="peserta" placeholder="Misalnya 2 orang" min="1" required>
+      </div>
+
+      <div class="form-field">
+        <label><i class="fa-solid fa-calendar"></i> Tanggal</label>
+        <input type="date" id="tanggal" required>
+      </div>
+
+      <button type="submit" class="submit-btn">CEK HARGA</button>
+    </form>
+  </div>
+
+  <div class="kontak-wa-info">
+    <span class="wa-emoji">📱</span>
+    <b>Punya pertanyaan lain?</b>  
+    Chat admin <b>Dieng.Travel</b> langsung via WhatsApp!
+    <span class="wa-number" id="wa-replace"></span>
+    <script>
+      // Menampilkan WA aman
+      document.addEventListener('DOMContentLoaded', function () {
+        const wa = ['62811','2828','283'];
+        document.getElementById('wa-replace').innerHTML =
+          ' &bull; <b>' +
+          wa.map((x,i) => i<2? x + '-': x).join('') +
+          '</b>';
+      });
+    </script>
+    <div style="font-size:0.95em;color:#777;margin-top:7px;">
+      (Nomor admin muncul otomatis, anti-spam & aman dari bot)
+    </div>
+  </div>
+
+  <style>
+    .kontak-hero {
+      max-width: 670px;
+      margin: 0 auto;
+      padding: 38px 10px 12px 10px;
+      text-align: center;
+      background: linear-gradient(90deg, #faffec 0%, #f4fbff 100%);
+      border-radius: 1.8rem;
+      box-shadow: 0 4px 32px #0db9fd13;
+    }
+    .kontak-title {
+      font-size: 2.07rem;
+      font-weight: 900;
+      color: #174889;
+      letter-spacing: 0.6px;
+      margin-bottom: 13px;
+    }
+    .kontak-title span {
+      color: #0071c2;
+      font-weight: 900;
+      margin-left: 7px;
+    }
+    .kontak-desc {
+      font-size: 1.15rem;
+      color: #22518e;
+      margin-bottom: 8px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .kontak-form-container {
+      max-width: 480px;
+      margin: 34px auto 20px auto;
+      padding: 28px 21px 20px 21px;
+      background: linear-gradient(to bottom, #fff, #f9fbfd);
+      border-radius: 17px;
+      box-shadow: 0 8px 30px #0071c215;
+    }
+    .form-title {
+      font-size: 1.24rem;
+      color: #174889;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+    .form-subtitle {
+      font-size: 0.98rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 19px;
+    }
+    .form-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-field {
+      margin-bottom: 17px;
+    }
+    .form-field label {
+      font-size: 0.99rem;
+      color: #1a73e8;
+      font-weight: 700;
+      margin-bottom: 7px;
+      display: block;
+    }
+    .form-field i {
+      margin-right: 6px;
+      color: #1a73e8;
+    }
+    .form-field select,
+    .form-field input {
+      width: 100%;
+      padding: 12px;
+      border: 1.3px solid #d8e0ea;
+      border-radius: 9px;
+      background: #fff;
+      font-size: 1.03rem;
+      box-sizing: border-box;
+      transition: border 0.2s ease;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      outline: none;
+      border-color: #1a73e8;
+      box-shadow: 0 0 0 2px #1a73e822;
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, #1a73e8, #174889);
+      color: #fff;
+      padding: 14px 0;
+      border: none;
+      border-radius: 11px;
+      font-size: 1.08rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(.44,0,.36,1);
+    }
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #174889, #1a73e8);
+      box-shadow: 0 6px 18px #1a73e815;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .kontak-wa-info {
+      text-align: center;
+      margin: 30px auto 10px auto;
+      font-size: 1.06rem;
+      color: #22518e;
+      background: #faffec;
+      border-radius: 13px;
+      padding: 15px 17px 8px 17px;
+      max-width: 410px;
+      box-shadow: 0 1px 14px #0db9fd0c;
+    }
+    .wa-emoji {
+      font-size: 1.3em;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .wa-number {
+      color: #008398;
+      margin-left: 6px;
+      font-size: 1.06em;
+      letter-spacing: 1px;
+      font-family: 'Courier New',monospace;
+    }
+    @media (max-width: 600px) {
+      .kontak-hero { padding: 18px 2vw 7px 2vw; border-radius: 1rem; }
+      .kontak-title { font-size: 1.15rem; }
+      .kontak-form-container { padding: 16px 4vw 11px 4vw; }
+      .wa-number { font-size: 1em; }
+    }
+  </style>
+
+  <script>
+    // Kirim data ke WhatsApp
+    function sendToWhatsApp() {
+      const mepo = document.getElementById('mepo').value;
+      const paket = document.getElementById('paket').value;
+      const peserta = document.getElementById('peserta').value;
+      const tanggal = document.getElementById('tanggal').value;
+
+      if (!mepo || !paket || !peserta || !tanggal) {
+        alert("Harap isi semua kolom terlebih dahulu.");
+        return;
+      }
+
+      // Nomor WA dipecah biar aman dari bot
+      var wa = ['62811','2828','283'].join('');
+      const message = `Halo, saya ingin cek harga paket wisata:\\n\\n📍 Meeting Point: ${mepo}\\n📦 Paket: ${paket}\\n👥 Jumlah Peserta: ${peserta}\\n📅 Tanggal: ${tanggal}\\n\\nMohon info lengkapnya ya.`;
+
+      const url = `https://wa.me/${wa}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    // Set tanggal minimal hari ini
+    document.addEventListener('DOMContentLoaded', function () {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('tanggal').setAttribute('min', today);
+    });
+  </script>
+</Layout>
