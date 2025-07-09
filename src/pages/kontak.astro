@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="kontak-hero">
     <h1 class="kontak-title">Kontak <span>Dieng.Travel</span></h1>
     <p class="kontak-desc">
-      Mau tanya-tanya paket wisata, booking trip privat, konsultasi itinerary, atau cuma cek harga?
+      Mau tanya-tanya paket wisata, booking trip privat, konsultasi itinerary, atau cuma cek harga?<br>
       <b>Tim Dieng.Travel</b> siap bantu semua kebutuhanmu!  
       Silakan isi form gokil di bawah, pesanmu langsung kami proses tanpa nunggu lama.<br /><br />
       <span style="font-size:1.1em;">Yuk, liburan ke Dieng makin gampang — mulai dari tanya, nego, sampai booking, semua di satu web!</span>
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
     <h2 class="form-title">Form Cek Harga & Konsultasi Trip</h2>
     <p class="form-subtitle">Tinggal isi, langsung dapat info lengkap tanpa ribet. Semua custom, bisa request apa saja!</p>
 
-    <form class="form-box" onsubmit="sendToWhatsApp(); return false;">
+    <form class="form-box" id="form-kontak">
       <div class="form-field">
         <label><i class="fa-solid fa-map-pin"></i> Meeting Point</label>
         <select id="mepo" required>
@@ -52,26 +52,6 @@ import Layout from '../layouts/Layout.astro';
 
       <button type="submit" class="submit-btn">CEK HARGA</button>
     </form>
-  </div>
-
-  <div class="kontak-wa-info">
-    <span class="wa-emoji">📱</span>
-    <b>Punya pertanyaan lain?</b>  
-    Chat admin <b>Dieng.Travel</b> langsung via WhatsApp!
-    <span class="wa-number" id="wa-replace"></span>
-    <script>
-      // Menampilkan WA aman
-      document.addEventListener('DOMContentLoaded', function () {
-        const wa = ['62811','2828','283'];
-        document.getElementById('wa-replace').innerHTML =
-          ' &bull; <b>' +
-          wa.map((x,i) => i<2? x + '-': x).join('') +
-          '</b>';
-      });
-    </script>
-    <div style="font-size:0.95em;color:#777;margin-top:7px;">
-      (Nomor admin muncul otomatis, anti-spam & aman dari bot)
-    </div>
   </div>
 
   <style>
@@ -177,62 +157,40 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 6px 18px #1a73e815;
       transform: translateY(-2px) scale(1.03);
     }
-    .kontak-wa-info {
-      text-align: center;
-      margin: 30px auto 10px auto;
-      font-size: 1.06rem;
-      color: #22518e;
-      background: #faffec;
-      border-radius: 13px;
-      padding: 15px 17px 8px 17px;
-      max-width: 410px;
-      box-shadow: 0 1px 14px #0db9fd0c;
-    }
-    .wa-emoji {
-      font-size: 1.3em;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-    .wa-number {
-      color: #008398;
-      margin-left: 6px;
-      font-size: 1.06em;
-      letter-spacing: 1px;
-      font-family: 'Courier New',monospace;
-    }
     @media (max-width: 600px) {
       .kontak-hero { padding: 18px 2vw 7px 2vw; border-radius: 1rem; }
       .kontak-title { font-size: 1.15rem; }
       .kontak-form-container { padding: 16px 4vw 11px 4vw; }
-      .wa-number { font-size: 1em; }
     }
   </style>
 
   <script>
-    // Kirim data ke WhatsApp
-    function sendToWhatsApp() {
-      const mepo = document.getElementById('mepo').value;
-      const paket = document.getElementById('paket').value;
-      const peserta = document.getElementById('peserta').value;
-      const tanggal = document.getElementById('tanggal').value;
-
-      if (!mepo || !paket || !peserta || !tanggal) {
-        alert("Harap isi semua kolom terlebih dahulu.");
-        return;
-      }
-
-      // Nomor WA dipecah biar aman dari bot
-      var wa = ['62811','2828','283'].join('');
-      const message = `Halo, saya ingin cek harga paket wisata:\\n\\n📍 Meeting Point: ${mepo}\\n📦 Paket: ${paket}\\n👥 Jumlah Peserta: ${peserta}\\n📅 Tanggal: ${tanggal}\\n\\nMohon info lengkapnya ya.`;
-
-      const url = `https://wa.me/${wa}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    }
-
-    // Set tanggal minimal hari ini
     document.addEventListener('DOMContentLoaded', function () {
+      // Tanggal minimal hari ini
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('tanggal').setAttribute('min', today);
+
+      // Event handler submit form
+      document.getElementById('form-kontak').onsubmit = function (e) {
+        e.preventDefault();
+        const mepo = document.getElementById('mepo').value;
+        const paket = document.getElementById('paket').value;
+        const peserta = document.getElementById('peserta').value;
+        const tanggal = document.getElementById('tanggal').value;
+
+        if (!mepo || !paket || !peserta || !tanggal) {
+          alert("Harap isi semua kolom terlebih dahulu.");
+          return false;
+        }
+
+        // Nomor WA dipecah (aman SEO)
+        var wa = ['62811','2828','283'].join('');
+        const message = `Halo, saya ingin cek harga paket wisata:\n\n📍 Meeting Point: ${mepo}\n📦 Paket: ${paket}\n👥 Jumlah Peserta: ${peserta}\n📅 Tanggal: ${tanggal}\n\nMohon info lengkapnya ya.`;
+
+        const url = `https://wa.me/${wa}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+        return false;
+      }
     });
   </script>
 </Layout>
