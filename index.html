@@ -468,7 +468,7 @@
     const peserta = document.getElementById('peserta').value;
     const tanggal = document.getElementById('tanggal').value;
     const pesan = `Halo, saya ingin cek harga paket wisata:\n\n📍 Meeting Point: ${mepo}\n📦 Paket: ${paket}\n👥 Peserta: ${peserta}\n📅 Tanggal: ${tanggal}\n\nMohon informasinya ya.`;
-    const n = ["62", "811", "2828", "283"].join('');
+    const nomorWA = "628112828283";
     const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
     window.open(url, '_blank');
   }
