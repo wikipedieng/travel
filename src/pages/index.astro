@@ -107,14 +107,21 @@ const faqs = [
 
 
 
-  .dieng-section-title {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #133562;
-    margin-bottom: 24px;
-    text-align: center;
-    letter-spacing: 0;
+.dieng-hero-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #133562;
+  margin-bottom: 15px;
+  margin-top: 2.4rem;  /* lebih lega di desktop */
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 600px) {
+  .dieng-hero-title {
+    margin-top: 1.1rem; /* di HP biar tetap rapat */
   }
+}
+
   /* Card Paket */
   .dieng-paket-wrap {
     margin-top: 30px;
