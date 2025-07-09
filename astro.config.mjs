@@ -23,7 +23,11 @@ export default defineConfig({
 =======
         sitemap(),    // <--- aktifkan plugin sitemap
     ],
+<<<<<<< HEAD
 // adapter: netlify(), // matikan dulu
 
 >>>>>>> 17120f2d1793f8794ea90fcf5cd4aeaf6aed0f03
+=======
+    adapter: netlify(), // <-- HARUS AKTIF jika mau deploy Netlify
+>>>>>>> a6f575e3a7fd3f3c2a9c8a9f8396d627c0c88c76
 });
