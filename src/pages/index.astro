@@ -23,13 +23,16 @@ const faqs = [
 ---
 
 <Layout title="Paket Wisata Dieng 2025 - Tour Dieng Murah">
-<section class="dieng-hero">
+<section class="dieng-hero dieng-hero-full">
   <img src="https://www.putratourdieng.com/wp-content/uploads/2025/07/paket_wisata_dieng.png" alt="Paket Wisata Dieng" class="dieng-hero-img" />
-  <h1 class="dieng-hero-title">Paket Wisata Dieng Private – Terlengkap & Fleksibel</h1>
-  <p class="dieng-hero-desc">
-    Nikmati pengalaman terbaik jelajah Negeri di Atas Awan bareng <b>Dieng.Travel</b>. Pilih trip 1-3 hari, custom rute, berangkat dari Jogja, Semarang, Purwokerto, Solo, atau meeting point sesuai permintaan. Harga ramah, fasilitas lengkap, booking mudah & transparan.
-  </p>
+  <div class="dieng-hero-text">
+    <h1 class="dieng-hero-title">Paket Wisata Dieng Private – Terlengkap & Fleksibel</h1>
+    <p class="dieng-hero-desc">
+      Nikmati pengalaman terbaik jelajah Negeri di Atas Awan bareng <b>Dieng.Travel</b>. Pilih trip 1-3 hari, custom rute, berangkat dari Jogja, Semarang, Purwokerto, Solo, atau meeting point sesuai permintaan. Harga ramah, fasilitas lengkap, booking mudah & transparan.
+    </p>
+  </div>
 </section>
+
 
 
   <section class="dieng-paket-wrap">
@@ -68,34 +71,33 @@ const faqs = [
 
   <style>
   /* Hero */
-  .dieng-hero {
-padding: 0 0 30px 0;    /* No padding atas */
-    text-align: center;
-    background: #fff;
-  }
+.dieng-hero-full {
+  padding: 0;
+}
+.dieng-hero-img {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 220px;
+  margin: 0 auto 0 auto;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  object-fit: cover;
+}
+.dieng-hero-text {
+  margin-top: -12px; /* naikin ke atas biar rapat */
+  background: #fff;
+  padding: 20px 0 0 0;
+}
+@media (max-width: 780px) {
   .dieng-hero-img {
-max-width: 1100px;    /* Biar gak terlalu lebar di layar sangat besar */
-    width: 95%;
-    margin: 0 auto 20px auto;
-    border-radius: 1.1rem;
-    box-shadow: 0 3px 22px #19335a18;
-    display: block;
+    min-height: 120px;
   }
-  .dieng-hero-title {
-    font-size: 2.3rem;
-    font-weight: 800;
-    color: #133562;
-    margin-bottom: 15px;
-    margin-top: 0.4em;
-    letter-spacing: -0.5px;
+  .dieng-hero-text {
+    padding-top: 12px;
   }
-  .dieng-hero-desc {
-    font-size: 1.16rem;
-    color: #4a4a4a;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+}
+
   .dieng-section-title {
     font-size: 1.45rem;
     font-weight: 700;
