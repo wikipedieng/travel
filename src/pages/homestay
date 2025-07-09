@@ -1,0 +1,358 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const homestayList = [
+  {
+    nama: "Homestay Sikunir View",
+    emoji: "🏡",
+    harga: "Rp 300.000 / malam",
+    desc: "Pemandangan langsung ke Sikunir, cocok buat sunrise hunter & keluarga. Lokasi sejuk, parkir luas, dekat warung & masjid."
+  },
+  {
+    nama: "Homestay Arjuna Suite",
+    emoji: "🏰",
+    harga: "Rp 350.000 / malam",
+    desc: "Kamar luas, Wi-Fi kencang, private bathroom, dekat Candi Arjuna. Nyaman untuk grup kecil & pasangan."
+  },
+  {
+    nama: "Homestay Family Dieng",
+    emoji: "👨‍👩‍👧‍👦",
+    harga: "Rp 450.000 / malam",
+    desc: "Ruang tamu, dapur, air panas, cocok untuk rombongan 6-12 orang. Suasana homy, ada area api unggun!"
+  },
+];
+
+const fasilitasUtama = [
+  { item: "Kamar tidur nyaman", emoji: "🛏️" },
+  { item: "Kamar mandi dalam + air panas", emoji: "🚿" },
+  { item: "Free Wi-Fi", emoji: "📶" },
+  { item: "Parkir mobil/motor", emoji: "🅿️" },
+  { item: "Sarapan lokal Dieng", emoji: "🍳" },
+  { item: "Extra selimut & jaket", emoji: "🧥" },
+];
+
+const review = [
+  {
+    nama: "Rina (Jakarta)",
+    emoji: "⭐️⭐️⭐️⭐️⭐️",
+    pesan: "Homestay bersih, view pagi cakep banget! Host ramah & booking super gampang. Next ke Dieng pasti balik lagi!"
+  },
+  {
+    nama: "Andri & Keluarga",
+    emoji: "⭐️⭐️⭐️⭐️⭐️",
+    pesan: "Bisa api unggun malam bareng anak-anak, lokasi strategis dan kamar hangat. Booking via WA, admin fast respon!"
+  },
+];
+
+const faq = [
+  {
+    q: "Bagaimana cara booking homestay di Dieng?",
+    a: "Pilih homestay favoritmu, klik tombol WhatsApp, lalu konfirmasi tanggal & jumlah tamu. Booking mudah tanpa ribet."
+  },
+  {
+    q: "Apakah bisa check-in lebih awal atau late check-out?",
+    a: "Bisa! Silakan request saat booking, tim kami fleksibel sesuai ketersediaan kamar. Early check-in & late check-out tanpa biaya jika tidak ada tamu berikutnya."
+  },
+  {
+    q: "Apakah homestay Dieng aman untuk anak-anak & lansia?",
+    a: "Sangat aman. Mayoritas homestay punya area bebas kendaraan & staf siap bantu kebutuhan khusus keluarga."
+  },
+  {
+    q: "Bisa booking mendadak atau dadakan?",
+    a: "Bisa banget! Tim siap 24 jam, booking H-0/last minute dilayani asal masih tersedia."
+  },
+  {
+    q: "Apakah dapat makan pagi/sarapan?",
+    a: "Sebagian homestay sudah include sarapan degan biaya tambahan. Menu bisa disesuaikan jika ada permintaan khusus (vegan, tanpa MSG, dll)."
+  },
+];
+
+---
+
+<Layout title="Homestay Dieng 2025 - Pilihan Cozy, Strategis, & Harga Bersahabat">
+  <section class="hs-hero">
+    <h1 class="hs-title">Homestay Dieng<br>
+      <span class="hs-highlight">Nyaman, Hangat, Harga Bersahabat</span>
+    </h1>
+    <p class="hs-desc">
+      🏡 Cari homestay cozy buat trip Dieng? Semua <b>homestay di sini</b> sudah dicek tim Dieng.Travel—lokasi strategis, fasilitas lengkap, harga jelas, booking super gampang!  
+      <span class="hs-harga">Mulai <b>Rp 500.000 / malam</b></span>
+    </p>
+    <a href="https://www.wikipedieng.com/dieng/penginapan-murah/" class="hs-btn">
+      🏡 Detail Penginapan
+    </a>
+  </section>
+
+  <section class="hs-list">
+    <h2 class="hs-section-title">Pilihan Homestay Populer</h2>
+    <div class="hs-list-grid">
+      {homestayList.map((hs) => (
+        <div class="hs-card">
+          <div class="hs-card-emoji">{hs.emoji}</div>
+          <h3>{hs.nama}</h3>
+          <div class="hs-harga-card">{hs.harga}</div>
+          <p>{hs.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="hs-fasilitas">
+    <h2 class="hs-section-title">Fasilitas Utama</h2>
+    <ul class="hs-fasilitas-list">
+      {fasilitasUtama.map((f) => (
+        <li><span class="hs-fasilitas-emoji">{f.emoji}</span> {f.item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="hs-review">
+    <h2 class="hs-section-title">Testimoni Tamu</h2>
+    <div class="hs-review-list">
+      {review.map((r) => (
+        <div class="hs-review-card">
+          <div class="hs-review-emoji">{r.emoji}</div>
+          <div class="hs-review-nama">{r.nama}</div>
+          <div class="hs-review-pesan">{r.pesan}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="hs-faq">
+    <h2 class="hs-section-title">FAQ Homestay Dieng</h2>
+    <div class="hs-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="hs-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  /* HERO */
+  .hs-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #f2fffe 0%, #fffde2 100%);
+    padding: 44px 13px 26px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 28px #6ee6c614;
+    margin-bottom: 26px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hs-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #19777a;
+    margin-bottom: 13px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .hs-highlight {
+    font-size: 1.08em;
+    color: #ffd600;
+    background: linear-gradient(90deg, #00b5c2 0%, #ffd600 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .hs-desc {
+    font-size: 1.1rem;
+    color: #33868e;
+    max-width: 600px;
+    margin: 0 auto 14px auto;
+    line-height: 1.7;
+  }
+  .hs-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .hs-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b5c2, #ffd600 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 12px 30px;
+    border-radius: 99px;
+    font-size: 1.13rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #ffd60020;
+    margin: 13px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .hs-btn:hover {
+    background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+    color: #00b5c2;
+    box-shadow: 0 7px 18px #00b5c228;
+  }
+  /* LIST HOMESTAY */
+  .hs-list { margin: 32px 0 26px 0; }
+  .hs-section-title {
+    text-align: center;
+    font-size: 1.21rem;
+    font-weight: 800;
+    color: #00b5c2;
+    letter-spacing: 0;
+    margin-bottom: 29px;
+  }
+  .hs-list-grid {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .hs-card {
+    background: linear-gradient(120deg, #f2fffe 0%, #fffde2 100%);
+    border-radius: 1.15rem;
+    box-shadow: 0 4px 20px #00b5c218;
+    padding: 25px 25px 21px 25px;
+    max-width: 270px;
+    min-width: 170px;
+    min-height: 128px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    border: 1.2px solid #d6eee6;
+    position: relative;
+    transition: box-shadow .13s, transform .11s, border .13s;
+  }
+  .hs-card:hover {
+    transform: translateY(-5px) scale(1.025);
+    border-color: #ffd600;
+    box-shadow: 0 10px 32px #ffd60021;
+  }
+  .hs-card-emoji {
+    font-size: 2.05rem;
+    position: absolute;
+    right: 20px; top: 17px;
+    opacity: 0.17;
+    pointer-events: none;
+  }
+  .hs-card h3 {
+    font-size: 1.06rem;
+    font-weight: 800;
+    margin: 0 0 7px 0;
+    color: #00b5c2;
+  }
+  .hs-harga-card {
+    font-size: 0.98rem;
+    color: #e69b00;
+    font-weight: 700;
+    margin-bottom: 2px;
+    background: #ffd60018;
+    border-radius: 7px;
+    padding: 2px 10px;
+    display: inline-block;
+  }
+  .hs-card p { font-size: 0.99rem; color: #226067; margin: 0; }
+  @media (max-width: 800px) {
+    .hs-list-grid { flex-direction: column; align-items: center; gap: 14px; }
+    .hs-card { max-width: 98vw; min-width: 0; }
+  }
+  /* FASILITAS */
+  .hs-fasilitas {
+    margin: 22px 0 14px 0;
+    text-align: center;
+  }
+  .hs-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 330px;
+  }
+  .hs-fasilitas-emoji { font-size: 1.15em; margin-right: 9px; }
+  .hs-fasilitas-list li {
+    font-size: 1.07rem;
+    color: #21846a;
+    font-weight: 600;
+    background: #fffbe9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex; align-items: center;
+  }
+  /* REVIEW */
+  .hs-review { margin: 32px 0 17px 0; }
+  .hs-review-list {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hs-review-card {
+    background: linear-gradient(90deg, #fffde2 0%, #f2fffe 100%);
+    border-radius: 1.1rem;
+    box-shadow: 0 2px 14px #ffe66625;
+    padding: 16px 22px 14px 20px;
+    max-width: 250px;
+    min-width: 120px;
+    min-height: 72px;
+    font-size: 0.97rem;
+    color: #3e5672;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1.1px solid #e9eed6;
+    gap: 5px;
+  }
+  .hs-review-emoji { font-size: 1.1em; }
+  .hs-review-nama { color: #00b5c2; font-weight: 700; font-size: 1.01em; }
+  .hs-review-pesan { color: #264055; font-weight: 500; font-size: 0.97em; }
+  /* FAQ */
+  .hs-faq { max-width: 700px; margin: 38px auto 0 auto; padding: 0 12px 26px 12px; }
+  .hs-faq-list { display: flex; flex-direction: column; gap: 17px; }
+  .hs-faq-card {
+    background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ffd60019;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #1b4477;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .hs-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b5c2;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .hs-faq-card[open] { box-shadow: 0 6px 22px #00b5c239; border-color: #ffd600; }
+  .hs-faq-card[open] summary { color: #ffd600; }
+  .hs-faq-card div { padding-top: 3px; color: #134075; }
+  @media (max-width: 780px) {
+    .hs-list-grid, .hs-review-list { flex-direction: column; align-items: center; }
+    .hs-card, .hs-review-card { max-width: 94vw; width: 100%; }
+    .hs-faq { padding: 0 5vw 20px 5vw; }
+  }
+  </style>
+</Layout>
