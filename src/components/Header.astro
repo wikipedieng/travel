@@ -1,106 +1,103 @@
 ---
-const logoUrl = "https://cdn-sdotid.adg.id/images/987b7a2d-55b1-4db4-bd8c-87dee40ec0f8_980x980.png";
 const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Paket 1 Hari', href: '#' },
-    { linkText: 'Paket 2 Hari', href: '#' },
-    { linkText: 'Paket 3 Hari', href: '#' },
-    { linkText: 'Jeep Dieng', href: '#' },
+  { linkText: 'Home', href: '/' },
+  { linkText: 'Paket', href: '/paket' },
+  { linkText: 'Open Trip', href: '/opentrip' },
+  { linkText: 'Testimoni', href: '/testimoni' },
+  { linkText: 'Kontak', href: '/kontak' }
 ];
 ---
-
-<nav class="dieng-navbar">
-  <div class="dieng-navbar-inner">
-    <a href="/" class="dieng-logo-link" aria-label="Beranda Paket Wisata Dieng">
-      <img src={logoUrl} alt="Logo Paket Dieng" class="dieng-logo-img" width="46" height="46" />
-      <span class="dieng-logo-text">Dieng.Travel</span>
+<nav class="dieng-header">
+  <div class="dieng-header-inner">
+    <a href="/" class="dieng-logo">
+      Dieng.<span>Travel</span>
     </a>
-    <ul class="dieng-nav-list">
+    <ul class="dieng-nav">
       {navItems.map((item) => (
         <li>
-          <a href={item.href} class="dieng-nav-link" target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
-            {item.linkText}
-          </a>
+          <a href={item.href} class="dieng-link">{item.linkText}</a>
         </li>
       ))}
     </ul>
   </div>
 </nav>
+<div style="margin-bottom: 3.7rem;"></div>
 
 <style>
-.dieng-navbar {
+.dieng-header {
   width: 100%;
-  padding: 0.8rem 0;
-  background: #fff;
-  box-shadow: 0 2px 12px #00204a09;
-  border-bottom: 1.5px solid #eff3f8;
-  position: relative;
-  z-index: 10;
+  background: linear-gradient(90deg, #0071c2 75%, #0097c2 100%);
+  box-shadow: 0 2px 16px 0 #0001;
+  padding: 0; margin: 0;
+  position: relative; z-index: 30;
 }
-.dieng-navbar-inner {
-  max-width: 1100px;
+.dieng-header-inner {
+  max-width: 1260px;
   margin: 0 auto;
-  padding: 0 4vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.2rem;
+  padding: 28px 32px 28px 32px;
 }
-.dieng-logo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.78rem;
+.dieng-logo {
+  color: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 1px;
   text-decoration: none;
+  user-select: none;
+  transition: letter-spacing 0.16s;
 }
-.dieng-logo-img {
-  width: 46px;
-  height: 46px;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px #2761c420;
-  border: 1.5px solid #e4ebf7;
-  background: #fff;
+.dieng-logo span {
+  color: #ffd600; /* gold ala Booking/Traveloka */
+  font-weight: 900;
 }
-.dieng-logo-text {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #253257;
-  letter-spacing: -0.01em;
-  font-family: 'Inter', sans-serif;
-}
-.dieng-nav-list {
+.dieng-nav {
   display: flex;
-  gap: 1.1rem;
-  margin: 0;
-  padding: 0;
+  gap: 2.4rem;
   list-style: none;
+  margin: 0; padding: 0;
 }
-.dieng-nav-link {
-  color: #21519c;
+.dieng-link {
+  color: #fff;
   font-weight: 600;
-  font-size: 1.07rem;
-  padding: 0.28em 1.2em;
-  border-radius: 1.1em;
+  font-size: 1.09rem;
   text-decoration: none;
-  transition: background .13s, color .13s;
+  border-radius: 8px;
+  padding: 9px 14px 9px 14px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.96;
+  transition: color 0.16s, background 0.15s;
+  /* animasi underline */
 }
-.dieng-nav-link:hover {
-  background: #f0f6ff;
-  color: #199d68;
+.dieng-link::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #ffd600, #fff2);
+  border-radius: 2px;
+  margin: 0 auto;
+  transition: width 0.25s cubic-bezier(.4,0,.2,1);
 }
-@media (max-width: 700px) {
-  .dieng-navbar-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.7rem;
-    padding: 0 1vw;
-  }
-  .dieng-nav-list {
-    flex-wrap: wrap;
-    gap: 0.3rem 0.8rem;
-    justify-content: flex-start;
-  }
-  .dieng-logo-text {
-    font-size: 1.09rem;
-  }
+.dieng-link:hover,
+.dieng-link:focus {
+  color: #ffd600;
+  background: rgba(255,255,255,0.07);
+}
+.dieng-link:hover::after,
+.dieng-link:focus::after {
+  width: 70%;
+}
+@media (max-width: 900px) {
+  .dieng-header-inner { flex-direction: column; align-items: flex-start; gap: 13px; padding: 18px 10px; }
+  .dieng-nav { gap: 0.9rem; }
+}
+@media (max-width: 480px) {
+  .dieng-header-inner { padding: 13px 4px; }
+  .dieng-logo { font-size: 1.2rem; }
+  .dieng-link { font-size: 0.97rem; padding: 8px 7px; }
 }
 </style>
