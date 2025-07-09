@@ -2,314 +2,333 @@
 import Layout from '../layouts/Layout.astro';
 
 const paketHarian = [
-  { title: 'Paket 1 Hari', desc: 'Trip singkat, sunrise Sikunir, kawah, candi, kuliner, pulang hari.', link: '#' },
-  { title: 'Paket 2 Hari 1 Malam', desc: 'Explore Dieng lebih lengkap, termasuk sunrise dan menginap di Dieng.', link: '#' },
-  { title: 'Paket 3 Hari 2 Malam', desc: 'Puas wisata dari pagi sampai malam, rute fleksibel & banyak destinasi.', link: '#' }
+  { title: 'Paket 1 Hari', desc: 'Trip singkat: sunrise Sikunir, kawah, candi, kuliner, pulang hari.', icon: "🌄", link: "#" },
+  { title: 'Paket 2 Hari 1 Malam', desc: 'Explore lebih lengkap, sunrise, keliling Dieng & menginap.', icon: "🏕️", link: "#" },
+  { title: 'Paket 3 Hari 2 Malam', desc: 'Puas wisata, lebih santai, semua destinasi Dieng & hidden gem.', icon: "⛰️", link: "#" }
 ];
 const paketKota = [
-  { kota: 'Jogja', link: '#' },
-  { kota: 'Semarang', link: '#' },
-  { kota: 'Purwokerto', link: '#' },
-  { kota: 'Solo', link: '#' },
-  { kota: 'Wonosobo', link: '#' },
-  { kota: 'Kota Lain', link: '#' }
+  { kota: 'Jogja', icon: "🛵", link: "#" },
+  { kota: 'Semarang', icon: "🚗", link: "#" },
+  { kota: 'Purwokerto', icon: "🚌", link: "#" },
+  { kota: 'Solo', icon: "🚙", link: "#" },
+  { kota: 'Wonosobo', icon: "🚐", link: "#" },
+  { kota: 'Kota Lain', icon: "🗺️", link: "#" }
 ];
 const faqs = [
   {
-    q: 'Apa yang membedakan paket wisata Dieng di sini dengan travel lain?',
-    a: 'Semua perjalanan benar-benar privat, hanya untuk grup Anda tanpa dicampur peserta lain. Rute, jadwal, bahkan lokasi makan bisa diatur ulang sesuai request tanpa biaya tambahan. Tidak ada sistem open trip, jadi privasi dan kenyamanan Anda terjaga 100%.'
+    q: 'Apa keunggulan utama paket wisata di Dieng.Travel?',
+    a: 'Full privat, itinerary bebas, driver/guide ramah lokal, fasilitas lengkap, harga transparan, review real, bisa start dari berbagai kota. Liburan jadi 100% santai, tanpa ribet atau “diatur” travel lain.',
+    icon: "✨"
   },
   {
-    q: 'Apakah bisa booking mendadak atau last minute?',
-    a: 'Bisa, selama jadwal dan armada masih tersedia. Kami terbiasa melayani booking H-1, bahkan kadang pagi langsung berangkat. Silakan hubungi admin untuk konfirmasi ketersediaan real-time.'
+    q: 'Bisa custom destinasi atau kuliner selama trip?',
+    a: 'Bisa banget! Mau ke hidden gem, spot Instagramable, atau request kuliner lokal—semua itinerary bisa diatur bareng tim kami. Tanpa biaya tambahan.',
+    icon: "📝"
   },
   {
-    q: 'Bagaimana jika ada peserta anak-anak, lansia, atau kebutuhan khusus?',
-    a: 'Pasti bisa! Tim kami siap menyesuaikan itinerary, tempo perjalanan, hingga menyiapkan fasilitas tambahan (kursi bayi, extra snack, atau jadwal lebih santai) agar semua peserta nyaman. Mohon infokan kebutuhan khusus saat booking.'
+    q: 'Gimana kalau mau booking dadakan atau reschedule?',
+    a: 'Last minute booking? Silakan! Selama ada armada, kami siap. Reschedule juga fleksibel, tanpa ribet. Cukup chat admin.',
+    icon: "⏱️"
   },
   {
-    q: 'Apa keuntungan memilih paket wisata private dibanding pergi sendiri?',
-    a: 'Anda tidak perlu repot urus tiket, logistik, parkir, makan, atau antri spot wisata. Semua sudah diatur guide lokal berpengalaman, sehingga waktu liburan lebih efisien, tidak tersesat, dan lebih banyak dapat insight lokal. Selain itu, biaya lebih transparan dan tidak ada biaya tersembunyi.'
+    q: 'Apakah ada dokumentasi foto gratis selama trip?',
+    a: 'Ya, tiap grup dapat dokumentasi standar (HP/DSLR guide). Mau upgrade ke fotografer pro juga bisa, tinggal request.',
+    icon: "📸"
   },
   {
-    q: 'Bagaimana sistem pembayaran dan apakah ada jaminan uang kembali?',
-    a: 'Booking cukup DP, sisanya dibayar saat hari H. Jika batal karena force majeure atau ada alasan khusus yang valid, uang DP bisa dikembalikan sesuai syarat. Tidak ada biaya admin siluman.'
+    q: 'Bagaimana sistem pembayaran & pembatalan?',
+    a: 'DP ringan, pelunasan hari H. Pembatalan karena force majeure: refund aman. Semua tanpa biaya siluman!',
+    icon: "💸"
   },
   {
-    q: 'Apakah tersedia dokumentasi foto selama trip?',
-    a: 'Ya, kami sediakan dokumentasi standar gratis (HP/DSLR sesuai ketersediaan guide). Anda juga bisa request fotografer profesional dengan biaya tambahan jika ingin hasil premium.'
-  },
-  {
-    q: 'Bisakah trip start langsung dari bandara/stasiun?',
-    a: 'Bisa. Jemputan bisa dari hotel, bandara, stasiun, rumah, atau titik mana saja di kota meeting point yang dipilih (Jogja, Semarang, Purwokerto, Wonosobo, Solo). Info alamat/jam penjemputan cukup dikirim H-1 sebelum berangkat.'
-  },
-  {
-    q: 'Apakah harga sudah termasuk semua tiket wisata, makan, dan penginapan?',
-    a: 'Semua harga sudah termasuk tiket destinasi utama, kendaraan, makan, penginapan (untuk paket inap), parkir, BBM, guide, air mineral, dan dokumentasi standar. Tidak ada biaya mendadak di perjalanan, kecuali jika ada request tambahan di luar paket.'
-  },
-  {
-    q: 'Bagaimana jika ingin request wisata hidden gem atau destinasi unik di Dieng?',
-    a: 'Sangat bisa. Tim kami kenal spot hidden gem, lokasi foto Instagramable, kuliner lokal unik, atau tempat yang jarang dikunjungi turis. Cukup sebut keinginan Anda saat booking, itinerary akan dikustom tanpa biaya tambahan.'
-  },
-  {
-    q: 'Apa yang harus dipersiapkan sebelum berangkat ke Dieng?',
-    a: 'Cukup bawa pakaian hangat, alas kaki nyaman, perlengkapan pribadi, dan dokumen identitas. Tim kami akan kirim reminder packing list dan update cuaca H-1 sebelum trip. Tidak perlu khawatir soal peralatan wisata, sudah kami siapkan.'
-  },
+    q: 'Apa aja yang harus disiapkan untuk wisata ke Dieng?',
+    a: 'Bawa jaket tebal, sepatu nyaman, charger, dan KTP/SIM. Packing list & tips cuaca dikirim otomatis H-1 biar anti kelupaan.',
+    icon: "🎒"
+  }
 ];
-
 ---
 
-<Layout title="Paket Wisata Dieng 2025 - Tour Dieng Murah">
-<section class="dieng-hero">
-  <div class="dieng-hero-imgwrap">
-    <img src="/images/paket-tour-dieng-travel.png" alt="Paket Wisata Dieng" class="dieng-hero-img" />
+<Layout title="Paket Wisata Dieng 2025 - Fun, Private, & Fleksibel">
+<section class="dieng-hero-fun">
+  <div class="dieng-hero-imgwrap-fun">
+    <img src="/images/paket-tour-dieng-travel.png" alt="Paket Wisata Dieng" class="dieng-hero-img-fun" />
   </div>
-  <h1 class="dieng-hero-title">Paket Wisata Dieng Private – Terlengkap & Fleksibel</h1>
-  <p class="dieng-hero-desc">
-    Nikmati pengalaman terbaik jelajah Negeri di Atas Awan bareng <b>Dieng.Travel</b>. Pilih trip 1-3 hari, custom rute, berangkat dari Jogja, Semarang, Purwokerto, Solo, atau meeting point sesuai permintaan. Harga ramah, fasilitas lengkap, booking mudah & transparan.
+  <h1 class="dieng-hero-title-fun">
+    Paket Wisata Dieng Private<br><span class="gradient-text">Liburan Seru, Fleksibel, Anti Ribet!</span>
+  </h1>
+  <p class="dieng-hero-desc-fun">
+    Nikmati pengalaman <b>jalan-jalan fun & fleksibel</b> bareng <span class="dieng-brand-fun">Dieng.<span>Travel</span></span>. Pilih paket 1-3 hari, custom rute, jemput dari Jogja, Semarang, Purwokerto, Solo, atau kota mana saja. Harga bersahabat, fasilitas lengkap, booking gampang!
   </p>
 </section>
 
+<section class="dieng-paket-wrap-fun">
+  <h2 class="dieng-section-title-fun">Paket Wisata 1–3 Hari</h2>
+  <div class="dieng-paket-grid-fun">
+    {paketHarian.map((item) => (
+      <div class="dieng-card-fun">
+        <div class="dieng-card-emoji">{item.icon}</div>
+        <h3>{item.title}</h3>
+        <p>{item.desc}</p>
+        <a href={item.link} class="dieng-btn-fun">Lihat Detail</a>
+      </div>
+    ))}
+  </div>
+</section>
 
+<section class="dieng-paket-wrap-fun">
+  <h2 class="dieng-section-title-fun">Paket Wisata Dari Kota Asal</h2>
+  <div class="dieng-kota-grid-fun">
+    {paketKota.map((item) => (
+      <a href={item.link} class="dieng-kota-card-fun">
+        <span class="dieng-kota-emoji">{item.icon}</span>
+        {item.kota}
+      </a>
+    ))}
+  </div>
+</section>
 
+<section class="dieng-faq-wrap-fun">
+  <h2 class="dieng-section-title-fun">FAQ – Paket Wisata Dieng</h2>
+  <div class="dieng-faq-list-fun">
+    {faqs.map((item, i) => (
+      <details class="dieng-faq-card-fun" { ...(i === 0 && { open: true }) }>
+        <summary>
+          <span class="dieng-faq-emoji">{item.icon}</span>{item.q}
+        </summary>
+        <div>{item.a}</div>
+      </details>
+    ))}
+  </div>
+</section>
 
-  <section class="dieng-paket-wrap">
-    <h2 class="dieng-section-title">Paket Wisata 1–3 Hari</h2>
-    <div class="dieng-paket-grid">
-      {paketHarian.map((item) => (
-        <div class="dieng-card">
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
-          <a href={item.link} class="dieng-btn">Lihat Detail</a>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="dieng-paket-wrap">
-    <h2 class="dieng-section-title">Paket Wisata Dari Kota Asal</h2>
-    <div class="dieng-kota-grid">
-      {paketKota.map((item) => (
-        <a href={item.link} class="dieng-kota-card">{item.kota}</a>
-      ))}
-    </div>
-  </section>
-
-  <section class="dieng-faq-wrap">
-    <h2 class="dieng-section-title">FAQ – Paket Wisata Dieng</h2>
-    <div class="dieng-faq-list">
-      {faqs.map((item, i) => (
-        <details class="dieng-faq-card" { ...(i === 0 && { open: true }) }>
-          <summary>{item.q}</summary>
-          <div>{item.a}</div>
-        </details>
-      ))}
-    </div>
-  </section>
-
-  <style>
-  /* Hero */
-.dieng-hero-imgwrap {
+<style>
+/* HERO FUN */
+.dieng-hero-fun {
+  padding: 0 0 30px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #e8fcff 0%, #faffef 100%);
+}
+.dieng-hero-imgwrap-fun {
   width: 100%;
-  max-width: 1000px;
+  max-width: 980px;
   margin: 0 auto;
-  border-radius: 1.3rem;
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 24px #19335a14;
-  margin-top: -32px;
+  box-shadow: 0 4px 34px #1dc7c819;
+  margin-top: -34px;
   background: #fff;
 }
-
-.dieng-hero-img {
+.dieng-hero-img-fun {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
 }
-
-@media (max-width: 600px) {
-  .dieng-hero-imgwrap {
-    max-width: 100vw;
-    border-radius: 0.7rem;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: -18px;
-  }
-  .dieng-hero-img {
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;
-  }
-}
-
-
-
-.dieng-hero-title {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: #133562;
-  margin-bottom: 15px;
-  margin-top: 2.4rem;  /* lebih lega di desktop */
+.dieng-hero-title-fun {
+  font-size: 2.28rem;
+  font-weight: 900;
+  color: #1b4477;
+  margin-bottom: 16px;
+  margin-top: 2.2rem;
   letter-spacing: -0.5px;
+  line-height: 1.13;
+}
+.gradient-text {
+  background: linear-gradient(90deg, #0091e6, #24e6a0 60%, #ffe666 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 1.15em;
+}
+.dieng-hero-desc-fun {
+  font-size: 1.13rem;
+  color: #3c6186;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.dieng-brand-fun {
+  font-weight: 900;
+  color: #00b5c2;
+  letter-spacing: 1px;
+}
+.dieng-brand-fun span {
+  color: #ffd600;
 }
 
 @media (max-width: 600px) {
-  .dieng-hero-title {
-    margin-top: 1.1rem; /* di HP biar tetap rapat */
-  }
+  .dieng-hero-imgwrap-fun { max-width: 100vw; border-radius: 0.75rem; margin-top: -18px; }
+  .dieng-hero-img-fun { width: 100vw; max-width: 100vw; }
+  .dieng-hero-title-fun { font-size: 1.35rem; margin-top: 1.1rem; }
 }
-.dieng-section-title {
-  font-size: 1.45rem;
+
+/* CARD PAKET FUN */
+.dieng-paket-wrap-fun { margin-top: 30px; margin-bottom: 38px; }
+.dieng-section-title-fun {
+  font-size: 1.42rem;
   font-weight: 700;
-  color: #133562;
-  margin-bottom: 38px; /* lebih lega di desktop */
+  color: #0091e6;
+  margin-bottom: 34px;
   margin-top: 0;
   text-align: center;
   letter-spacing: 0;
 }
-
-.dieng-paket-grid,
-.dieng-kota-grid {
-  margin-top: 0; /* pastikan tidak ada jarak dobel di atas grid */
+.dieng-paket-grid-fun {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.dieng-card-fun {
+  background: linear-gradient(140deg, #e5fbfc 65%, #fffde2 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 32px #13ecd91a, 0 1.5px 7px #0097c233;
+  padding: 33px 28px 29px 28px;
+  max-width: 280px;
+  width: 100%;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform .13s, box-shadow .2s;
+  border: 1.3px solid #d5f1ff;
+  position: relative;
+  overflow: hidden;
+}
+.dieng-card-fun:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 14px 40px 0 #00b5c247, 0 2px 12px #ffd60028;
+  border-color: #00b5c2;
+}
+.dieng-card-fun h3 {
+  font-size: 1.13rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #0071c2;
+}
+.dieng-card-fun p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: #1c567c;
+}
+.dieng-btn-fun {
+  display: inline-block;
+  background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
+  color: #fff;
+  font-weight: 800;
+  padding: 9px 20px;
+  border-radius: 99px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background .15s, box-shadow .14s;
+  box-shadow: 0 2px 8px #ffd60012;
+  margin-top: auto;
+  letter-spacing: 0.01em;
+  border: 0;
+}
+.dieng-btn-fun:hover {
+  background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+  color: #0071c2;
+  box-shadow: 0 6px 18px #00b5c229;
+}
+.dieng-card-emoji {
+  font-size: 2rem;
+  position: absolute;
+  right: 20px; top: 15px;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
-@media (max-width: 600px) {
-  .dieng-section-title {
-    margin-bottom: 22px; /* di HP lebih rapat */
-  }
+/* KOTA FUN */
+.dieng-kota-grid-fun {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dieng-kota-card-fun {
+  background: linear-gradient(90deg, #00b5c2 60%, #ffd600 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 13px 30px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 18px #00b5c226;
+  text-decoration: none;
+  transition: background .14s, color .16s;
+  border: 1.5px solid #eaf2ff;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.dieng-kota-card-fun:hover {
+  background: #133562;
+  color: #ffd600;
+  border-color: #00b5c2;
+  box-shadow: 0 7px 22px #ffd6001a;
+}
+.dieng-kota-emoji {
+  font-size: 1.45em;
 }
 
-
-  /* Card Paket */
-  .dieng-paket-wrap {
-    margin-top: 30px;
-    margin-bottom: 38px;
-  }
-  .dieng-paket-grid {
-    display: flex;
-    gap: 26px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .dieng-card {
-    background: #fff;
-    border-radius: 1.2rem;
-    box-shadow: 0 4px 26px 0 #0071c221, 0 1px 4px #0001;
-    padding: 34px 30px 30px 30px;
-    max-width: 300px;
-    width: 100%;
-    min-height: 195px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: transform .13s, box-shadow .2s;
-    border: 1.6px solid #f2f5ff;
-  }
-  .dieng-card:hover {
-    transform: translateY(-8px) scale(1.025);
-    box-shadow: 0 12px 36px 0 #0071c246, 0 2px 10px #0002;
-    border-color: #0071c2;
-  }
-  .dieng-card h3 {
-    font-size: 1.18rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    color: #0061b0;
-  }
-  .dieng-card p {
-    font-size: 1rem;
-    margin-bottom: 16px;
-    color: #19335a;
-  }
-  .dieng-btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #0071c2, #00b5c2 80%);
-    color: #fff;
-    font-weight: 700;
-    padding: 10px 22px;
-    border-radius: 24px;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: background .17s, box-shadow .17s;
-    box-shadow: 0 2px 8px #0071c218;
-    margin-top: auto;
-  }
-  .dieng-btn:hover {
-    background: linear-gradient(90deg, #0058a8, #06b 80%);
-    box-shadow: 0 6px 18px #0071c230;
-    color: #ffe082;
-  }
-  /* Card Kota */
-  .dieng-kota-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    justify-content: center;
-    margin-top: 12px;
-    margin-bottom: 8px;
-  }
-  .dieng-kota-card {
-    background: #0071c2;
-    color: #fff;
-    font-weight: 700;
-    padding: 13px 32px;
-    border-radius: 999px;
-    font-size: 1.09rem;
-    box-shadow: 0 3px 16px #0071c220;
-    text-decoration: none;
-    transition: background .14s, color .16s;
-    border: 1.5px solid #eaf2ff;
-  }
-  .dieng-kota-card:hover {
-    background: #133562;
-    color: #ffe082;
-    border-color: #0071c2;
-  }
-  /* FAQ */
-  .dieng-faq-wrap {
-    max-width: 700px;
-    margin: 55px auto 0 auto;
-    padding: 0 12px 30px 12px;
-  }
-  .dieng-faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .dieng-faq-card {
-    background: #f8fbff;
-    border-radius: 1rem;
-    padding: 18px 22px 11px 22px;
-    box-shadow: 0 2px 16px #0071c20d;
-    border: 1.2px solid #e3ecfa;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: #134075;
-    transition: box-shadow .16s, border .13s;
-  }
-  .dieng-faq-card summary {
-    cursor: pointer;
-    font-weight: 800;
-    color: #0071c2;
-    outline: none;
-    margin-bottom: 7px;
-    font-size: 1.07rem;
-  }
-  .dieng-faq-card[open] {
-    box-shadow: 0 6px 28px #0071c233;
-    border-color: #0071c2;
-  }
-  .dieng-faq-card[open] summary {
-    color: #0058a8;
-  }
-  .dieng-faq-card div {
-    padding-top: 4px;
-    color: #18325a;
-  }
-  @media (max-width: 780px) {
-    .dieng-paket-grid, .dieng-kota-grid { flex-direction: column; align-items: center; }
-    .dieng-card, .dieng-kota-card { max-width: 90vw; width: 100%; }
-    .dieng-hero-img { max-width: 96vw; }
-  }
-  </style>
+/* FAQ FUN */
+.dieng-faq-wrap-fun {
+  max-width: 720px;
+  margin: 56px auto 0 auto;
+  padding: 0 12px 30px 12px;
+}
+.dieng-faq-list-fun {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.dieng-faq-card-fun {
+  background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+  border-radius: 1rem;
+  padding: 19px 23px 12px 22px;
+  box-shadow: 0 2px 16px #00b5c219;
+  border: 1.2px solid #e3ecfa;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1b4477;
+  transition: box-shadow .16s, border .13s;
+  position: relative;
+  overflow: hidden;
+}
+.dieng-faq-card-fun summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: #00b5c2;
+  outline: none;
+  margin-bottom: 7px;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.12s;
+}
+.dieng-faq-emoji {
+  font-size: 1.22em;
+  margin-right: 4px;
+}
+.dieng-faq-card-fun[open] {
+  box-shadow: 0 6px 28px #00b5c239;
+  border-color: #00b5c2;
+}
+.dieng-faq-card-fun[open] summary {
+  color: #ffd600;
+}
+.dieng-faq-card-fun div {
+  padding-top: 4px;
+  color: #134075;
+}
+@media (max-width: 780px) {
+  .dieng-paket-grid-fun, .dieng-kota-grid-fun { flex-direction: column; align-items: center; }
+  .dieng-card-fun, .dieng-kota-card-fun { max-width: 94vw; width: 100%; }
+  .dieng-hero-img-fun { max-width: 98vw; }
+  .dieng-faq-wrap-fun { padding: 0 5vw 22px 5vw; }
+}
+</style>
 </Layout>
