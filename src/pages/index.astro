@@ -23,15 +23,16 @@ const faqs = [
 ---
 
 <Layout title="Paket Wisata Dieng 2025 - Tour Dieng Murah">
-<section class="dieng-hero dieng-hero-full">
-  <img src="https://www.putratourdieng.com/wp-content/uploads/2025/07/paket_wisata_dieng.png" alt="Paket Wisata Dieng" class="dieng-hero-img" />
-  <div class="dieng-hero-text">
-    <h1 class="dieng-hero-title">Paket Wisata Dieng Private – Terlengkap & Fleksibel</h1>
-    <p class="dieng-hero-desc">
-      Nikmati pengalaman terbaik jelajah Negeri di Atas Awan bareng <b>Dieng.Travel</b>. Pilih trip 1-3 hari, custom rute, berangkat dari Jogja, Semarang, Purwokerto, Solo, atau meeting point sesuai permintaan. Harga ramah, fasilitas lengkap, booking mudah & transparan.
-    </p>
+<section class="dieng-hero">
+  <div class="dieng-hero-imgwrap">
+    <img src="https://www.putratourdieng.com/wp-content/uploads/2025/07/paket_wisata_dieng.png" alt="Paket Wisata Dieng" class="dieng-hero-img" />
   </div>
+  <h1 class="dieng-hero-title">Paket Wisata Dieng Private – Terlengkap & Fleksibel</h1>
+  <p class="dieng-hero-desc">
+    Nikmati pengalaman terbaik jelajah Negeri di Atas Awan bareng <b>Dieng.Travel</b>. Pilih trip 1-3 hari, custom rute, berangkat dari Jogja, Semarang, Purwokerto, Solo, atau meeting point sesuai permintaan. Harga ramah, fasilitas lengkap, booking mudah & transparan.
+  </p>
 </section>
+
 
 
 
@@ -71,32 +72,48 @@ const faqs = [
 
   <style>
   /* Hero */
-.dieng-hero-full {
-  padding: 0;
+.dieng-hero {
+  padding: 0 0 30px 0;
+  text-align: center;
+  background: #fff;
+}
+.dieng-hero-imgwrap {
+  max-width: 1000px;
+  width: 95vw;
+  margin: 0 auto;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px #19335a14;
+  margin-top: -32px; /* jurus: tarik gambar ke atas, rapat header */
 }
 .dieng-hero-img {
-  width: 100vw;
-  max-width: 100vw;
-  min-height: 220px;
-  margin: 0 auto 0 auto;
-  border-radius: 0;
-  box-shadow: none;
+  width: 100%;
   display: block;
-  object-fit: cover;
 }
-.dieng-hero-text {
-  margin-top: -12px; /* naikin ke atas biar rapat */
-  background: #fff;
-  padding: 20px 0 0 0;
+.dieng-hero-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #133562;
+  margin-bottom: 15px;
+  margin-top: 1.7rem;
+  letter-spacing: -0.5px;
 }
-@media (max-width: 780px) {
-  .dieng-hero-img {
-    min-height: 120px;
+.dieng-hero-desc {
+  font-size: 1.16rem;
+  color: #4a4a4a;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .dieng-hero-imgwrap {
+    max-width: 99vw;
+    border-radius: 0.9rem;
+    margin-top: -18px;
   }
-  .dieng-hero-text {
-    padding-top: 12px;
-  }
+  .dieng-hero-title { font-size: 1.38rem; margin-top: 1.1rem;}
 }
+
 
   .dieng-section-title {
     font-size: 1.45rem;
