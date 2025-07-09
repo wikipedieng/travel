@@ -2,125 +2,178 @@
 import Layout from '../layouts/Layout.astro';
 
 const paket = {
-  title: "Paket Wisata Dieng 2 Orang",
-  subtitle: "Private trip eksklusif untuk 2 orang — fleksibel, lengkap, dan seru!",
-  price: "Mulai dari Rp 2.550.000 / pax",
-  duration: "2 Hari 1 Malam",
-  meetingPoints: ["Jogja", "Semarang", "Purwokerto", "Solo", "Wonosobo"],
+  title: 'Paket Wisata Dieng untuk 2 Orang',
+  subtitle: 'Trip privat seru dan nyaman, cocok banget buat kamu dan teman atau pasangan!',
+  priceStart: 975000, // mulai dari per orang
+  durationOptions: ['1 Hari', '2 Hari 1 Malam', '3 Hari 2 Malam'],
+  description: `Nikmati perjalanan seru dan penuh keseruan ke Dieng dengan paket khusus buat 2 orang. 
+  Jadwal fleksibel, destinasi lengkap, dan fasilitas privat buat kamu berdua bebas atur sendiri 
+  rutenya. Cocok buat quality time, honeymoon, atau liburan santai bersama sahabat.`,
+  features: [
+    'Kendaraan privat dan nyaman',
+    'Driver & guide profesional dan ramah',
+    'Tiket masuk semua destinasi utama',
+    '4x makan lezat khas Dieng',
+    'Dokumentasi foto gratis dari guide',
+    'Penginapan cozy (paket 2 hari+)',
+    'Air mineral dan snack ringan',
+  ],
   itinerary: [
-    "Hari 1: Penjemputan, Sunrise Sikunir, Telaga Cebong, Kawah Sikidang, Candi Arjuna",
-    "Hari 2: Kebun Teh, Telaga Menjer, Kuliner Lokal, Pulang"
+    {
+      day: 'Hari 1',
+      activities: [
+        'Penjemputan di meeting point pilihan',
+        'Sunrise Sikunir - lihat matahari terbit yang magis',
+        'Tour Kawah Sikidang yang berasap',
+        'Jelajah Kompleks Candi Arjuna',
+        'Makan siang di restoran lokal',
+        'Wisata ke Telaga Warna penuh warna',
+        'Check-in penginapan & istirahat',
+        'Makan malam romantis atau santai',
+      ],
+    },
+    {
+      day: 'Hari 2 (jika pilih paket inap)',
+      activities: [
+        'Sarapan pagi di penginapan',
+        'Tour Kebun Teh Pananjakan',
+        'Kunjungan ke Museum Kailasa',
+        'Makan siang dan oleh-oleh khas Dieng',
+        'Perjalanan pulang dengan hati senang',
+      ],
+    },
   ],
-  facilities: [
-    "Kendaraan private AC",
-    "BBM, parkir, tol",
-    "Tiket masuk objek wisata",
-    "1 malam penginapan nyaman",
-    "4x makan",
-    "Driver dan guide profesional",
-    "Air mineral",
-    "Dokumentasi foto gratis"
-  ],
-  bookingLink: "https://paketdieng.id/"
 };
 ---
 
-<Layout title={paket.title}>
-  <section class="paket-2-orang">
-    <h1>{paket.title}</h1>
-    <p class="subtitle">{paket.subtitle}</p>
-    <div class="paket-main">
-      <div class="paket-info">
-        <p class="price">{paket.price}</p>
-        <p class="duration">Durasi: {paket.duration}</p>
-        <p><strong>Meeting Point:</strong> {paket.meetingPoints.join(", ")}</p>
-        <h3>Itinerary Singkat</h3>
-        <ul>
-          {paket.itinerary.map(item => <li>{item}</li>)}
-        </ul>
-        <h3>Fasilitas Lengkap</h3>
-        <ul>
-          {paket.facilities.map(item => <li>{item}</li>)}
-        </ul>
-        <a href={paket.bookingLink} class="btn-booking">Booking Sekarang</a>
+<Layout title={`Paket Wisata Dieng untuk 2 Orang – Mulai dari Rp${paket.priceStart.toLocaleString('id-ID')}`}>
+  <section class="dieng-paket-2orang-hero">
+    <h1 class="dieng-paket-title">{paket.title}</h1>
+    <p class="dieng-paket-subtitle">{paket.subtitle}</p>
+    <p class="dieng-paket-price">Harga mulai dari <strong>Rp{paket.priceStart.toLocaleString('id-ID')}</strong> per orang</p>
+  </section>
+
+  <section class="dieng-paket-description">
+    <p>{paket.description}</p>
+  </section>
+
+  <section class="dieng-paket-features">
+    <h2>Fasilitas dan Keuntungan</h2>
+    <ul>
+      {paket.features.map((fitur) => (
+        <li>✅ {fitur}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="dieng-paket-itinerary">
+    <h2>Itinerary Singkat</h2>
+    {paket.itinerary.map((hari) => (
+      <div class="dieng-paket-day">
+        <h3>{hari.day}</h3>
+        <ol>
+          {hari.activities.map((kegiatan) => (
+            <li>{kegiatan}</li>
+          ))}
+        </ol>
       </div>
-    </div>
+    ))}
   </section>
 
   <style>
-  /* styling sama seperti tadi */
-  .paket-2-orang {
-    max-width: 720px;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    background: #e0f2fe;
-    border-radius: 12px;
-    box-shadow: 0 6px 24px rgb(0 113 194 / 0.25);
-    font-family: 'Inter', sans-serif;
-    color: #0c3c67;
-  }
-  .paket-2-orang h1 {
-    font-size: 2.3rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-    color: #005eaa;
-    text-align: center;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #084c8d;
-  }
-  .paket-info p.price {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: #0071c2;
-    margin: 0 0 0.8rem 0;
-  }
-  .paket-info p.duration,
-  .paket-info p strong {
-    font-weight: 700;
-  }
-  .paket-info ul {
-    list-style-type: disc;
-    padding-left: 1.3rem;
-    margin-bottom: 1.6rem;
-  }
-  .paket-info ul li {
-    margin-bottom: 0.5rem;
-  }
-  .btn-booking {
-    display: inline-block;
-    background: linear-gradient(90deg, #0071c2, #00b5c2);
-    color: white;
-    font-weight: 700;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 20px rgb(0 113 194 / 0.4);
-    text-align: center;
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-    display: block;
-  }
-  .btn-booking:hover {
-    background: linear-gradient(90deg, #005b9a, #009ba5);
-    box-shadow: 0 8px 36px rgb(0 113 194 / 0.6);
-  }
-  @media (max-width: 480px) {
-    .paket-2-orang {
-      padding: 1rem;
+    .dieng-paket-2orang-hero {
+      text-align: center;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      color: #133562;
     }
-    .paket-2-orang h1 {
+    .dieng-paket-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    .dieng-paket-subtitle {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #0071c2;
+    }
+    .dieng-paket-price {
       font-size: 1.6rem;
+      color: #ffd600;
+      font-weight: 800;
+      margin-bottom: 3rem;
     }
-    .paket-info p.price {
+    .dieng-paket-description {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+      color: #19335a;
+      line-height: 1.6;
+    }
+    .dieng-paket-features {
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      color: #133562;
+    }
+    .dieng-paket-features h2 {
+      font-weight: 700;
       font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
     }
-  }
+    .dieng-paket-features ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+    }
+    .dieng-paket-features li {
+      margin-bottom: 0.7rem;
+      color: #0071c2;
+    }
+    .dieng-paket-itinerary {
+      max-width: 700px;
+      margin: 0 auto 5rem auto;
+      color: #19335a;
+    }
+    .dieng-paket-itinerary h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .dieng-paket-day h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      border-bottom: 2px solid #0071c2;
+      padding-bottom: 6px;
+    }
+    .dieng-paket-day ol {
+      margin-left: 1rem;
+      font-size: 1.1rem;
+      list-style-type: decimal;
+      line-height: 1.6;
+    }
+    .dieng-paket-day ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .dieng-paket-title {
+        font-size: 1.8rem;
+      }
+      .dieng-paket-subtitle {
+        font-size: 1.1rem;
+      }
+      .dieng-paket-price {
+        font-size: 1.3rem;
+      }
+      .dieng-paket-description,
+      .dieng-paket-features,
+      .dieng-paket-itinerary {
+        padding: 0 1rem;
+      }
+    }
   </style>
 </Layout>
