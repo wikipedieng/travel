@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const itinerary = [
+  { jam: "03.00", kegiatan: "Penjemputan peserta di kota asal / meeting point" },
+  { jam: "04.45", kegiatan: "Sunrise Sikunir & Telaga Cebong (spot sunrise legendaris)" },
+  { jam: "07.00", kegiatan: "Sarapan lokal khas Dieng" },
+  { jam: "08.00", kegiatan: "Eksplor Kawah Sikidang (wisata edukasi & fenomena alam)" },
+  { jam: "09.30", kegiatan: "Tour Komplek Candi Arjuna" },
+  { jam: "10.30", kegiatan: "Batu Ratapan Angin (panorama Telaga Warna)" },
+  { jam: "12.30", kegiatan: "Dieng Plateau Theater / kuliner oleh-oleh" },
+  { jam: "14.00", kegiatan: "Pulang ke kota asal, trip selesai & penuh cerita!" },
+];
+
+const fasilitas = [
+  { icon: "🚐", text: "Transport AC & driver ramah" },
+  { icon: "⛽", text: "BBM, parkir, tol, tiket wisata utama" },
+  { icon: "🍽️", text: "2x makan (sarapan & makan siang)" },
+  { icon: "🧑‍🤝‍🧑", text: "Tour guide lokal" },
+  { icon: "💧", text: "Air mineral selama trip" },
+  { icon: "📸", text: "Free dokumentasi by crew" },
+];
+
+const faq = [
+  {
+    q: "Bisa custom itinerary atau request destinasi?",
+    a: "Bisa banget! Semua trip 100% private, itinerary bisa diubah sesuai keinginan sebelum keberangkatan.",
+  },
+  {
+    q: "Meeting point di mana saja?",
+    a: "Bebas pilih: Wonosobo, Purwokerto, Jogja, Semarang, Solo, atau sesuai request. Silakan konfirmasi saat booking.",
+  },
+  {
+    q: "Minimal & maksimal peserta berapa orang?",
+    a: "Minimal 2 orang, maksimal hingga 30+ (rombongan, komunitas, atau keluarga besar). Harga makin murah untuk grup besar.",
+  },
+  {
+    q: "Booking H-1 atau dadakan bisa?",
+    a: "Bisa! Admin fast respon, booking last minute dilayani asal kuota & armada masih tersedia.",
+  },
+  {
+    q: "Harga sudah all in atau ada biaya lain?",
+    a: "Harga sudah termasuk semua fasilitas, tiket utama, makan, dan dokumentasi. Tidak ada biaya siluman!",
+  },
+];
+
+const harga = "Rp 475.000 / orang (min. 4 peserta)";
+---
+
+<Layout title="Paket Wisata Dieng 1 Hari 2025 - Sunrise, Kawah, Candi, All-in!">
+  <section class="one-hero">
+    <h1 class="one-title">Paket Wisata Dieng 1 Hari</h1>
+    <p class="one-desc">
+      🚐 Liburan singkat ke Dieng? <b>Paket 1 Hari</b> ini cocok buat kamu yang mau full trip dalam sehari: sunrise Sikunir, kawah, candi, kuliner & oleh-oleh!  
+      <span class="one-harga">Harga: <b>{harga}</b></span>
+    </p>
+    <a href="https://www.putratour.com/paket-wisata-dieng/1-hari/" class="one-btn">
+      🚐 Booking Paket 1 Hari Sekarang
+    </a>
+  </section>
+
+  <section class="one-itinerary">
+    <h2 class="one-section-title">Itinerary Paket 1 Hari</h2>
+    <div class="one-itin-list">
+      {itinerary.map((item) => (
+        <div class="one-itin-item">
+          <span class="one-itin-jam">{item.jam}</span>
+          <span class="one-itin-kegiatan">{item.kegiatan}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="one-fasilitas">
+    <h2 class="one-section-title">Fasilitas & Layanan</h2>
+    <ul class="one-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="one-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="one-faq">
+    <h2 class="one-section-title">FAQ Paket 1 Hari</h2>
+    <div class="one-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="one-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .one-hero {
+    text-align: center;
+    background: linear-gradient(90deg, #f2fffe 0%, #fffde2 100%);
+    padding: 44px 13px 24px 13px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #6ee6c614;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .one-title {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #19777a;
+    margin-bottom: 13px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+  }
+  .one-desc {
+    font-size: 1.12rem;
+    color: #3c8588;
+    max-width: 570px;
+    margin: 0 auto 12px auto;
+    line-height: 1.7;
+  }
+  .one-harga {
+    display: inline-block;
+    background: #ffe66644;
+    color: #e69b00;
+    padding: 6px 18px;
+    border-radius: 13px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .one-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #00b5c2, #ffd600 85%);
+    color: #fff;
+    font-weight: 800;
+    padding: 13px 30px;
+    border-radius: 99px;
+    font-size: 1.13rem;
+    text-decoration: none;
+    box-shadow: 0 4px 18px #ffd60020;
+    margin: 13px auto 0 auto;
+    letter-spacing: 0.04em;
+    transition: background .14s, box-shadow .15s, color .13s;
+    border: 0;
+  }
+  .one-btn:hover {
+    background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+    color: #00b5c2;
+    box-shadow: 0 7px 18px #00b5c228;
+  }
+  /* ITINERARY */
+  .one-itinerary { margin: 32px 0 18px 0; }
+  .one-section-title {
+    text-align: center;
+    font-size: 1.17rem;
+    font-weight: 800;
+    color: #00b5c2;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  .one-itin-list {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .one-itin-item {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: linear-gradient(90deg, #e7faff 0%, #f8f5e0 100%);
+    box-shadow: 0 1px 8px #00b5c210;
+    border-radius: 0.85rem;
+    padding: 11px 24px 11px 18px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #23757e;
+    border: 1.1px solid #f1f8f4;
+  }
+  .one-itin-jam {
+    background: #ffd60018;
+    border-radius: 7px;
+    padding: 3px 13px;
+    font-size: 0.99em;
+    color: #00b5c2;
+    min-width: 62px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .one-itin-kegiatan { flex: 1; }
+  /* FASILITAS */
+  .one-fasilitas {
+    margin: 24px 0 14px 0;
+    text-align: center;
+  }
+  .one-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-start;
+    max-width: 320px;
+  }
+  .one-fasilitas-emoji { font-size: 1.18em; margin-right: 9px; }
+  .one-fasilitas-list li {
+    font-size: 1.08rem;
+    color: #21846a;
+    font-weight: 600;
+    background: #fffbe9;
+    padding: 7px 15px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px #00b5c20a;
+    display: flex; align-items: center;
+  }
+  /* FAQ */
+  .one-faq { max-width: 700px; margin: 38px auto 0 auto; padding: 0 12px 26px 12px; }
+  .one-faq-list { display: flex; flex-direction: column; gap: 17px; }
+  .one-faq-card {
+    background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+    border-radius: 1rem;
+    padding: 17px 21px 11px 21px;
+    box-shadow: 0 2px 13px #ffd60019;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.03rem;
+    font-weight: 500;
+    color: #1b4477;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .one-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b5c2;
+    outline: none;
+    margin-bottom: 7px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .one-faq-card[open] { box-shadow: 0 6px 22px #00b5c239; border-color: #ffd600; }
+  .one-faq-card[open] summary { color: #ffd600; }
+  .one-faq-card div { padding-top: 3px; color: #134075; }
+  @media (max-width: 600px) {
+    .one-hero { padding: 29px 3vw 14px 3vw; border-radius: 0 0 1rem 1rem; }
+    .one-title { font-size: 1.12rem; }
+    .one-section-title { font-size: 1.01rem; }
+    .one-itin-list { padding: 0 2vw; }
+  }
+  </style>
+</Layout>
