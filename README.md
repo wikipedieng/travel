@@ -1,51 +1,23 @@
-# Astro on Netlify Platform Starter
+Jika belum auto open, kunjungi [localhost:8888](http://localhost:8888).
 
-[Live Demo](https://astro-platform-starter.netlify.app/)
+---
 
-A modern starter based on Astro.js, Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+## About This Project
 
-## Astro Commands
+Proyek open source ini dibuat untuk memudahkan promosi, pemesanan, dan informasi seputar paket wisata Dieng secara digital.  
+Siapa saja boleh menggunakan, memodifikasi, atau mengembangkan source code ini untuk kebutuhan pariwisata, edukasi, atau bisnis travel lainnya.
 
-All commands are run from the root of the project, from a terminal:
+Website live & fitur demo: [https://dieng.travel/](https://dieng.travel/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## Deploying to Netlify
+## License
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+MIT License – bebas dikembangkan dan digunakan untuk kemajuan pariwisata Dieng & Indonesia!
 
-## Developing Locally
+---
 
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.14+.                                      |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+> Source code ini terbuka untuk pengembangan pariwisata, edukasi, dan kolaborasi digital.
+>
+> Untuk info lebih lanjut, silakan kunjungi [dieng.travel](https://dieng.travel/)
 
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
-
-```
-npm install netlify-cli@latest -g
-```
-
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
-
-```
-netlify link
-```
-
-4. Then, run the Astro.js development server via Netlify CLI:
-
-```
-netlify dev
-```
-
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
