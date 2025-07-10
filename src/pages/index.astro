@@ -49,286 +49,346 @@ const faqs = [
 ---
 
 <Layout title="Paket Wisata Dieng 2025 - Fun, Private, & Fleksibel">
-<section class="dieng-hero-fun">
-  <div class="dieng-hero-imgwrap-fun">
-    <img src="/images/paket-tour-dieng-travel.png" alt="Paket Wisata Dieng" class="dieng-hero-img-fun" />
-  </div>
-  <h1 class="dieng-hero-title-fun">
-    Paket Wisata Dieng Private<br><span class="gradient-text">Liburan Seru, Fleksibel, Bikin Happy!</span>
-  </h1>
-  <p class="dieng-hero-desc-fun">
-    Nikmati pengalaman <b>jalan-jalan fun & fleksibel</b> bareng <span class="dieng-brand-fun">Dieng.<span>Travel</span></span>. Pilih paket 1-3 hari, custom rute, jemput dari Jogja, Semarang, Purwokerto, Solo, atau kota mana saja. Harga bersahabat, fasilitas lengkap, booking gampang!
-  </p>
-</section>
+  <section class="dieng-hero-fun">
+    <div class="dieng-hero-imgwrap-fun">
+      <img src="/images/paket-tour-dieng-travel.png" alt="Paket Wisata Dieng" class="dieng-hero-img-fun" />
+    </div>
+    <h1 class="dieng-hero-title-fun">
+      Paket Wisata Dieng Private<br><span class="gradient-text">Liburan Seru, Fleksibel, Bikin Happy!</span>
+    </h1>
+    <p class="dieng-hero-desc-fun">
+      Nikmati pengalaman <b>jalan-jalan fun & fleksibel</b> bareng <span class="dieng-brand-fun">Dieng.<span>Travel</span></span>. Pilih paket 1-3 hari, custom rute, jemput dari Jogja, Semarang, Purwokerto, Solo, atau kota mana saja. Harga bersahabat, fasilitas lengkap, booking gampang!
+    </p>
+  </section>
 
-<section class="dieng-paket-wrap-fun">
-  <h2 class="dieng-section-title-fun">Paket Wisata 1–3 Hari</h2>
-  <div class="dieng-paket-grid-fun">
-    {paketHarian.map((item) => (
-      <div class="dieng-card-fun">
-        <div class="dieng-card-emoji">{item.icon}</div>
-        <h3>{item.title}</h3>
-        <p>{item.desc}</p>
-        <a href={item.link} class="dieng-btn-fun">Lihat Detail</a>
-      </div>
-    ))}
-  </div>
-</section>
+  <!-- DESKRIPSI PANJANG TERSEMBUNYI -->
+  <section class="dieng-desc-fun-wrap">
+    <div id="dieng-desc-short">
+      <p>
+        Penasaran kenapa banyak orang pilih trip ke Dieng bareng kami? Klik “Selengkapnya” buat tahu cerita serunya!
+      </p>
+      <button class="dieng-desc-btn" type="button" onclick="document.getElementById('dieng-desc-long').style.display='block'; this.style.display='none';">
+        Selengkapnya
+      </button>
+    </div>
+    <div id="dieng-desc-long" style="display:none;">
+      <p>
+        <b>Paket Wisata Dieng</b> bareng <span class="dieng-brand-fun">Dieng.Travel</span> itu soal pengalaman yang nyaman, seru, dan terasa akrab. Kami percaya liburan terbaik itu yang bikin hati tenang, waktu fleksibel, dan semua kebutuhan udah diurus. <br><br>
+        Setiap itinerary kami rancang supaya kamu bisa menikmati sunrise di Sikunir, jalan santai ke candi, sampai kulineran lokal, tanpa perlu repot mikir detail. Semua peserta dapat fasilitas lengkap, mulai kendaraan, tiket wisata, sampai dokumentasi foto. Tim kami pun selalu siap bantu, dari awal booking sampai pulang ke rumah.  
+      </p>
+      <ul>
+        <li>✔️ <b>Rute fleksibel</b>: bisa mulai dari Jogja, Semarang, Purwokerto, Solo, atau kota lain</li>
+        <li>✔️ <b>Harga jelas & lengkap</b>: nggak ada biaya tersembunyi, semua sudah termasuk tiket & makan</li>
+        <li>✔️ <b>Fasilitas nyaman</b>: kendaraan bersih, driver lokal, penginapan, sampai snack & air mineral</li>
+        <li>✔️ <b>Custom trip</b>: bebas pilih destinasi atau request spot favorit sesuai keinginan</li>
+        <li>✔️ <b>Respon cepat</b>: booking mudah, bisa last minute selama kuota masih ada</li>
+      </ul>
+      <p>
+        Kami ingin setiap perjalanan di Dieng bukan cuma soal foto-foto, tapi benar-benar jadi momen istimewa—entah itu sama keluarga, sahabat, komunitas, atau bahkan solo trip. Setiap peserta akan selalu kami bantu agar liburannya lancar dan penuh cerita seru yang dibawa pulang.<br><br>
+        <b>Pilih paket yang paling cocok, booking gampang, dan biar kami yang urus sisanya. Selamat menikmati petualangan di Dieng!</b>
+      </p>
+    </div>
+  </section>
+  <!-- END DESKRIPSI PANJANG -->
 
-<section class="dieng-paket-wrap-fun">
-  <h2 class="dieng-section-title-fun">Paket Wisata Dari Kota Asal</h2>
-  <div class="dieng-kota-grid-fun">
-    {paketKota.map((item) => (
-      <a href={item.link} class="dieng-kota-card-fun">
-        <span class="dieng-kota-emoji">{item.icon}</span>
-        {item.kota}
-      </a>
-    ))}
-  </div>
-</section>
+  <section class="dieng-paket-wrap-fun">
+    <h2 class="dieng-section-title-fun">Paket Wisata 1–3 Hari</h2>
+    <div class="dieng-paket-grid-fun">
+      {paketHarian.map((item) => (
+        <div class="dieng-card-fun">
+          <div class="dieng-card-emoji">{item.icon}</div>
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+          <a href={item.link} class="dieng-btn-fun">Lihat Detail</a>
+        </div>
+      ))}
+    </div>
+  </section>
 
-<section class="dieng-faq-wrap-fun">
-  <h2 class="dieng-section-title-fun">FAQ – Paket Wisata Dieng</h2>
-  <div class="dieng-faq-list-fun">
-    {faqs.map((item, i) => (
-      <details class="dieng-faq-card-fun" { ...(i === 0 && { open: true }) }>
-        <summary>
-          <span class="dieng-faq-emoji">{item.icon}</span>{item.q}
-        </summary>
-        <div>{item.a}</div>
-      </details>
-    ))}
-  </div>
-</section>
+  <section class="dieng-paket-wrap-fun">
+    <h2 class="dieng-section-title-fun">Paket Wisata Dari Kota Asal</h2>
+    <div class="dieng-kota-grid-fun">
+      {paketKota.map((item) => (
+        <a href={item.link} class="dieng-kota-card-fun">
+          <span class="dieng-kota-emoji">{item.icon}</span>
+          {item.kota}
+        </a>
+      ))}
+    </div>
+  </section>
 
-<style>
-/* HERO FUN */
-.dieng-hero-fun {
-  padding: 0 0 30px 0;
-  text-align: center;
-  background: linear-gradient(90deg, #e8fcff 0%, #faffef 100%);
-}
-.dieng-hero-imgwrap-fun {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: 0 4px 34px #1dc7c819;
-  margin-top: -34px;
-  background: #fff;
-}
-.dieng-hero-img-fun {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-.dieng-hero-title-fun {
-  font-size: 2.28rem;
-  font-weight: 900;
-  color: #1b4477;
-  margin-bottom: 16px;
-  margin-top: 2.2rem;
-  letter-spacing: -0.5px;
-  line-height: 1.13;
-}
-.gradient-text {
-  background: linear-gradient(90deg, #0091e6, #24e6a0 60%, #ffe666 100%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-size: 1.15em;
-}
-.dieng-hero-desc-fun {
-  font-size: 1.13rem;
-  color: #3c6186;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-.dieng-brand-fun {
-  font-weight: 900;
-  color: #00b5c2;
-  letter-spacing: 1px;
-}
-.dieng-brand-fun span {
-  color: #ffd600;
-}
+  <section class="dieng-faq-wrap-fun">
+    <h2 class="dieng-section-title-fun">FAQ – Paket Wisata Dieng</h2>
+    <div class="dieng-faq-list-fun">
+      {faqs.map((item, i) => (
+        <details class="dieng-faq-card-fun" {...(i === 0 && { open: true })}>
+          <summary>
+            <span class="dieng-faq-emoji">{item.icon}</span>{item.q}
+          </summary>
+          <div>{item.a}</div>
+        </details>
+      ))}
+    </div>
+  </section>
 
-@media (max-width: 600px) {
-  .dieng-hero-imgwrap-fun { max-width: 100vw; border-radius: 0.75rem; margin-top: -18px; }
-  .dieng-hero-img-fun { width: 100vw; max-width: 100vw; }
-  .dieng-hero-title-fun { font-size: 1.35rem; margin-top: 1.1rem; }
-}
+  <style>
+    /* HERO FUN */
+    .dieng-hero-fun {
+      padding: 0 0 30px 0;
+      text-align: center;
+      background: linear-gradient(90deg, #e8fcff 0%, #faffef 100%);
+    }
+    .dieng-hero-imgwrap-fun {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 34px #1dc7c819;
+      margin-top: -34px;
+      background: #fff;
+    }
+    .dieng-hero-img-fun {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .dieng-hero-title-fun {
+      font-size: 2.28rem;
+      font-weight: 900;
+      color: #1b4477;
+      margin-bottom: 16px;
+      margin-top: 2.2rem;
+      letter-spacing: -0.5px;
+      line-height: 1.13;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #0091e6, #24e6a0 60%, #ffe666 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-size: 1.15em;
+    }
+    .dieng-hero-desc-fun {
+      font-size: 1.13rem;
+      color: #3c6186;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .dieng-brand-fun {
+      font-weight: 900;
+      color: #00b5c2;
+      letter-spacing: 1px;
+    }
+    .dieng-brand-fun span {
+      color: #ffd600;
+    }
 
-/* CARD PAKET FUN */
-.dieng-paket-wrap-fun { margin-top: 30px; margin-bottom: 38px; }
-.dieng-section-title-fun {
-  font-size: 1.42rem;
-  font-weight: 700;
-  color: #0091e6;
-  margin-bottom: 34px;
-  margin-top: 0;
-  text-align: center;
-  letter-spacing: 0;
-}
-.dieng-paket-grid-fun {
-  display: flex;
-  gap: 26px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.dieng-card-fun {
-  background: linear-gradient(140deg, #e5fbfc 65%, #fffde2 100%);
-  border-radius: 1.2rem;
-  box-shadow: 0 6px 32px #13ecd91a, 0 1.5px 7px #0097c233;
-  padding: 33px 28px 29px 28px;
-  max-width: 280px;
-  width: 100%;
-  min-height: 190px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: transform .13s, box-shadow .2s;
-  border: 1.3px solid #d5f1ff;
-  position: relative;
-  overflow: hidden;
-}
-.dieng-card-fun:hover {
-  transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 14px 40px 0 #00b5c247, 0 2px 12px #ffd60028;
-  border-color: #00b5c2;
-}
-.dieng-card-fun h3 {
-  font-size: 1.13rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  color: #0071c2;
-}
-.dieng-card-fun p {
-  font-size: 1rem;
-  margin-bottom: 18px;
-  color: #1c567c;
-}
-.dieng-btn-fun {
-  display: inline-block;
-  background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
-  color: #fff;
-  font-weight: 800;
-  padding: 9px 20px;
-  border-radius: 99px;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background .15s, box-shadow .14s;
-  box-shadow: 0 2px 8px #ffd60012;
-  margin-top: auto;
-  letter-spacing: 0.01em;
-  border: 0;
-}
-.dieng-btn-fun:hover {
-  background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
-  color: #0071c2;
-  box-shadow: 0 6px 18px #00b5c229;
-}
-.dieng-card-emoji {
-  font-size: 2rem;
-  position: absolute;
-  right: 20px; top: 15px;
-  opacity: 0.15;
-  pointer-events: none;
-}
+    @media (max-width: 600px) {
+      .dieng-hero-imgwrap-fun { max-width: 100vw; border-radius: 0.75rem; margin-top: -18px; }
+      .dieng-hero-img-fun { width: 100vw; max-width: 100vw; }
+      .dieng-hero-title-fun { font-size: 1.35rem; margin-top: 1.1rem; }
+    }
 
-/* KOTA FUN */
-.dieng-kota-grid-fun {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.dieng-kota-card-fun {
-  background: linear-gradient(90deg, #00b5c2 60%, #ffd600 100%);
-  color: #fff;
-  font-weight: 700;
-  padding: 13px 30px;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  box-shadow: 0 3px 18px #00b5c226;
-  text-decoration: none;
-  transition: background .14s, color .16s;
-  border: 1.5px solid #eaf2ff;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-.dieng-kota-card-fun:hover {
-  background: #133562;
-  color: #ffd600;
-  border-color: #00b5c2;
-  box-shadow: 0 7px 22px #ffd6001a;
-}
-.dieng-kota-emoji {
-  font-size: 1.45em;
-}
+    /* CARD PAKET FUN */
+    .dieng-paket-wrap-fun { margin-top: 30px; margin-bottom: 38px; }
+    .dieng-section-title-fun {
+      font-size: 1.42rem;
+      font-weight: 700;
+      color: #0091e6;
+      margin-bottom: 34px;
+      margin-top: 0;
+      text-align: center;
+      letter-spacing: 0;
+    }
+    .dieng-paket-grid-fun {
+      display: flex;
+      gap: 26px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .dieng-card-fun {
+      background: linear-gradient(140deg, #e5fbfc 65%, #fffde2 100%);
+      border-radius: 1.2rem;
+      box-shadow: 0 6px 32px #13ecd91a, 0 1.5px 7px #0097c233;
+      padding: 33px 28px 29px 28px;
+      max-width: 280px;
+      width: 100%;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform .13s, box-shadow .2s;
+      border: 1.3px solid #d5f1ff;
+      position: relative;
+      overflow: hidden;
+    }
+    .dieng-card-fun:hover {
+      transform: translateY(-8px) scale(1.025);
+      box-shadow: 0 14px 40px 0 #00b5c247, 0 2px 12px #ffd60028;
+      border-color: #00b5c2;
+    }
+    .dieng-card-fun h3 {
+      font-size: 1.13rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #0071c2;
+    }
+    .dieng-card-fun p {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: #1c567c;
+    }
+    .dieng-btn-fun {
+      display: inline-block;
+      background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
+      color: #fff;
+      font-weight: 800;
+      padding: 9px 20px;
+      border-radius: 99px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background .15s, box-shadow .14s;
+      box-shadow: 0 2px 8px #ffd60012;
+      margin-top: auto;
+      letter-spacing: 0.01em;
+      border: 0;
+    }
+    .dieng-btn-fun:hover {
+      background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+      color: #0071c2;
+      box-shadow: 0 6px 18px #00b5c229;
+    }
+    .dieng-card-emoji {
+      font-size: 2rem;
+      position: absolute;
+      right: 20px; top: 15px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
 
-/* FAQ FUN */
-.dieng-faq-wrap-fun {
-  max-width: 720px;
-  margin: 56px auto 0 auto;
-  padding: 0 12px 30px 12px;
-}
-.dieng-faq-list-fun {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.dieng-faq-card-fun {
-  background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
-  border-radius: 1rem;
-  padding: 19px 23px 12px 22px;
-  box-shadow: 0 2px 16px #00b5c219;
-  border: 1.2px solid #e3ecfa;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #1b4477;
-  transition: box-shadow .16s, border .13s;
-  position: relative;
-  overflow: hidden;
-}
-.dieng-faq-card-fun summary {
-  cursor: pointer;
-  font-weight: 800;
-  color: #00b5c2;
-  outline: none;
-  margin-bottom: 7px;
-  font-size: 1.08rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.12s;
-}
-.dieng-faq-emoji {
-  font-size: 1.22em;
-  margin-right: 4px;
-}
-.dieng-faq-card-fun[open] {
-  box-shadow: 0 6px 28px #00b5c239;
-  border-color: #00b5c2;
-}
-.dieng-faq-card-fun[open] summary {
-  color: #ffd600;
-}
-.dieng-faq-card-fun div {
-  padding-top: 4px;
-  color: #134075;
-}
-@media (max-width: 780px) {
-  .dieng-paket-grid-fun, .dieng-kota-grid-fun { flex-direction: column; align-items: center; }
-  .dieng-card-fun, .dieng-kota-card-fun { max-width: 94vw; width: 100%; }
-  .dieng-hero-img-fun { max-width: 98vw; }
-  .dieng-faq-wrap-fun { padding: 0 5vw 22px 5vw; }
-}
-</style>
+    /* KOTA FUN */
+    .dieng-kota-grid-fun {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .dieng-kota-card-fun {
+      background: linear-gradient(90deg, #00b5c2 60%, #ffd600 100%);
+      color: #fff;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 18px #00b5c226;
+      text-decoration: none;
+      transition: background .14s, color .16s;
+      border: 1.5px solid #eaf2ff;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .dieng-kota-card-fun:hover {
+      background: #133562;
+      color: #ffd600;
+      border-color: #00b5c2;
+      box-shadow: 0 7px 22px #ffd6001a;
+    }
+    .dieng-kota-emoji {
+      font-size: 1.45em;
+    }
+
+    /* FAQ FUN */
+    .dieng-faq-wrap-fun {
+      max-width: 720px;
+      margin: 56px auto 0 auto;
+      padding: 0 12px 30px 12px;
+    }
+    .dieng-faq-list-fun {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .dieng-faq-card-fun {
+      background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
+      border-radius: 1rem;
+      padding: 19px 23px 12px 22px;
+      box-shadow: 0 2px 16px #00b5c219;
+      border: 1.2px solid #e3ecfa;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #1b4477;
+      transition: box-shadow .16s, border .13s;
+      position: relative;
+      overflow: hidden;
+    }
+    .dieng-faq-card-fun summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #00b5c2;
+      outline: none;
+      margin-bottom: 7px;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.12s;
+    }
+    .dieng-faq-emoji {
+      font-size: 1.22em;
+      margin-right: 4px;
+    }
+    .dieng-faq-card-fun[open] {
+      box-shadow: 0 6px 28px #00b5c239;
+      border-color: #00b5c2;
+    }
+    .dieng-faq-card-fun[open] summary {
+      color: #ffd600;
+    }
+    .dieng-faq-card-fun div {
+      padding-top: 4px;
+      color: #134075;
+    }
+
+    /* DESKRIPSI FUN WRAP */
+    .dieng-desc-fun-wrap {
+      max-width: 700px;
+      margin: 32px auto 10px auto;
+      padding: 0 12px;
+      background: #faffef;
+      border-radius: 1.2rem;
+      box-shadow: 0 4px 24px #13ecd91a;
+      font-size: 1.06rem;
+      color: #19496c;
+      text-align: left;
+    }
+    .dieng-desc-btn {
+      margin-top: 15px;
+      padding: 10px 28px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #ffd60012;
+      transition: background .18s;
+    }
+    .dieng-desc-btn:hover {
+      background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
+      color: #0071c2;
+    }
+    @media (max-width: 780px) {
+      .dieng-paket-grid-fun, .dieng-kota-grid-fun { flex-direction: column; align-items: center; }
+      .dieng-card-fun, .dieng-kota-card-fun { max-width: 94vw; width: 100%; }
+      .dieng-hero-img-fun { max-width: 98vw; }
+      .dieng-faq-wrap-fun { padding: 0 5vw 22px 5vw; }
+    }
+  </style>
 </Layout>
