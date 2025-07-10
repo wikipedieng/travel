@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const fasilitas = [
+  { icon: "🚐", text: "Transportasi full AC (Jemput dari stasiun/bandara Jogja/Semarang/Solo – Elf/Hiace/Bus Mini sesuai kebutuhan)" },
+  { icon: "🏨", text: "Penginapan Dieng (homestay, villa, hotel – bisa request sesuai budget)" },
+  { icon: "🍽️", text: "Makan selama tour (menu lokal/tradisional, bisa request khusus)" },
+  { icon: "🎟️", text: "Tiket masuk destinasi unggulan Dieng" },
+  { icon: "🥤", text: "Air mineral free sepanjang trip" },
+  { icon: "🧑‍✈️", text: "Driver + guide lokal profesional, ramah, informatif" },
+  { icon: "📸", text: "Free dokumentasi standar (kamera HP/DSLR, siap bantu spot foto)" },
+  { icon: "🧳", text: "Custom itinerary, fleksibel meeting point & rute – cocok untuk keluarga, rombongan, atau couple trip" },
+  { icon: "🗺️", text: "Bisa tambah adventure, fun games, city tour, atau sesi foto profesional (request)" }
+];
+
+const faq = [
+  {
+    q: "Apa bedanya private trip dengan open trip?",
+    a: "Private trip artinya satu rombongan hanya berisi peserta Anda/kelompok sendiri, tanpa dicampur peserta lain. Itinerary, waktu jemput, pilihan destinasi, dan penginapan bisa diatur sesuai request."
+  },
+  {
+    q: "Bagaimana proses penjemputan peserta?",
+    a: "Tim kami siap jemput langsung di stasiun/bandara Jogja, Semarang, Solo, atau titik yang Anda tentukan. Armada standby sesuai jadwal kedatangan Anda, tanpa menunggu peserta lain."
+  },
+  {
+    q: "Apakah bisa request destinasi dan upgrade fasilitas?",
+    a: "Bisa, itinerary sangat fleksibel. Silakan konsultasi ke tim booking untuk tambah destinasi, upgrade penginapan, atau minta sesi foto profesional."
+  },
+  {
+    q: "Apakah aman untuk keluarga dengan anak-anak atau lansia?",
+    a: "Aman, driver dan guide berpengalaman dengan group keluarga, anak-anak, hingga peserta usia senior. Jadwal bisa disesuaikan dengan kebutuhan rombongan."
+  },
+  {
+    q: "Berapa harga private trip Dieng?",
+    a: "Mulai dari Rp 1,2 juta per orang untuk paket 2 hari 1 malam (exclude tiket ke Jawa Tengah). Harga tergantung jumlah peserta, lama trip, dan kelas penginapan."
+  },
+  {
+    q: "Apakah ada layanan dokumentasi?",
+    a: "Setiap trip mendapat dokumentasi standar (kamera HP/DSLR guide). Ingin fotografer profesional? Bisa request tambahan jasa."
+  },
+];
+---
+
+<Layout title="Private Trip Dieng 2025 – Liburan Fleksibel & Nyaman, Fasilitas Lengkap, Bisa Custom" desc="Private trip Dieng paling fleksibel dan nyaman. Bisa custom itinerary, jemput dari Jogja/Semarang/Solo. Cocok untuk keluarga, group, atau honeymoon. Fasilitas lengkap, harga transparan, team profesional. Booking sekarang!">
+  <section class="privatetrip-hero">
+    <h1 class="privatetrip-title">Private Trip Dieng <span>2025</span></h1>
+    <p class="privatetrip-desc">
+      Mau liburan yang benar-benar sesuai gaya kamu? <b>Private Trip Dieng</b> hadir untuk kamu yang ingin bebas atur itinerary, waktu berangkat, rute, dan fasilitas. Mulai dari keluarga kecil, rombongan, hingga honeymoon couple, semua bisa diatur fleksibel.  
+      <br><br>
+      Trip ini cocok untuk peserta yang ingin <b>privasi, kenyamanan, dan pengalaman spesial</b> tanpa perlu gabung dengan grup lain. Semua urusan transportasi, penginapan, makan, hingga destinasi utama sudah di-handle oleh tim lokal berpengalaman.  
+      <br><br>
+      <ul class="privatetrip-list">
+        <li>Bisa custom meeting point – jemput stasiun, bandara, hotel area Jogja/Semarang/Solo</li>
+        <li>Itinerary bisa bebas request, tanpa jadwal kaku</li>
+        <li>Pilihan penginapan dari homestay ekonomis hingga villa eksklusif</li>
+        <li>Driver dan guide profesional – siap bantu dokumentasi & spot foto terbaik</li>
+        <li>Harga transparan, tidak ada biaya tersembunyi</li>
+      </ul>
+      <br>
+      Setibanya di Dieng, kamu langsung bisa nikmati view pegunungan, sunrise di Sikunir, Kawah Sikidang, Candi Arjuna, Telaga Warna, dan masih banyak lagi.  
+      <br><br>
+      <b>Bawa koper, tinggal duduk manis – semua sudah diatur biar liburan kamu makin seru & memorable!</b>
+    </p>
+  </section>
+
+  <section class="privatetrip-fasilitas">
+    <h2 class="privatetrip-section-title">Fasilitas Private Trip Dieng</h2>
+    <ul class="privatetrip-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="privatetrip-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="privatetrip-faq">
+    <h2 class="privatetrip-section-title">FAQ Private Trip Dieng</h2>
+    <div class="privatetrip-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="privatetrip-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .privatetrip-hero {
+    text-align: left;
+    background: linear-gradient(90deg, #f8fdff 0%, #fffbe6 100%);
+    padding: 44px 22px 18px 22px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #93dbfa14;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .privatetrip-title {
+    font-size: 2.19rem;
+    font-weight: 900;
+    color: #19335a;
+    margin-bottom: 13px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .privatetrip-title span {
+    color: #00b6c3;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 7px;
+  }
+  .privatetrip-desc {
+    font-size: 1.14rem;
+    color: #214769;
+    margin: 0 0 14px 0;
+    line-height: 1.72;
+    max-width: 790px;
+  }
+  .privatetrip-list {
+    margin: 11px 0 9px 25px;
+    padding: 0;
+  }
+  .privatetrip-list li {
+    font-size: 1.08rem;
+    color: #138189;
+    margin-bottom: 4px;
+    list-style: disc;
+  }
+  .privatetrip-section-title {
+    text-align: center;
+    font-size: 1.16rem;
+    font-weight: 800;
+    color: #00b6c3;
+    margin-bottom: 28px;
+    margin-top: 34px;
+    letter-spacing: 0;
+  }
+  .privatetrip-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto 18px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-start;
+    max-width: 440px;
+  }
+  .privatetrip-fasilitas-emoji { font-size: 1.23em; margin-right: 11px; }
+  .privatetrip-fasilitas-list li {
+    font-size: 1.11rem;
+    color: #183850;
+    font-weight: 600;
+    background: #f4fbff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #00b6c314;
+    display: flex; align-items: center;
+  }
+  .privatetrip-faq { max-width: 700px; margin: 37px auto 0 auto; padding: 0 12px 28px 12px; }
+  .privatetrip-faq-list { display: flex; flex-direction: column; gap: 18px; }
+  .privatetrip-faq-card {
+    background: linear-gradient(90deg, #f4fbff 80%, #fffdf4 100%);
+    border-radius: 1rem;
+    padding: 18px 23px 11px 23px;
+    box-shadow: 0 2px 14px #00b6c312;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.06rem;
+    font-weight: 500;
+    color: #1d4255;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .privatetrip-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #00b6c3;
+    outline: none;
+    margin-bottom: 8px;
+    font-size: 1.07rem;
+    transition: color 0.12s;
+  }
+  .privatetrip-faq-card[open] { box-shadow: 0 6px 22px #00b6c329; border-color: #00b6c3; }
+  .privatetrip-faq-card[open] summary { color: #19335a; }
+  .privatetrip-faq-card div { padding-top: 4px; color: #1d4255; }
+  @media (max-width: 700px) {
+    .privatetrip-hero { padding: 26px 2vw 13px 2vw; border-radius: 0 0 1rem 1rem; }
+    .privatetrip-title { font-size: 1.14rem; }
+    .privatetrip-section-title { font-size: 1.03rem; }
+  }
+  </style>
+</Layout>
