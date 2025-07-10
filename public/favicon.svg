@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .dieng-center-dot {
+      fill: #FFC727;
+      transition: fill 0.2s;
+    }
+    .dieng-mountain {
+      fill: #25A69A;
+    }
+    .dieng-sun {
+      fill: #FFC727;
+      opacity: 0.82;
+    }
+    @media (prefers-color-scheme: dark) {
+      .dieng-center-dot {
+        fill: #fff8dc;
+      }
+    }
+  </style>
+  <!-- Pegunungan -->
+  <path class="dieng-mountain" d="M4 24 L10 16 L16 24 L22 13 L28 24 Z"></path>
+  <!-- Matahari/sunrise -->
+  <circle class="dieng-sun" cx="16" cy="13" r="4"></circle>
+  <!-- Titik tengah -->
+  <circle class="dieng-center-dot" cx="16" cy="17" r="2"></circle>
+</svg>
