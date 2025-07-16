@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const fasilitas = [
+  { icon: "🚐", text: "Transportasi private full AC (Avanza/Innova/Elf/HiAce, sesuai jumlah peserta)" },
+  { icon: "🕗", text: "Jemput & drop dari meeting point kota terdekat (Wonosobo, Purwokerto, Jogja, Semarang, dan sekitarnya)" },
+  { icon: "🎟️", text: "Tiket masuk seluruh destinasi wisata Dieng sesuai itinerary" },
+  { icon: "🍽️", text: "Makan siang di resto lokal (menu tradisional khas Dieng)" },
+  { icon: "🥤", text: "Air mineral free selama perjalanan" },
+  { icon: "🧑‍✈️", text: "Driver + guide lokal profesional & ramah" },
+  { icon: "📸", text: "Free dokumentasi standar (kamera HP/DSLR, siap bantu spot foto)" },
+  { icon: "🧳", text: "Custom rute & itinerary sesuai request, fleksibel jumlah peserta" },
+];
+
+const faq = [
+  {
+    q: "Berapa harga paket wisata Dieng 1 hari untuk private trip?",
+    a: "Harga paket wisata 1 hari ke Dieng bervariasi tergantung jumlah peserta. Untuk trip private 2 orang mulai dari Rp 1.350.000/orang, 3 orang Rp 925.000/orang, 4 orang Rp 800.000/orang, 5–6 orang bisa lebih hemat (sekitar Rp 600.000–675.000/orang). Untuk rombongan 7–10 orang menggunakan HiAce/Elf mulai Rp 575.000–750.000/orang. Semua sudah termasuk transport, tiket masuk, makan siang, dan fasilitas lengkap."
+  },
+  {
+    q: "Itinerary destinasi mana saja yang dikunjungi dalam satu hari?",
+    a: "Itinerary paket 1 hari Dieng biasanya meliputi: Sunrise Bukit Sikunir (opsional), Telaga Warna & Batu Ratapan Angin, Kawah Sikidang, Komplek Candi Arjuna, Dieng Plateau Theater, hingga sentra oleh-oleh dan wisata kuliner. Semua destinasi bisa disesuaikan request dan waktu start trip."
+  },
+  {
+    q: "Apakah bisa berangkat dari kota selain Wonosobo atau Purwokerto?",
+    a: "Bisa! Meeting point fleksibel, bisa dari Jogja, Semarang, Solo, bahkan dari hotel/bandara/stasiun sesuai permintaan. Cukup infokan lokasi penjemputan saat booking."
+  },
+  {
+    q: "Apakah harga sudah termasuk semua biaya atau ada tambahan?",
+    a: "Harga paket wisata Dieng 1 hari sudah termasuk transportasi, tiket destinasi, makan siang, air mineral, driver, guide, dokumentasi, parkir, tol, dan BBM. Tidak ada biaya tersembunyi. Tambahan hanya jika ada request khusus di luar paket."
+  },
+  {
+    q: "Berapa maksimal peserta dalam satu mobil?",
+    a: "Avanza/Innova maksimal 6 peserta. Untuk rombongan lebih dari 7 orang akan disediakan HiAce atau Elf hingga 10 peserta, atau bus mini untuk rombongan lebih besar."
+  },
+  {
+    q: "Apakah bisa request destinasi atau itinerary custom?",
+    a: "Bisa banget! Itinerary, waktu keberangkatan, hingga destinasi bisa diatur sesuai keinginan peserta. Konsultasikan dulu biar tim bisa atur rute dan estimasi waktu terbaik."
+  },
+  {
+    q: "Bagaimana proses booking dan pembayaran?",
+    a: "Booking bisa dilakukan online (website/WA). Setelah deal itinerary & harga, peserta transfer DP sebagai tanda jadi. Sisa pelunasan bisa dibayar H-1 atau saat hari keberangkatan sesuai kesepakatan."
+  },
+];
+---
+
+<Layout title="Harga Paket Wisata Dieng 1 Hari Murah Terbaru 2025 - Trip Private & Rombongan" description="Info lengkap harga paket wisata Dieng 1 hari terbaru: fasilitas, itinerary, penjemputan fleksibel, cocok untuk private trip & rombongan. Booking mudah, harga transparan, destinasi lengkap!">
+  <section class="dieng-hero">
+    <h1 class="dieng-title">Harga Paket Wisata Dieng <span>1 Hari</span> Murah Terbaru</h1>
+    <p class="dieng-desc">
+      Ingin liburan singkat, praktis, dan tanpa ribet ke <b>Dieng?</b> Paket wisata 1 hari ini cocok untuk kamu yang punya waktu terbatas, tapi tetap ingin menjelajahi semua spot hits di negeri di atas awan. Semua transport, tiket, makan, dan guide sudah include. 
+    </p>
+    <p class="dieng-desc">
+      <b>Harga paket wisata Dieng 1 hari</b> sangat fleksibel, mulai dari Rp 575.000/orang untuk rombongan, atau Rp 1 jutaan per orang untuk private trip kecil. Cukup booking, pilih meeting point terdekat, dan tim akan menjemput sesuai request. Trip bisa dimulai dari Wonosobo, Purwokerto, Jogja, Semarang, atau kota lain di Jawa Tengah.
+    </p>
+    <p class="dieng-desc">
+      <b>Itinerary padat, destinasi utama Dieng tercover semua:</b> Sunrise Bukit Sikunir (opsional), Telaga Warna, Batu Ratapan Angin, Kawah Sikidang, Komplek Candi Arjuna, dan sentra oleh-oleh khas. Paket ini cocok untuk solo traveler, family trip, maupun outing kantor.
+    </p>
+    <p class="dieng-desc">
+      Semua fasilitas sudah all in—transportasi nyaman, makan siang, tiket wisata, guide, sampai dokumentasi! Nggak perlu takut ada biaya dadakan.  
+      <br /><br />
+      <b>Booking sekarang, liburan ke Dieng makin mudah & hemat!</b>
+    </p>
+  </section>
+
+  <section class="dieng-fasilitas">
+    <h2 class="dieng-section-title">Fasilitas Paket 1 Hari Dieng</h2>
+    <ul class="dieng-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="dieng-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="dieng-faq">
+    <h2 class="dieng-section-title">FAQ Paket Wisata Dieng 1 Hari</h2>
+    <div class="dieng-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="dieng-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+  .dieng-hero {
+    text-align: left;
+    background: linear-gradient(90deg, #fffdf4 0%, #f4fbff 100%);
+    padding: 42px 22px 18px 22px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 3px 32px #c7eaff19;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dieng-title {
+    font-size: 2.17rem;
+    font-weight: 900;
+    color: #19335a;
+    margin-bottom: 13px;
+    line-height: 1.14;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  .dieng-title span {
+    color: #2ab7ca;
+    font-weight: 900;
+    text-shadow: 0 2px 12px #fff8;
+    margin-left: 7px;
+  }
+  .dieng-desc {
+    font-size: 1.12rem;
+    color: #223a4f;
+    margin: 0 0 14px 0;
+    line-height: 1.7;
+    max-width: 780px;
+  }
+  .dieng-section-title {
+    text-align: center;
+    font-size: 1.14rem;
+    font-weight: 800;
+    color: #2ab7ca;
+    margin-bottom: 26px;
+    margin-top: 32px;
+    letter-spacing: 0;
+  }
+  .dieng-fasilitas-list {
+    list-style: none;
+    padding: 0; margin: 0 auto 18px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+  .dieng-fasilitas-emoji { font-size: 1.23em; margin-right: 11px; }
+  .dieng-fasilitas-list li {
+    font-size: 1.09rem;
+    color: #213a4d;
+    font-weight: 600;
+    background: #f4fbff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #2ab7ca14;
+    display: flex; align-items: center;
+  }
+  .dieng-faq { max-width: 700px; margin: 37px auto 0 auto; padding: 0 12px 28px 12px; }
+  .dieng-faq-list { display: flex; flex-direction: column; gap: 18px; }
+  .dieng-faq-card {
+    background: linear-gradient(90deg, #f4fbff 80%, #fffdf4 100%);
+    border-radius: 1rem;
+    padding: 18px 23px 11px 23px;
+    box-shadow: 0 2px 14px #2ab7ca12;
+    border: 1.1px solid #e3ecfa;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #213a4d;
+    transition: box-shadow .16s, border .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .dieng-faq-card summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: #2ab7ca;
+    outline: none;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    transition: color 0.12s;
+  }
+  .dieng-faq-card[open] { box-shadow: 0 6px 22px #2ab7ca29; border-color: #2ab7ca; }
+  .dieng-faq-card[open] summary { color: #19335a; }
+  .dieng-faq-card div { padding-top: 4px; color: #213a4d; }
+  @media (max-width: 700px) {
+    .dieng-hero { padding: 26px 2vw 13px 2vw; border-radius: 0 0 1rem 1rem; }
+    .dieng-title { font-size: 1.14rem; }
+    .dieng-section-title { font-size: 1.02rem; }
+  }
+  </style>
+</Layout>
