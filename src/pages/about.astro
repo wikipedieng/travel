@@ -1,0 +1,292 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const toc = [
+  { id: "apa-itu", title: "Apa Itu Paket Wisata Dieng?" },
+  { id: "kenapa-paket", title: "Kenapa Memilih Paket Wisata?" },
+  { id: "isi-paket", title: "Apa Saja Isi Paket Wisata Dieng?" },
+  { id: "siapa-cocok", title: "Siapa Saja yang Cocok?" },
+  { id: "jenis-paket", title: "Jenis-Jenis Paket Wisata Dieng" },
+  { id: "destinasi", title: "Destinasi Favorit" },
+  { id: "keuntungan", title: "Keuntungan Paket Wisata" },
+  { id: "tips", title: "Tips Memilih Paket" },
+  { id: "faq", title: "FAQ" },
+];
+
+const fasilitas = [
+  { icon: "✈️", text: "Tiket kereta/pesawat (opsional, bisa bantu booking sesuai kebutuhan)" },
+  { icon: "🚐", text: "Transport full AC antar-jemput dari stasiun/bandara Jogja/Semarang/Solo ke Dieng (Elf/Hiace/Bus Mini)" },
+  { icon: "🏨", text: "Penginapan Dieng (homestay, villa, hotel sesuai request)" },
+  { icon: "🍽️", text: "Makan selama tour (3x/hari untuk paket inap, menu lokal & tradisional)" },
+  { icon: "🎟️", text: "Tiket masuk destinasi utama & objek wisata Dieng" },
+  { icon: "🥤", text: "Air mineral free sepanjang trip" },
+  { icon: "🧑‍✈️", text: "Driver + guide lokal profesional, ramah & informatif" },
+  { icon: "📸", text: "Free dokumentasi standar (kamera HP/DSLR, siap bantu spot foto)" },
+  { icon: "🧳", text: "Bisa custom itinerary, fleksibel meeting point & rute" },
+];
+
+const faq = [
+  {
+    q: "Apa itu paket wisata Dieng?",
+    a: "Paket wisata Dieng adalah layanan wisata terpadu di mana semua kebutuhan liburan—mulai transportasi, penginapan, tiket masuk, hingga makan dan itinerary—sudah diatur oleh penyelenggara. Cocok untuk semua kalangan yang ingin liburan nyaman dan praktis."
+  },
+  {
+    q: "Bisa request custom destinasi atau itinerary?",
+    a: "Bisa banget! Hampir semua penyelenggara paket wisata Dieng bisa menyesuaikan rute, destinasi, hingga waktu berangkat dan pulang sesuai kebutuhan peserta."
+  },
+  {
+    q: "Apakah aman untuk keluarga dan anak-anak?",
+    a: "Aman. Paket sudah diatur agar nyaman untuk keluarga, anak-anak, maupun lansia. Guide dan driver siap membantu ekstra untuk kebutuhan khusus."
+  },
+  {
+    q: "Bagaimana cara memesan paket?",
+    a: "Tinggal pilih penyelenggara terpercaya, konsultasikan kebutuhan, dan lakukan booking sesuai instruksi. Biasanya bisa via WhatsApp, website, atau telepon."
+  },
+  {
+    q: "Apakah harga sudah termasuk semua fasilitas?",
+    a: "Ya, harga sudah termasuk semua yang tertulis di fasilitas (transport, penginapan, tiket masuk, makan, guide, air mineral, dll). Biasanya hanya pengeluaran pribadi yang belum termasuk."
+  },
+  {
+    q: "Kapan waktu terbaik ke Dieng?",
+    a: "Dieng bisa dikunjungi sepanjang tahun. Untuk cuaca cerah, puncak sunrise, dan festival budaya, biasanya Mei-September adalah musim favorit."
+  },
+];
+---
+
+<Layout title="Apa Itu Paket Wisata Dieng? Penjelasan & Panduan Praktis 2025">
+  <section class="about-hero">
+    <h1 class="about-title">Tentang <span>Paket Wisata Dieng</span></h1>
+    <p class="about-desc">
+      Belum pernah ke Dieng? Atau masih bingung paket wisata itu apa dan bagaimana sistemnya?<br/>
+      Di halaman ini, kamu akan menemukan penjelasan **paling lengkap dan mudah dimengerti** tentang dunia paket wisata Dieng. Cocok buat keluarga, pemula, atau siapa pun yang mau liburan praktis, nyaman, dan tanpa ribet.
+    </p>
+  </section>
+  
+  <nav class="about-toc">
+    <h2>Daftar Isi</h2>
+    <ul>
+      {toc.map((item) => (
+        <li><a href={`#${item.id}`}>{item.title}</a></li>
+      ))}
+    </ul>
+  </nav>
+  
+  <section id="apa-itu">
+    <h2>Apa Itu Paket Wisata Dieng?</h2>
+    <p>
+      <b>Paket wisata Dieng</b> adalah layanan liburan di mana semua kebutuhan perjalanan—mulai dari transportasi, penginapan, tiket masuk destinasi, hingga makan—sudah diatur dan disediakan dalam satu harga all-in.  
+      Peserta tinggal duduk manis, berangkat, dan menikmati semua destinasi tanpa perlu repot atur itinerary sendiri.
+    </p>
+  </section>
+  
+  <section id="kenapa-paket">
+    <h2>Kenapa Memilih Paket Wisata?</h2>
+    <p>
+      Banyak orang pengen ke Dieng, tapi kadang bingung harus mulai dari mana:  
+      “Nginep di mana? Destinasi apa aja? Makan di mana? Aman buat keluarga gak?”  
+      <br/><br/>
+      Dengan paket wisata, semua jawaban itu sudah dijamin—jadi kamu bisa liburan lebih santai, tanpa was-was soal detail perjalanan.
+    </p>
+  </section>
+  
+  <section id="isi-paket">
+    <h2>Apa Saja Isi Paket Wisata Dieng?</h2>
+    <ul class="about-fasilitas-list">
+      {fasilitas.map((f) => (
+        <li><span class="about-fasilitas-emoji">{f.icon}</span>{f.text}</li>
+      ))}
+    </ul>
+  </section>
+  
+  <section id="siapa-cocok">
+    <h2>Siapa Saja yang Cocok?</h2>
+    <ul>
+      <li>Keluarga kecil & besar, dari anak-anak hingga lansia</li>
+      <li>Rombongan teman sekolah, kampus, kantor, atau komunitas</li>
+      <li>Pemula yang baru pertama ke Dieng</li>
+      <li>Pasangan honeymoon, solo traveler, hingga grup gathering perusahaan</li>
+      <li>Semua yang mau liburan nyaman, tinggal duduk, tanpa pusing urus detail</li>
+    </ul>
+  </section>
+  
+  <section id="jenis-paket">
+    <h2>Jenis-Jenis Paket Wisata Dieng</h2>
+    <ul>
+      <li><b>Private Trip:</b> Hanya untuk rombonganmu, itinerary bisa diatur sesuai keinginan.</li>
+      <li><b>Open Trip:</b> Gabung bareng peserta lain, harga lebih hemat, tetap fasilitas lengkap.</li>
+      <li><b>One Day Trip:</b> Wisata seharian, start pagi pulang malam.</li>
+      <li><b>Family Trip:</b> Fokus pada kenyamanan keluarga & anak-anak.</li>
+      <li><b>Paket Honeymoon:</b> Suasana romantis, itinerary santai, penginapan istimewa.</li>
+      <li><b>Paket Instansi/Perusahaan:</b> Bisa sekalian gathering, outing, atau acara tim di Dieng.</li>
+    </ul>
+  </section>
+  
+  <section id="destinasi">
+    <h2>Destinasi Favorit Paket Wisata Dieng</h2>
+    <ul>
+      <li>Telaga Warna & Telaga Pengilon</li>
+      <li>Komplek Candi Arjuna</li>
+      <li>Kawah Sikidang</li>
+      <li>Batu Pandang Ratapan Angin</li>
+      <li>Bukit Sikunir (sunrise view)</li>
+      <li>Dieng Plateau Theater</li>
+      <li>Telaga Merdada, Telaga Dringo</li>
+      <li>Kawah Candradimuka</li>
+      <li>Kebun Teh, Gardu Pandang Tieng</li>
+      <li>Berburu kuliner & oleh-oleh khas Dieng</li>
+    </ul>
+  </section>
+  
+  <section id="keuntungan">
+    <h2>Keuntungan Memilih Paket Wisata Dieng</h2>
+    <ul>
+      <li><b>Hemat waktu & tenaga:</b> Semua sudah diatur, tinggal berangkat.</li>
+      <li><b>Harga jelas & transparan:</b> Tidak ada biaya dadakan, semua dijelaskan dari awal.</li>
+      <li><b>Ramah pemula & keluarga:</b> Itinerary disusun supaya semua peserta nyaman & happy.</li>
+      <li><b>Fleksibel:</b> Bisa request destinasi, upgrade penginapan, atau custom agenda.</li>
+      <li><b>Tim lokal profesional:</b> Siap membantu selama perjalanan, termasuk dokumentasi & info destinasi.</li>
+    </ul>
+  </section>
+  
+  <section id="tips">
+    <h2>Tips Memilih Paket Wisata Dieng</h2>
+    <ul>
+      <li>Pilih penyelenggara yang jelas & berpengalaman</li>
+      <li>Cek testimoni dan review peserta sebelumnya</li>
+      <li>Tanyakan detail fasilitas, biaya, dan yang termasuk/exclude</li>
+      <li>Pilih durasi & jenis paket sesuai kebutuhan & budget</li>
+      <li>Jangan ragu konsultasi kebutuhan khusus (anak-anak, lansia, dll)</li>
+    </ul>
+  </section>
+  
+  <section id="faq" class="about-faq">
+    <h2>FAQ Paket Wisata Dieng</h2>
+    <div class="about-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+      {faq.map((item, i) => (
+        <details class="about-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">{item.q}</summary>
+          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+            <span itemprop="text">{item.a}</span>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <style>
+    .about-hero {
+      text-align: left;
+      background: linear-gradient(90deg, #fffdf4 0%, #f4fbff 100%);
+      padding: 42px 22px 18px 22px;
+      border-radius: 0 0 2rem 2rem;
+      box-shadow: 0 3px 32px #c7eaff19;
+      margin-bottom: 24px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-title {
+      font-size: 2.17rem;
+      font-weight: 900;
+      color: #19335a;
+      margin-bottom: 13px;
+      line-height: 1.14;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .about-title span {
+      color: #2ab7ca;
+      font-weight: 900;
+      text-shadow: 0 2px 12px #fff8;
+      margin-left: 7px;
+    }
+    .about-desc {
+      font-size: 1.12rem;
+      color: #223a4f;
+      margin: 0 0 14px 0;
+      line-height: 1.7;
+      max-width: 780px;
+    }
+    .about-toc {
+      background: #f4fbff;
+      border-radius: 13px;
+      margin: 0 auto 38px auto;
+      padding: 22px 20px 17px 24px;
+      max-width: 530px;
+      box-shadow: 0 1px 16px #2ab7ca0c;
+    }
+    .about-toc h2 {
+      font-size: 1.13rem;
+      font-weight: 700;
+      color: #19335a;
+      margin-bottom: 7px;
+      letter-spacing: 0;
+    }
+    .about-toc ul {
+      padding-left: 19px;
+      margin: 0;
+    }
+    .about-toc li {
+      margin-bottom: 4px;
+      font-size: 1.04rem;
+    }
+    .about-toc a {
+      color: #2ab7ca;
+      text-decoration: underline;
+      transition: color .12s;
+    }
+    .about-toc a:hover { color: #19335a; }
+    .about-fasilitas-list {
+      list-style: none;
+      padding: 0; margin: 0 0 18px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      align-items: flex-start;
+      max-width: 420px;
+    }
+    .about-fasilitas-emoji { font-size: 1.23em; margin-right: 11px; }
+    .about-fasilitas-list li {
+      font-size: 1.09rem;
+      color: #213a4d;
+      font-weight: 600;
+      background: #f4fbff;
+      padding: 8px 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #2ab7ca14;
+      display: flex; align-items: center;
+    }
+    .about-faq { max-width: 700px; margin: 37px auto 0 auto; padding: 0 12px 28px 12px; }
+    .about-faq-list { display: flex; flex-direction: column; gap: 18px; }
+    .about-faq-card {
+      background: linear-gradient(90deg, #f4fbff 80%, #fffdf4 100%);
+      border-radius: 1rem;
+      padding: 18px 23px 11px 23px;
+      box-shadow: 0 2px 14px #2ab7ca12;
+      border: 1.1px solid #e3ecfa;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #213a4d;
+      transition: box-shadow .16s, border .13s;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-faq-card summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #2ab7ca;
+      outline: none;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      transition: color 0.12s;
+    }
+    .about-faq-card[open] { box-shadow: 0 6px 22px #2ab7ca29; border-color: #2ab7ca; }
+    .about-faq-card[open] summary { color: #19335a; }
+    .about-faq-card div { padding-top: 4px; color: #213a4d; }
+    @media (max-width: 700px) {
+      .about-hero { padding: 26px 2vw 13px 2vw; border-radius: 0 0 1rem 1rem; }
+      .about-title { font-size: 1.14rem; }
+      .about-toc { padding: 12px 5vw 10px 7vw; }
+    }
+  </style>
+</Layout>
