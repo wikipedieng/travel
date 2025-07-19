@@ -1,0 +1,266 @@
+---
+const toc = [
+  { href: "#deskripsi", title: "Tentang Putra Tour Dieng" },
+  { href: "#layanan", title: "Layanan" },
+  { href: "#paket-wisata", title: "Pilihan Paket Wisata" },
+  { href: "#kontak", title: "Kontak & Informasi" },
+  { href: "#faq", title: "FAQ" },
+];
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Paket Wisata Dieng oleh Putra Tour Dieng – Profil, Layanan, dan Kontak Lengkap</title>
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --primary: #19335a;
+        --accent: #4285f4;
+        --bg: #f7faff;
+        --text: #232c38;
+        --card-bg: #fff;
+        --shadow: 0 2px 14px 0 rgba(25,51,90,.08);
+      }
+      html, body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 12px 0 rgba(25,51,90,.05);
+        padding: 1.1rem 0;
+        margin-bottom: 2.5rem;
+      }
+      .header-wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .header-title {
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: .5px;
+        text-decoration: none;
+      }
+      .toc-wrap {
+        max-width: 780px;
+        margin: 0 auto 2.2rem auto;
+        padding: 0 1.2rem;
+      }
+      .toc-title {
+        font-size: 1.09rem;
+        font-weight: 600;
+        margin-bottom: .6rem;
+        color: #374151;
+        letter-spacing: .01em;
+      }
+      .toc-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .8rem 1.6rem;
+        margin: 0;
+        padding: 0 0 .7rem 0;
+        list-style: none;
+      }
+      .toc-list li a {
+        color: var(--accent);
+        font-size: 1rem;
+        text-decoration: none;
+        border-bottom: 1px solid #c8dafc;
+        transition: border-color .2s;
+      }
+      .toc-list li a:hover {
+        border-bottom: 2px solid var(--accent);
+      }
+      main {
+        min-height: 60vh;
+      }
+      .main-card {
+        max-width: 780px;
+        margin: 0 auto 2.5rem auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 2.3rem 1.2rem 2.6rem 1.2rem;
+      }
+      .main-card h1 {
+        font-size: 2rem;
+        color: var(--primary);
+        font-weight: 800;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 1.2rem;
+        letter-spacing: .5px;
+      }
+      .main-card h2 {
+        font-size: 1.28rem;
+        font-weight: 700;
+        margin: 2.3rem 0 1rem 0;
+        color: var(--primary);
+        letter-spacing: .02em;
+      }
+      .main-card h3 {
+        font-size: 1.08rem;
+        font-weight: 600;
+        margin: 2.1rem 0 .7rem 0;
+        color: #374151;
+      }
+      .main-card ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.2em;
+        line-height: 1.65;
+      }
+      .main-card p, .main-card li {
+        font-size: 1.06rem;
+        line-height: 1.7;
+        color: var(--text);
+      }
+      .main-card a {
+        color: var(--accent);
+        text-decoration: underline;
+        transition: color .17s;
+      }
+      .main-card a:hover {
+        color: #2467e3;
+      }
+      footer {
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #e8eaf0;
+        margin-top: 3.2rem;
+      }
+      .footer-wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 1.3rem 1.3rem;
+        text-align: left;
+        color: #737b89;
+        font-size: .99rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+      @media (max-width: 700px) {
+        .header-wrap, .footer-wrap, .main-card, .toc-wrap {padding-left: .8rem; padding-right: .8rem;}
+        .main-card {padding: 1.35rem .8rem 2.1rem .8rem;}
+        .main-card h1 {font-size: 1.45rem;}
+        .main-card h2 {font-size: 1.09rem;}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-wrap">
+        <a href="https://www.putratour.com/" class="header-title">Putratour.com</a>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc-wrap" aria-label="Daftar Isi">
+      <div class="toc-title">Daftar Isi</div>
+      <ul class="toc-list">
+        {toc.map(item => (
+          <li><a href={item.href}>{item.title}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <main>
+      <section class="main-card">
+        <h1 id="deskripsi">Putra Tour Dieng</h1>
+        <h2>Tentang Putra Tour Dieng</h2>
+        <p>
+          <b>Putra Tour Dieng</b> adalah sebuah usaha penyedia jasa perjalanan wisata yang berlokasi di Wonosobo, Jawa Tengah. Usaha ini dikenal sebagai salah satu operator wisata lokal yang melayani berbagai kebutuhan perjalanan ke kawasan Dataran Tinggi Dieng.
+          <br /><br />
+          Putra Tour Dieng umumnya menawarkan layanan wisata dengan sistem private trip, di mana peserta bisa berasal dari keluarga, kelompok kecil, rombongan instansi, maupun pasangan yang ingin berlibur ke Dieng tanpa harus bergabung dengan kelompok lain.
+          <br /><br />
+          Berbeda dengan operator open trip, Putra Tour Dieng lebih banyak menerima pesanan wisata dengan jadwal, rute, dan fasilitas yang disesuaikan keinginan peserta. Wisatawan dapat memilih sendiri titik penjemputan di sejumlah kota, menentukan durasi perjalanan, serta mengatur sendiri destinasi wisata yang ingin dikunjungi di kawasan Dieng.
+          <br /><br />
+          Dari segi layanan, Putra Tour Dieng menyediakan opsi perjalanan mulai dari satu hari (one day tour) hingga beberapa hari menginap di Dieng. Selain akomodasi dan transportasi, operator ini juga membantu dalam hal pemesanan tiket objek wisata, penyediaan kendaraan lokal (misalnya Jeep untuk rute tertentu), serta pengaturan kebutuhan logistik selama wisata.
+          <br /><br />
+          Dari pengalaman beberapa pengguna, Putra Tour Dieng cukup dikenal karena kemudahan komunikasi dan kemampuannya menyesuaikan itinerary sesuai kebutuhan peserta. Selain itu, adanya pilihan penjemputan dari berbagai kota seperti Jogja, Semarang, Purwokerto, Wonosobo, dan Solo, memudahkan wisatawan yang berasal dari luar daerah.
+          <br /><br />
+          Secara umum, <a href="https://www.putratour.com/">Putra Tour Dieng</a> merupakan salah satu alternatif bagi wisatawan yang membutuhkan layanan <a href="https://www.putratour.com/">paket wisata dieng</a> secara fleksibel, tanpa harus mengikuti jadwal kelompok besar atau open trip.
+        </p>
+
+        <h2 id="layanan">Layanan</h2>
+        <ul>
+          <li>Private Trip Dieng untuk keluarga, kelompok kecil, atau rombongan instansi</li>
+          <li>Paket wisata keluarga dan gathering di area Dieng</li>
+          <li>Paket wisata untuk pasangan atau honeymoon</li>
+          <li>Penyewaan mobil dan transportasi wisata lokal</li>
+          <li>Paket wisata dengan Jeep di beberapa jalur Dieng</li>
+          <li>Layanan penjemputan/meeting point dari berbagai kota (Jogja, Semarang, Purwokerto, Solo, Wonosobo, dan sekitarnya)</li>
+        </ul>
+
+        <h2 id="paket-wisata">Pilihan Paket Wisata</h2>
+        <ul>
+          <li>Paket One Day Tour Dieng (perjalanan pulang-pergi dalam satu hari)</li>
+          <li>Paket 2 Hari 1 Malam (menginap satu malam di Dieng)</li>
+          <li>Paket 3 Hari 2 Malam (dua malam di Dieng)</li>
+          <li>Paket wisata custom (durasi dan destinasi sesuai permintaan peserta)</li>
+        </ul>
+
+        <h2 id="kontak">Kontak &amp; Informasi</h2>
+        <ul>
+          <li><b>WhatsApp:</b> <a href="https://wa.me/628112828283" rel="nofollow" target="_blank">0811-2828-283</a></li>
+          <li><b>Telepon:</b> <a href="tel:08112828283" rel="nofollow">0811-2828-283</a></li>
+          <li><b>Email:</b> <a href="mailto:cs@putratour.com" rel="nofollow">cs@putratour.com</a></li>
+          <li><b>Website:</b> <a href="https://www.putratour.com/" target="_blank">putratour.com</a></li>
+          <li><b>TikTok:</b> <a href="https://www.tiktok.com/@pakettripdieng" target="_blank" rel="noopener">@pakettripdieng</a></li>
+          <li><b>Instagram:</b> <a href="https://www.instagram.com/putratourdieng/" target="_blank" rel="noopener">@putratourdieng</a></li>
+        </ul>
+
+        <h2 id="faq">FAQ</h2>
+        <div itemscope itemtype="https://schema.org/FAQPage">
+          <h3>Apakah Putra Tour Dieng hanya melayani wisata ke Dieng?</h3>
+          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <span itemprop="name"></span>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <div itemprop="text">Layanan utama Putra Tour Dieng memang berfokus pada perjalanan wisata ke kawasan Dataran Tinggi Dieng, baik untuk peserta dari Wonosobo maupun luar daerah.</div>
+            </div>
+          </div>
+          <h3>Apakah peserta bisa menentukan sendiri jadwal dan rute perjalanan?</h3>
+          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <span itemprop="name"></span>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <div itemprop="text">Ya, mayoritas perjalanan bersifat private dan dapat disesuaikan dengan kebutuhan peserta, termasuk jadwal, titik penjemputan, dan objek wisata yang ingin dikunjungi.</div>
+            </div>
+          </div>
+          <h3>Apakah ada layanan antar-jemput dari luar Wonosobo?</h3>
+          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <span itemprop="name"></span>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <div itemprop="text">Ada. Putra Tour Dieng melayani penjemputan dari berbagai kota, seperti Jogja, Semarang, Purwokerto, Solo, atau lokasi lain sesuai permintaan peserta.</div>
+            </div>
+          </div>
+          <h3>Bagaimana proses reservasi atau konsultasi dengan Putra Tour Dieng?</h3>
+          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <span itemprop="name"></span>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+              <div itemprop="text">Calon peserta dapat menghubungi langsung melalui WhatsApp, telepon, atau email yang tertera pada bagian kontak untuk mendapatkan informasi detail dan konsultasi paket.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-wrap">
+        &copy; {new Date().getFullYear()} <a href="https://www.putratour.com/" style="color:#19335a;text-decoration:none;">Putratour.com</a>
+        &mdash; Halaman ulasan dan referensi publik.
+      </div>
+    </footer>
+  </body>
+</html>
