@@ -6,15 +6,15 @@ const toc = [
   { href: "#kontak", title: "Kontak & Informasi" },
   { href: "#faq", title: "FAQ" },
 ];
+const year = new Date().getFullYear();
 ---
 
-<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Paket Wisata Dieng oleh Putra Tour Dieng – Profil, Layanan, dan Kontak Lengkap</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
       :root {
         --primary: #19335a;
@@ -178,12 +178,12 @@ const toc = [
 
     <main>
       <section class="main-card">
-   <img 
-      src="/images/putra-tour.jpg"
-      alt="Putra Tour Dieng - Paket Wisata Dieng" 
-      style="width:100%;max-width:870px;display:block;margin:0 auto 1.7rem auto;border-radius:14px;box-shadow:0 4px 24px 0 rgba(25,51,90,.11);" 
-      loading="lazy"
-    />
+        <img 
+          src="/images/putra-tour.jpg"
+          alt="Putra Tour Dieng - Paket Wisata Dieng" 
+          style="width:100%;max-width:870px;display:block;margin:0 auto 1.7rem auto;border-radius:14px;box-shadow:0 4px 24px 0 rgba(25,51,90,.11);" 
+          loading="lazy"
+        />
         <h1 id="deskripsi">Putra Tour Dieng</h1>
         <h2>Tentang Putra Tour Dieng</h2>
         <p>
@@ -229,45 +229,27 @@ const toc = [
         </ul>
 
         <h2 id="faq">FAQ</h2>
-        <div itemscope itemtype="https://schema.org/FAQPage">
+        <div class="faq-list">
           <h3>Apakah Putra Tour Dieng hanya melayani wisata ke Dieng?</h3>
-          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <span itemprop="name"></span>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <div itemprop="text">Layanan utama Putra Tour Dieng memang berfokus pada perjalanan wisata ke kawasan Dataran Tinggi Dieng, baik untuk peserta dari Wonosobo maupun luar daerah.</div>
-            </div>
-          </div>
+          <p>Layanan utama Putra Tour Dieng memang berfokus pada perjalanan wisata ke kawasan Dataran Tinggi Dieng, baik untuk peserta dari Wonosobo maupun luar daerah.</p>
+
           <h3>Apakah peserta bisa menentukan sendiri jadwal dan rute perjalanan?</h3>
-          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <span itemprop="name"></span>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <div itemprop="text">Ya, mayoritas perjalanan bersifat private dan dapat disesuaikan dengan kebutuhan peserta, termasuk jadwal, titik penjemputan, dan objek wisata yang ingin dikunjungi.</div>
-            </div>
-          </div>
+          <p>Ya, mayoritas perjalanan bersifat private dan dapat disesuaikan dengan kebutuhan peserta, termasuk jadwal, titik penjemputan, dan objek wisata yang ingin dikunjungi.</p>
+
           <h3>Apakah ada layanan antar-jemput dari luar Wonosobo?</h3>
-          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <span itemprop="name"></span>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <div itemprop="text">Ada. Putra Tour Dieng melayani penjemputan dari berbagai kota, seperti Jogja, Semarang, Purwokerto, Solo, atau lokasi lain sesuai permintaan peserta.</div>
-            </div>
-          </div>
+          <p>Ada. Putra Tour Dieng melayani penjemputan dari berbagai kota, seperti Jogja, Semarang, Purwokerto, Solo, atau lokasi lain sesuai permintaan peserta.</p>
+
           <h3>Bagaimana proses reservasi atau konsultasi dengan Putra Tour Dieng?</h3>
-          <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <span itemprop="name"></span>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-              <div itemprop="text">Calon peserta dapat menghubungi langsung melalui WhatsApp, telepon, atau email yang tertera pada bagian kontak untuk mendapatkan informasi detail dan konsultasi paket.</div>
-            </div>
-          </div>
+          <p>Calon peserta dapat menghubungi langsung melalui WhatsApp, telepon, atau email yang tertera pada bagian kontak untuk mendapatkan informasi detail dan konsultasi paket.</p>
         </div>
       </section>
     </main>
 
     <footer>
-<div class="footer-wrap">
-  &copy; {new Date().getFullYear()} <a href="https://www.putratour.com/" style="color:#19335a;text-decoration:none;">Putratour.com</a>
-  &mdash; Paket Wisata Dieng.
-</div>
-
+      <div class="footer-wrap">
+        &copy; {year} <a href="https://www.putratour.com/" style="color:#19335a;text-decoration:none;">Putratour.com</a>
+        &mdash; Paket Wisata Dieng.
+      </div>
     </footer>
   </body>
 </html>
