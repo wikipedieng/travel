@@ -352,18 +352,18 @@
     position: relative;
     overflow: hidden;
   }
-  .card-img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-    border-bottom: 1px solid #f2f4fa;
-    margin-bottom: 16px;
-    background: #e5eaf5;
-    transition: filter .13s;
-    display: block;
-  }
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: unset;    /* Atau boleh dihapus sekalian */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-bottom: 1px solid #f2f4fa;
+  margin-bottom: 16px;
+  background: #e5eaf5;
+  transition: filter .13s;
+  display: block;
+}
   .card h3 {
     color: var(--primary);
     font-size: 1.13rem;
