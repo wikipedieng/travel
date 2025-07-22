@@ -1,488 +1,477 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const paketHarian = [
-  { title: 'Paket 1 Hari', desc: 'Trip singkat: sunrise Sikunir, kawah, candi, kuliner, pulang hari.', icon: "🌄", link: "paket-1-hari" },
-  { title: 'Paket 2 Hari 1 Malam', desc: 'Explore lebih lengkap, sunrise, keliling Dieng & menginap.', icon: "🏕️", link: "paket-2-hari" },
-  { title: 'Paket 3 Hari 2 Malam', desc: 'Puas wisata, lebih santai, semua destinasi Dieng & hidden gem.', icon: "⛰️", link: "paket-3-hari" }
-];
-const paketKota = [
-  { kota: 'Jogja', icon: "🛵", link: "jogja" },
-  { kota: 'Semarang', icon: "🚗", link: "semarang" },
-  { kota: 'Purwokerto', icon: "🚌", link: "purwokerto" },
-  { kota: 'Solo', icon: "🚙", link: "solo" },
-  { kota: 'Wonosobo', icon: "🚐", link: "wonosobo" },
-  { kota: 'Jakarta', icon: "🗺️", link: "jakarta" }
-];
-const faqs = [
-  {
-    q: 'Apa keunggulan utama paket wisata di Dieng.Travel?',
-    a: 'Full privat, itinerary bebas, driver/guide ramah lokal, fasilitas lengkap, harga transparan, review real, bisa start dari berbagai kota. Liburan jadi 100% santai, tanpa ribet atau “diatur” travel lain.',
-    icon: "✨"
-  },
-  {
-    q: 'Bisa custom destinasi atau kuliner selama trip?',
-    a: 'Bisa banget! Mau ke hidden gem, spot Instagramable, atau request kuliner lokal—semua itinerary bisa diatur bareng tim kami. Tanpa biaya tambahan.',
-    icon: "📝"
-  },
-  {
-    q: 'Gimana kalau mau booking dadakan atau reschedule?',
-    a: 'Last minute booking? Silakan! Selama ada armada, kami siap. Reschedule juga fleksibel, tanpa ribet. Cukup chat admin.',
-    icon: "⏱️"
-  },
-  {
-    q: 'Apakah ada dokumentasi foto gratis selama trip?',
-    a: 'Ya, tiap grup dapat dokumentasi standar (HP/DSLR guide). Mau upgrade ke fotografer pro juga bisa, tinggal request.',
-    icon: "📸"
-  },
-  {
-    q: 'Bagaimana sistem pembayaran & pembatalan?',
-    a: 'DP ringan, pelunasan hari H. Pembatalan karena force majeure: refund aman. Semua tanpa biaya siluman!',
-    icon: "💸"
-  },
-  {
-    q: 'Apa aja yang harus disiapkan untuk wisata ke Dieng?',
-    a: 'Bawa jaket tebal, sepatu nyaman, charger, dan KTP/SIM. Packing list & tips cuaca dikirim otomatis H-1 biar anti kelupaan.',
-    icon: "🎒"
-  }
-];
 ---
+<head>
+  <title>Paket Wisata Dieng – Paket Tour Murah 2025</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;600;400&display=swap" rel="stylesheet" />
+</head>
 
-<Layout title="Paket Wisata Dieng 2025 - Fun, Private, & Fleksibel">
-  <section class="dieng-hero-fun">
-    <div class="dieng-hero-imgwrap-fun">
-      <img src="/images/paket-tour-dieng-travel.png" alt="Paket Wisata Dieng" class="dieng-hero-img-fun" />
+<header>
+  <div class="header-inner">
+    <a href="/" class="brand">Dieng.Travel</a>
+    <nav>
+      <a href="/" class="active">Beranda</a>
+      <a href="#paket">Paket</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h1 class="hero-title">Paket Wisata Dieng – Paket Tour Favorit, Rute Lengkap, Harga Bersahabat</h1>
+    <div class="hero-desc">
+      <p>Paket wisata Dieng menghadirkan pengalaman perjalanan yang berbeda—memadukan keindahan alam, udara sejuk, dan suasana khas pegunungan yang sulit ditemukan di tempat lain. Mulai dari sunrise di Bukit Sikunir, keliling candi, hingga menikmati ketenangan telaga, setiap aktivitas dirancang agar Anda benar-benar menikmati momen tanpa terburu-buru.</p>
+      <p>Dengan layanan terorganisir dan fasilitas lengkap, setiap perjalanan terasa lebih nyaman dan efisien. Paket ini cocok untuk liburan keluarga, perjalanan bersama teman, atau group gathering—semuanya dikemas profesional agar pengalaman Anda di Dieng semakin berkesan.</p>
     </div>
-    <h1 class="dieng-hero-title-fun">
-      Paket Wisata Dieng Private<br><span class="gradient-text">Liburan Seru, Fleksibel, Bikin Happy!</span>
-    </h1>
-    <p class="dieng-hero-desc-fun">
-      Nikmati pengalaman <b>jalan-jalan fun & fleksibel</b> bareng <span class="dieng-brand-fun">Dieng.<span>Travel</span></span>. Pilih paket wisata Dieng 1-3 hari, custom rute, jemput dari Jogja, Semarang, Purwokerto, Solo, atau kota mana saja. Harga bersahabat, fasilitas lengkap, booking gampang!
-    </p>
-  </section>
-
-  
-  <section class="dieng-desc-fun-wrap">
-    <div id="dieng-desc-short">
-      <p>
-        Penasaran kenapa banyak orang pilih trip ke Dieng bareng kami? Klik “Selengkapnya” buat tahu cerita serunya!
-      </p>
-      <button class="dieng-desc-btn" type="button" onclick="document.getElementById('dieng-desc-long').style.display='block'; this.style.display='none';">
-        Selengkapnya
-      </button>
-    </div>
-    <div id="dieng-desc-long" style="display:none;">
-      <p>
-        <b>Paket Wisata Dieng</b> bareng <span class="dieng-brand-fun">Dieng.Travel</span> itu soal pengalaman yang nyaman, seru, dan terasa akrab. Kami percaya liburan terbaik itu yang bikin hati tenang, waktu fleksibel, dan semua kebutuhan udah diurus. <br><br>
-        Setiap itinerary kami rancang supaya kamu bisa menikmati sunrise di Sikunir, jalan santai ke candi, sampai kulineran lokal, tanpa perlu repot mikir detail. Semua peserta dapat fasilitas lengkap, mulai kendaraan, tiket wisata, sampai dokumentasi foto. Tim kami pun selalu siap bantu, dari awal booking sampai pulang ke rumah.  
-      </p>
-      <ul>
-        <li>✔️ <b>Rute fleksibel</b>: bisa mulai dari Jogja, Semarang, Purwokerto, Solo, atau kota lain</li>
-        <li>✔️ <b>Harga jelas & lengkap</b>: nggak ada biaya tersembunyi, semua sudah termasuk tiket & makan</li>
-        <li>✔️ <b>Fasilitas nyaman</b>: kendaraan bersih, driver lokal, penginapan, sampai snack & air mineral</li>
-        <li>✔️ <b>Custom trip</b>: bebas pilih destinasi atau request spot favorit sesuai keinginan</li>
-        <li>✔️ <b>Respon cepat</b>: booking mudah, bisa last minute selama kuota masih ada</li>
-      </ul>
-      <p>
-        Kami ingin setiap perjalanan di Dieng bukan cuma soal foto-foto, tapi benar-benar jadi momen istimewa—entah itu sama keluarga, sahabat, komunitas, atau bahkan solo trip. Setiap peserta akan selalu kami bantu agar liburannya lancar dan penuh cerita seru yang dibawa pulang.<br><br>
-        <b>Pilih paket yang paling cocok, booking gampang, dan biar kami yang urus sisanya. Selamat menikmati petualangan di Dieng!</b>
-      </p>
+    <div class="hero-cta">
+      <a class="cta-wa" href="https://wa.me/dieng">Booking WhatsApp</a>
     </div>
   </section>
-  
 
-  <section class="dieng-paket-wrap-fun">
-    <h2 class="dieng-section-title-fun">Paket Wisata 1–3 Hari</h2>
-    <div class="dieng-paket-grid-fun">
-      {paketHarian.map((item) => (
-        <div class="dieng-card-fun">
-          <div class="dieng-card-emoji">{item.icon}</div>
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
-          <a href={item.link} class="dieng-btn-fun">Lihat Detail</a>
+  <section>
+    <h2 id="paket" style="text-align:center;margin:38px 0 14px 0;font-size:1.18rem;color:#224181;font-weight:700;letter-spacing:.18em;">
+      Pilihan Paket Wisata Dieng
+    </h2>
+    <div class="cards">
+      <!-- Paket 1 Hari -->
+      <div class="card">
+        <span style="position:absolute;top:14px;left:0;background:#36a3e1;color:#fff;font-size:.85rem;font-weight:600;padding:3px 22px 3px 16px;border-radius:0 1.5em 1.5em 0;letter-spacing:.06em;">Favorit</span>
+        <img src="/images/paket1.jpg" alt="Paket Dieng 1 Hari" class="card-img" loading="lazy" />
+        <div style="padding:18px 18px 0 18px;display:flex;flex-direction:column;flex:1;">
+          <h3 style="margin:0 0 10px 0;font-size:1.09rem;color:#19335a;">1 Hari: Explore Ikonik Dieng</h3>
+          <ul style="padding-left:19px;margin:0 0 18px 0;line-height:1.6;">
+            <li>Start pagi (Wonosobo/Jogja/Semarang)</li>
+            <li>Telaga Warna, Kawah Sikidang, Candi Arjuna, Batu Pandang</li>
+            <li>Transportasi nyaman, driver profesional</li>
+            <li>Tiket masuk, makan siang, air mineral</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+            <span style="display:inline-block;background:#fffaee;color:#e08e1e;font-size:1.26rem;font-weight:800;padding:8px 20px 8px 16px;border-radius:2em;letter-spacing:.04em;box-shadow:0 1px 6px 0 #ffd06726;border:1.5px solid #ffe0a2;">
+              Rp265.000<span style="font-size:.94rem;font-weight:500;color:#888;">/pax</span>
+            </span>
+            <span style="color:#56985b;font-weight:600;font-size:.93rem;letter-spacing:.04em;">Mulai dari</span>
+          </div>
+          <a class="cta-link" href="https://wa.me/dieng">Booking via WhatsApp</a>
         </div>
-      ))}
+      </div>
+      <!-- Paket 2 Hari 1 Malam -->
+      <div class="card">
+        <span style="position:absolute;top:14px;left:0;background:#f6b609;color:#fff;font-size:.85rem;font-weight:600;padding:3px 24px 3px 16px;border-radius:0 1.5em 1.5em 0;letter-spacing:.06em;">Paling Populer</span>
+        <img src="/images/paket2.jpg" alt="Paket Dieng 2 Hari 1 Malam" class="card-img" loading="lazy" />
+        <div style="padding:18px 18px 0 18px;display:flex;flex-direction:column;flex:1;">
+          <h3 style="margin:0 0 10px 0;font-size:1.09rem;color:#19335a;">2 Hari 1 Malam: Sunrise & Alam</h3>
+          <ul style="padding-left:19px;margin:0 0 18px 0;line-height:1.6;">
+            <li>Itinerary dua hari, 1 malam</li>
+            <li>Sunrise Sikunir, Telaga Warna, Kawah Sikidang, Candi Arjuna</li>
+            <li>Penginapan, makan 3x, sarapan</li>
+            <li>Transportasi, tiket, air mineral</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+            <span style="display:inline-block;background:#fdf6e3;color:#c77c08;font-size:1.26rem;font-weight:800;padding:8px 20px 8px 16px;border-radius:2em;letter-spacing:.04em;box-shadow:0 1px 6px 0 #ffe7a926;border:1.5px solid #ffdf9a;">
+              Rp875.000<span style="font-size:.94rem;font-weight:500;color:#888;">/pax</span>
+            </span>
+            <span style="color:#56985b;font-weight:600;font-size:.93rem;letter-spacing:.04em;">Mulai dari</span>
+          </div>
+          <a class="cta-link" href="https://wa.me/dieng">Booking via WhatsApp</a>
+        </div>
+      </div>
+      <!-- Paket 3 Hari 2 Malam -->
+      <div class="card">
+        <span style="position:absolute;top:14px;left:0;background:#e94159;color:#fff;font-size:.85rem;font-weight:600;padding:3px 23px 3px 16px;border-radius:0 1.5em 1.5em 0;letter-spacing:.06em;">Paling Laris</span>
+        <img src="/images/paket3.jpg" alt="Paket Dieng 3 Hari 2 Malam" class="card-img" loading="lazy" />
+        <div style="padding:18px 18px 0 18px;display:flex;flex-direction:column;flex:1;">
+          <h3 style="margin:0 0 10px 0;font-size:1.09rem;color:#19335a;">3 Hari 2 Malam: Jelajah Dieng</h3>
+          <ul style="padding-left:19px;margin:0 0 18px 0;line-height:1.6;">
+            <li>Trip private, 3 hari 2 malam</li>
+            <li>Sunrise Sikunir, Telaga Dringo, Air Terjun Sikarim, Batu Pandang</li>
+            <li>2 malam penginapan, makan lengkap</li>
+            <li>Tiket wisata & tour guide lokal</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+            <span style="display:inline-block;background:#fcebef;color:#ce2d46;font-size:1.26rem;font-weight:800;padding:8px 20px 8px 16px;border-radius:2em;letter-spacing:.04em;box-shadow:0 1px 6px 0 #f595aa1c;border:1.5px solid #fab4c6;">
+              Rp1.465.000<span style="font-size:.94rem;font-weight:500;color:#888;">/pax</span>
+            </span>
+            <span style="color:#56985b;font-weight:600;font-size:.93rem;letter-spacing:.04em;">Mulai dari</span>
+          </div>
+          <a class="cta-link" href="https://wa.me/dieng">Booking via WhatsApp</a>
+        </div>
+      </div>
+      <!-- Paket 4 Hari 3 Malam -->
+      <div class="card">
+        <span style="position:absolute;top:14px;left:0;background:#2442e6;color:#fff;font-size:.85rem;font-weight:600;padding:3px 19px 3px 16px;border-radius:0 1.5em 1.5em 0;letter-spacing:.06em;">Paket Premium</span>
+        <img src="/images/paket4.jpg" alt="Paket Dieng 4 Hari 3 Malam" class="card-img" loading="lazy" />
+        <div style="padding:18px 18px 0 18px;display:flex;flex-direction:column;flex:1;">
+          <h3 style="margin:0 0 10px 0;font-size:1.09rem;color:#19335a;">4 Hari 3 Malam: Eksplorasi Tenang</h3>
+          <ul style="padding-left:19px;margin:0 0 18px 0;line-height:1.6;">
+            <li>Destinasi tambahan: Telaga Merdada, perkebunan teh, Dieng Plateau Theater</li>
+            <li>3 malam penginapan, makan & transportasi full</li>
+            <li>Semua tiket masuk, guide lokal</li>
+            <li>Fasilitas premium, waktu santai</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+            <span style="display:inline-block;background:#e6edfa;color:#2047d2;font-size:1.26rem;font-weight:800;padding:8px 20px 8px 16px;border-radius:2em;letter-spacing:.04em;box-shadow:0 1px 6px 0 #a5bbf818;border:1.5px solid #c0d4fb;">
+              Rp2.450.000<span style="font-size:.94rem;font-weight:500;color:#888;">/pax</span>
+            </span>
+            <span style="color:#56985b;font-weight:600;font-size:.93rem;letter-spacing:.04em;">Mulai dari</span>
+          </div>
+          <a class="cta-link" href="https://wa.me/dieng">Booking via WhatsApp</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="dieng-paket-wrap-fun">
-    <h2 class="dieng-section-title-fun">Paket Wisata Dari Kota Asal</h2>
-    <div class="dieng-kota-grid-fun">
-      {paketKota.map((item) => (
-        <a href={item.link} class="dieng-kota-card-fun">
-          <span class="dieng-kota-emoji">{item.icon}</span>
-          {item.kota}
-        </a>
-      ))}
+  <!-- FAQ -->
+  <section id="faq" class="faq-wrap">
+    <h2 style="color:#224181;font-size:1.11rem;font-weight:700;margin:0 0 8px 0;letter-spacing:.09em;">
+      FAQ – Pertanyaan Umum Paket Wisata Dieng
+    </h2>
+
+    <!-- FAQ Card 1 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq1">
+      <label for="faq1" class="faq-label">Apa saja yang termasuk dalam paket wisata Dieng?</label>
+      <div class="faq-content">
+        Semua paket sudah termasuk transportasi AC, penginapan (untuk paket lebih dari 1 hari), tiket masuk destinasi utama, makan sesuai itinerary, pemandu lokal, dan dokumentasi standar. Detail fasilitas bisa dilihat pada deskripsi setiap paket.
+      </div>
+    </div>
+    <!-- FAQ Card 2 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq2">
+      <label for="faq2" class="faq-label">Berapa harga paket wisata Dieng dan apakah ada promo?</label>
+      <div class="faq-content">
+        Harga paket bervariasi tergantung jumlah peserta, durasi, fasilitas, dan titik penjemputan. Untuk info harga terbaru dan promo, silakan cek daftar harga di halaman atau hubungi tim kami. Promo khusus biasanya tersedia untuk group, weekday, atau periode tertentu.
+      </div>
+    </div>
+    <!-- FAQ Card 3 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq3">
+      <label for="faq3" class="faq-label">Kapan waktu terbaik untuk wisata ke Dieng?</label>
+      <div class="faq-content">
+        Waktu terbaik berkunjung ke Dieng adalah musim kemarau (Juni–Agustus) saat cuaca cerah dan pemandangan lebih maksimal. Untuk pengalaman sunrise terbaik, pilih keberangkatan dini hari dan gunakan jaket hangat karena suhu bisa sangat dingin.
+      </div>
+    </div>
+    <!-- FAQ Card 4 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq4">
+      <label for="faq4" class="faq-label">Bisakah request itinerary khusus atau private trip?</label>
+      <div class="faq-content">
+        Bisa. Wisatawan bebas request itinerary sesuai minat, baik untuk private trip, keluarga, maupun rombongan. Tim kami siap membantu menyusun rute sesuai kebutuhan, termasuk tambahan destinasi atau aktivitas tertentu.
+      </div>
+    </div>
+    <!-- FAQ Card 5 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq5">
+      <label for="faq5" class="faq-label">Dari mana saja titik penjemputan yang tersedia?</label>
+      <div class="faq-content">
+        Penjemputan tersedia dari Jogja, Semarang, Purwokerto, Solo, Wonosobo, dan beberapa kota lain di Jawa Tengah. Penjemputan dari stasiun, bandara, atau lokasi tertentu bisa dikonsultasikan lebih lanjut.
+      </div>
+    </div>
+    <!-- FAQ Card 6 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq6">
+      <label for="faq6" class="faq-label">Apa saja tips wisata ke Dieng agar perjalanan lebih nyaman?</label>
+      <div class="faq-content">
+        Bawa jaket hangat, pakaian nyaman, alas kaki anti slip, serta perlengkapan pribadi. Hindari musim hujan jika ingin pemandangan maksimal. Selalu siapkan masker untuk ke kawah dan bawa uang tunai secukupnya, karena ATM terbatas di kawasan Dieng.
+      </div>
+    </div>
+    <!-- FAQ Card 7 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq7">
+      <label for="faq7" class="faq-label">Bagaimana fasilitas umum di Dieng (toilet, mushola, dll)?</label>
+      <div class="faq-content">
+        Fasilitas umum seperti toilet, mushola, dan area parkir tersedia di sebagian besar destinasi utama. Namun, sebaiknya tetap membawa perlengkapan pribadi secukupnya dan selalu menjaga kebersihan selama wisata.
+      </div>
+    </div>
+    <!-- FAQ Card 8 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq8">
+      <label for="faq8" class="faq-label">Apakah anak-anak dan lansia aman ikut wisata Dieng?</label>
+      <div class="faq-content">
+        Sebagian besar destinasi di Dieng aman untuk segala usia. Untuk anak-anak dan lansia, disarankan memilih itinerary ringan tanpa pendakian yang berat, dan selalu didampingi keluarga.
+      </div>
+    </div>
+    <!-- FAQ Card 9 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq9">
+      <label for="faq9" class="faq-label">Bagaimana jika cuaca buruk saat wisata di Dieng?</label>
+      <div class="faq-content">
+        Jika cuaca kurang mendukung, itinerary bisa disesuaikan dengan destinasi indoor atau wisata kuliner lokal. Tim kami selalu memberikan update kondisi terbaru dan alternatif jadwal jika diperlukan.
+      </div>
+    </div>
+    <!-- FAQ Card 10 -->
+    <div class="faq-card">
+      <input type="checkbox" class="faq-input" id="faq10">
+      <label for="faq10" class="faq-label">Apakah dokumentasi sudah termasuk dalam paket?</label>
+      <div class="faq-content">
+        Paket wisata Dieng umumnya sudah termasuk dokumentasi standar (foto grup di beberapa spot utama). Untuk dokumentasi lebih lengkap seperti video, drone, atau file digital khusus bisa request di awal.
+      </div>
     </div>
   </section>
-<section class="dieng-rekom-wrap-fun">
-
-    <p>
-  <h2 class="dieng-section-title-fun">Paket Wisata Dieng dari Jakarta: Pengalaman yang Dirancang Sempurna</h2>
-
-  <div class="dieng-rekom-card-fun">
-    <img 
-      src="/images/trip-jakarta-dieng.png" 
-      alt="Paket Wisata Dieng dari Jakarta" 
-      style="width:100%;max-width:700px;display:block;margin:0 auto 20px auto;border-radius:18px;box-shadow:0 4px 18px 0 rgba(60,60,120,0.08);"
-    >
-    <p>
-Dari semaraknya Jakarta, Dieng hadir sebagai destinasi yang membawa napas baru—tempat di mana pagi berkabut dan udara segar pegunungan langsung menyapa sejak langkah pertama. <a href="https://www.paketwisatadiengwonosobo.com/" class="dieng-rekom-link">Paket wisata Dieng dari Jakarta</a> dirancang untuk menghadirkan kemudahan tanpa kehilangan sentuhan personal: transportasi yang nyaman dari meeting point yang telah ditentukan, penginapan sudah dipilihkan, dan itinerary ramah segala usia. Untuk kamu yang ingin pengalaman maksimal, sebaiknya rencanakan keberangkatan di musim kemarau (Juni–September), ketika langit Dieng cerah dan sunrise di Bukit Sikunir benar-benar memesona. Pastikan membawa jaket tebal, karena suhu Dieng di malam hari bisa turun drastis—lebih dingin dari yang dibayangkan oleh warga Jakarta.
-    </p>
-    <p>
-Setiap detail perjalanan sudah dipersiapkan mulai dari konfirmasi meeting point, pengaturan tiket masuk destinasi, hingga rekomendasi wisata kuliner lokal yang layak dicoba. Kuota peserta pada setiap jadwal keberangkatan terbatas demi menjaga kenyamanan, jadi pastikan booking jauh hari terutama jika berencana berangkat di musim liburan. Dengan paket wisata ini, kamu tinggal fokus menikmati perjalanan, bertukar cerita di perjalanan malam, hingga menjelajah dataran tinggi tanpa perlu repot mengatur detail kecil. Cocok untuk liburan keluarga, reuni sahabat lama, atau healing sejenak dari rutinitas kota—setiap sudut Dieng menawarkan kisah baru yang siap kamu bawa pulang.
-    </p>
+</main>
+<footer id="kontak">
+  <div>
+    &copy; 2025 Dieng.Travel –
+    Booking &amp; info: <a href="https://wa.me/dieng" class="footer-link">wa.me/dieng</a>
   </div>
-</section>
-
-
-<section class="dieng-rekom-wrap-fun">
-
-    <p>
-  <h2 class="dieng-section-title-fun">Harga Paket Tour Dieng: Pilihan Fleksibel, Pengalaman Maksimal</h2>
-
-  <div class="dieng-rekom-card-fun">
-    <img 
-      src="/images/harga-paket-wisata-dieng.png" 
-      alt="Harga Paket Wisata Dieng" 
-      style="width:100%;max-width:700px;display:block;margin:0 auto 20px auto;border-radius:18px;box-shadow:0 4px 18px 0 rgba(60,60,120,0.08);"
-    >
-    <p>
-Berlibur ke Dieng kini lebih sederhana dengan pilihan <a href="https://www.putratour.id/" class="dieng-rekom-link">harga paket wisata Dieng</a> yang transparan dan ramah di kantong. Dari Wonosobo, harga paket wisata Dieng mulai Rp525.000 per orang untuk perjalanan satu hari, sudah termasuk kendaraan, makan siang, tiket masuk ke destinasi unggulan seperti Bukit Sikunir, Telaga Cebong, Kawah Sikidang, hingga Candi Arjuna. Untuk kamu yang berangkat dari Jogja atau Purwokerto, harga paket wisata Dieng dibuka mulai Rp725.000 per orang, sementara dari Semarang dan Solo tersedia mulai Rp750.000 per orang untuk paket satu hari yang praktis.
-    </p>
-    <p>
-Setiap paket sudah mencakup fasilitas lengkap sesuai kebutuhan perjalanan: transportasi nyaman, pendamping wisata, makan, dan pengaturan tiket destinasi, sehingga kamu bisa menikmati keindahan Dieng tanpa perlu repot mengatur detail sendiri. Pilihan durasi pun fleksibel, dari satu hari penuh eksplorasi hingga paket dua atau tiga hari dengan tambahan pengalaman menginap dan kunjungan ke lebih banyak spot. Dengan harga paket wisata Dieng yang kompetitif, liburan ke negeri atas awan jadi lebih mudah untuk semua kalangan—baik bersama keluarga, teman, maupun perjalanan pribadi untuk menemukan suasana baru di dataran tinggi Jawa.
-    </p>
+  <div style="margin-top:8px;font-size:.97rem;color:#ecd26a;">
+    Paket wisata Dieng, Jawa Tengah, Indonesia.
   </div>
-</section>
+</footer>
 
-
-
-
-
-<section class="dieng-rekom-wrap-fun">
-  <h2 class="dieng-section-title-fun">Rekomendasi Paket tour Dieng dari EO Lokal</h2>
-
-  <div class="dieng-rekom-card-fun">
-    <img 
-      src="/images/dieng-paket-wisata.png" 
-      alt="Paket Wisata Dieng" 
-      style="width:100%;max-width:700px;display:block;margin:0 auto 20px auto;border-radius:18px;box-shadow:0 4px 18px 0 rgba(60,60,120,0.08);"
-    >
-    <p>
-      Kalau kamu mencari <strong>paket wisata Dieng</strong> yang fleksibel dan cocok untuk private trip keluarga, sahabat, atau rombongan kecil—kami juga merekomendasikan <a href="/putra-tour-dieng/" target="_blank" rel="noopener" class="dieng-rekom-link">Putra Tour Dieng</a>. 
-    </p>
-    <p>
-      EO ini dikenal dengan pelayanan ramah, itinerary yang rapi, dan fasilitas lengkap. Pilihan paketnya juga banyak, mulai 1 hingga 3 hari, lengkap dengan dokumentasi, tiket wisata, dan penjemputan dari kota-kota besar seperti Jogja, Semarang, Purwokerto, hingga Jakarta.
-    </p>
-    <p>
-      Jadi, buat kamu yang suka kebebasan atur waktu dan destinasi sendiri, <a href="https://www.putratourdieng.com" target="_blank" rel="noopener" class="dieng-rekom-link">paket wisata Dieng dari Putra Tour</a> bisa jadi opsi menarik untuk dipertimbangkan.
-    </p>
-  </div>
-</section>
-
-  <section class="dieng-faq-wrap-fun">
-    <h2 class="dieng-section-title-fun">FAQ – Paket Wisata Dieng</h2>
-    <div class="dieng-faq-list-fun">
-      {faqs.map((item, i) => (
-        <details class="dieng-faq-card-fun" {...(i === 0 && { open: true })}>
-          <summary>
-            <span class="dieng-faq-emoji">{item.icon}</span>{item.q}
-          </summary>
-          <div>{item.a}</div>
-        </details>
-      ))}
-    </div>
-  </section>
-
-  <style>
-.dieng-rekom-wrap-fun {
-  max-width: 740px;
-  margin: 32px auto;
-  padding: 0 16px;
-}
-.dieng-rekom-card-fun {
-  background: linear-gradient(120deg, #e8fcff 70%, #fffde2 100%);
-  border: 1.4px solid #cceffc;
-  border-radius: 1.2rem;
-  padding: 24px 26px;
-  box-shadow: 0 3px 24px #00b5c214;
-  color: #1b4477;
-  font-size: 1.06rem;
-  line-height: 1.7;
-}
-.dieng-rekom-card-fun p {
-  margin-bottom: 14px;
-}
-.dieng-rekom-link {
-  color: #0091e6;
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1.5px solid #ffd60055;
-}
-.dieng-rekom-link:hover {
-  color: #ffd600;
-  border-color: #00b5c2;
-}
-
-    /* HERO FUN */
-    .dieng-hero-fun {
-      padding: 0 0 30px 0;
-      text-align: center;
-      background: linear-gradient(90deg, #e8fcff 0%, #faffef 100%);
-    }
-    .dieng-hero-imgwrap-fun {
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      border-radius: 1.5rem;
-      overflow: hidden;
-      box-shadow: 0 4px 34px #1dc7c819;
-      margin-top: -34px;
-      background: #fff;
-    }
-    .dieng-hero-img-fun {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-    .dieng-hero-title-fun {
-      font-size: 2.28rem;
-      font-weight: 900;
-      color: #1b4477;
-      margin-bottom: 16px;
-      margin-top: 2.2rem;
-      letter-spacing: -0.5px;
-      line-height: 1.13;
-    }
-    .gradient-text {
-      background: linear-gradient(90deg, #0091e6, #24e6a0 60%, #ffe666 100%);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      font-size: 1.15em;
-    }
-    .dieng-hero-desc-fun {
-      font-size: 1.13rem;
-      color: #3c6186;
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-    .dieng-brand-fun {
-      font-weight: 900;
-      color: #00b5c2;
-      letter-spacing: 1px;
-    }
-    .dieng-brand-fun span {
-      color: #ffd600;
-    }
-
-    @media (max-width: 600px) {
-      .dieng-hero-imgwrap-fun { max-width: 100vw; border-radius: 0.75rem; margin-top: -18px; }
-      .dieng-hero-img-fun { width: 100vw; max-width: 100vw; }
-      .dieng-hero-title-fun { font-size: 1.35rem; margin-top: 1.1rem; }
-    }
-
-    /* CARD PAKET FUN */
-    .dieng-paket-wrap-fun { margin-top: 30px; margin-bottom: 38px; }
-    .dieng-section-title-fun {
-      font-size: 1.42rem;
-      font-weight: 700;
-      color: #0091e6;
-      margin-bottom: 34px;
-      margin-top: 0;
-      text-align: center;
-      letter-spacing: 0;
-    }
-    .dieng-paket-grid-fun {
-      display: flex;
-      gap: 26px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .dieng-card-fun {
-      background: linear-gradient(140deg, #e5fbfc 65%, #fffde2 100%);
-      border-radius: 1.2rem;
-      box-shadow: 0 6px 32px #13ecd91a, 0 1.5px 7px #0097c233;
-      padding: 33px 28px 29px 28px;
-      max-width: 280px;
-      width: 100%;
-      min-height: 190px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      transition: transform .13s, box-shadow .2s;
-      border: 1.3px solid #d5f1ff;
-      position: relative;
-      overflow: hidden;
-    }
-    .dieng-card-fun:hover {
-      transform: translateY(-8px) scale(1.025);
-      box-shadow: 0 14px 40px 0 #00b5c247, 0 2px 12px #ffd60028;
-      border-color: #00b5c2;
-    }
-    .dieng-card-fun h3 {
-      font-size: 1.13rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: #0071c2;
-    }
-    .dieng-card-fun p {
-      font-size: 1rem;
-      margin-bottom: 18px;
-      color: #1c567c;
-    }
-    .dieng-btn-fun {
-      display: inline-block;
-      background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
-      color: #fff;
-      font-weight: 800;
-      padding: 9px 20px;
-      border-radius: 99px;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background .15s, box-shadow .14s;
-      box-shadow: 0 2px 8px #ffd60012;
-      margin-top: auto;
-      letter-spacing: 0.01em;
-      border: 0;
-    }
-    .dieng-btn-fun:hover {
-      background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
-      color: #0071c2;
-      box-shadow: 0 6px 18px #00b5c229;
-    }
-    .dieng-card-emoji {
-      font-size: 2rem;
-      position: absolute;
-      right: 20px; top: 15px;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    /* KOTA FUN */
-    .dieng-kota-grid-fun {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      justify-content: center;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    .dieng-kota-card-fun {
-      background: linear-gradient(90deg, #00b5c2 60%, #ffd600 100%);
-      color: #fff;
-      font-weight: 700;
-      padding: 13px 30px;
-      border-radius: 999px;
-      font-size: 1.1rem;
-      box-shadow: 0 3px 18px #00b5c226;
-      text-decoration: none;
-      transition: background .14s, color .16s;
-      border: 1.5px solid #eaf2ff;
-      display: flex;
-      align-items: center;
-      gap: 11px;
-    }
-    .dieng-kota-card-fun:hover {
-      background: #133562;
-      color: #ffd600;
-      border-color: #00b5c2;
-      box-shadow: 0 7px 22px #ffd6001a;
-    }
-    .dieng-kota-emoji {
-      font-size: 1.45em;
-    }
-
-    /* FAQ FUN */
-    .dieng-faq-wrap-fun {
-      max-width: 720px;
-      margin: 56px auto 0 auto;
-      padding: 0 12px 30px 12px;
-    }
-    .dieng-faq-list-fun {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .dieng-faq-card-fun {
-      background: linear-gradient(90deg, #e5fbfc 80%, #fffde2 100%);
-      border-radius: 1rem;
-      padding: 19px 23px 12px 22px;
-      box-shadow: 0 2px 16px #00b5c219;
-      border: 1.2px solid #e3ecfa;
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: #1b4477;
-      transition: box-shadow .16s, border .13s;
-      position: relative;
-      overflow: hidden;
-    }
-    .dieng-faq-card-fun summary {
-      cursor: pointer;
-      font-weight: 800;
-      color: #00b5c2;
-      outline: none;
-      margin-bottom: 7px;
-      font-size: 1.08rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.12s;
-    }
-    .dieng-faq-emoji {
-      font-size: 1.22em;
-      margin-right: 4px;
-    }
-    .dieng-faq-card-fun[open] {
-      box-shadow: 0 6px 28px #00b5c239;
-      border-color: #00b5c2;
-    }
-    .dieng-faq-card-fun[open] summary {
-      color: #ffd600;
-    }
-    .dieng-faq-card-fun div {
-      padding-top: 4px;
-      color: #134075;
-    }
-
-    /* DESKRIPSI FUN WRAP */
-    .dieng-desc-fun-wrap {
-      max-width: 700px;
-      margin: 32px auto 10px auto;
-      padding: 0 12px;
-      background: #faffef;
-      border-radius: 1.2rem;
-      box-shadow: 0 4px 24px #13ecd91a;
-      font-size: 1.06rem;
-      color: #19496c;
-      text-align: left;
-    }
-    .dieng-desc-btn {
-      margin-top: 15px;
-      padding: 10px 28px;
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #00b5c2, #ffd600 90%);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #ffd60012;
-      transition: background .18s;
-    }
-    .dieng-desc-btn:hover {
-      background: linear-gradient(90deg, #ffd600 30%, #00b5c2 100%);
-      color: #0071c2;
-    }
-    @media (max-width: 780px) {
-      .dieng-paket-grid-fun, .dieng-kota-grid-fun { flex-direction: column; align-items: center; }
-      .dieng-card-fun, .dieng-kota-card-fun { max-width: 94vw; width: 100%; }
-      .dieng-hero-img-fun { max-width: 98vw; }
-      .dieng-faq-wrap-fun { padding: 0 5vw 22px 5vw; }
-    }
-  </style>
-</Layout>
+<style>
+  :root {
+    --primary: #224181;
+    --primary-light: #f5f8fd;
+    --text: #1a2236;
+    --muted: #5e6e8a;
+    --card: #fff;
+    --shadow: 0 4px 32px #22418110;
+    --radius: 22px;
+    --accent: #ffd700;
+  }
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    background: var(--primary-light);
+    color: var(--text);
+    font-size: 1.09rem;
+    letter-spacing: .01em;
+  }
+  header {
+    background: var(--card);
+    box-shadow: 0 2px 18px #e3eaf7a9;
+    position: sticky;
+    top: 0; z-index: 10;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 32px 18px 32px;
+  }
+  .brand {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: 'Inter', Arial, sans-serif;
+    text-transform: uppercase;
+    transition: color .17s;
+  }
+  nav {
+    display: flex;
+    gap: 28px;
+  }
+  nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.04rem;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: border .18s, color .14s;
+    border-radius: 1px;
+  }
+  nav a.active, nav a:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+  }
+  @media (max-width:800px){
+    .header-inner{flex-direction:column;align-items:flex-start;padding:13px 9px;}
+    nav{margin-top:7px;gap:15px;}
+    .brand{font-size:1.25rem;}
+  }
+  .hero {
+    max-width: 920px;
+    margin: 54px auto 0 auto;
+    padding: 0 22px;
+    text-align: left;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 13px;
+    line-height: 1.16;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
+  .hero-desc {
+    font-size: 1.13rem;
+    color: var(--muted);
+    margin-bottom: 32px;
+    max-width: 670px;
+  }
+  .hero-cta {
+    margin-top: 20px;
+  }
+  .cta-wa {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 32px;
+    font-weight: 700;
+    font-size: 1.13rem;
+    letter-spacing: .07em;
+    box-shadow: 0 3px 12px #22418118;
+    border: none;
+    transition: background .14s, filter .13s;
+  }
+  .cta-wa:hover {background: #192c55;}
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    gap: 32px;
+    margin: 42px auto 0 auto;
+    padding: 0 10px;
+    max-width: 1100px;
+    position: relative;
+    z-index: 2;
+  }
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 0 0 26px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    border: 1.2px solid #ecf0f9;
+    transition: box-shadow .17s, border .13s, transform .13s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    border-bottom: 1px solid #f2f4fa;
+    margin-bottom: 16px;
+    background: #e5eaf5;
+    transition: filter .13s;
+    display: block;
+  }
+  .card h3 {
+    color: var(--primary);
+    font-size: 1.13rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    letter-spacing: .18px;
+    padding: 0 20px;
+    margin-top: 6px;
+  }
+  .card ul {
+    margin: 0 0 15px 36px;
+    padding: 0;
+    font-size: 1.01rem;
+    color: #34416c;
+    padding-right: 20px;
+  }
+  .card .cta-link {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 14px auto 0 auto;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 0;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.04rem;
+    letter-spacing: .07em;
+    box-shadow: 0 2px 10px #2241811a;
+    border: none;
+    text-align: center;
+    transition: background .13s;
+  }
+  .card .cta-link:hover {background: #192c55;}
+  @media (max-width:600px){
+    .card-img{height:110px;}
+    .card .cta-link {width: calc(100% - 16px);}
+  }
+  .faq-wrap {
+    max-width: 860px;
+    margin: 54px auto 66px auto;
+    padding: 0 10px;
+    display: grid;
+    gap: 14px;
+  }
+  .faq-card {
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: 0 5px 22px #2241810f;
+    border: 1.1px solid #e6eaf7;
+    overflow: hidden;
+    transition: box-shadow .12s, border .12s;
+    position: relative;
+  }
+  .faq-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .faq-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 19px 22px 18px 22px;
+    font-weight: 600;
+    font-size: 1.06rem;
+    color: var(--primary);
+    background: transparent;
+    border: none;
+    transition: background .13s;
+    user-select: none;
+    letter-spacing: .03em;
+  }
+  .faq-label:after {
+    content: "";
+    margin-left: auto;
+    border: solid var(--primary);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 6px;
+    transform: rotate(45deg);
+    transition: .18s;
+    opacity: 0.88;
+  }
+  .faq-input:checked + .faq-label {background: #f5f7fc;}
+  .faq-input:checked + .faq-label:after {transform: rotate(-135deg);}
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #f8fbff;
+    color: #304268;
+    font-size: 1.03rem;
+    transition: max-height .21s cubic-bezier(.5,0,.3,1);
+    padding: 0 22px;
+    border-top: 1.1px solid #e9eaf2;
+  }
+  .faq-input:checked ~ .faq-content {
+    max-height: 300px;
+    padding: 13px 22px 15px 22px;
+    transition: max-height .31s cubic-bezier(.8,0,.6,1);
+  }
+  .faq-content a {color: var(--primary);text-decoration: underline;}
+  footer {
+    background: #192c55;
+    color: #c9d5f0;
+    padding: 30px 0 16px 0;
+    text-align: center;
+    font-size: 1.05rem;
+    margin-top: 70px;
+    border-radius: 38px 38px 0 0;
+  }
+  .footer-link {color: #ffd700;text-decoration: underline;}
+</style>
