@@ -1,383 +1,97 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
-const toc = [
-  { id: "apa-itu", title: "Apa Itu Paket Wisata Dieng?" },
-  { id: "kenapa-paket", title: "Kenapa Memilih Paket Wisata?" },
-  { id: "isi-paket", title: "Apa Saja Isi Paket Wisata Dieng?" },
-  { id: "siapa-cocok", title: "Siapa Saja yang Cocok?" },
-  { id: "jenis-paket", title: "Jenis-Jenis Paket Wisata Dieng" },
-  { id: "destinasi", title: "Destinasi Favorit" },
-  { id: "keuntungan", title: "Keuntungan Paket Wisata" },
-  { id: "tips", title: "Tips Memilih Paket" },
-  { id: "faq", title: "FAQ" },
-];
-
-const fasilitas = [
-  { icon: "✈️", text: "Tiket kereta/pesawat (opsional, bisa bantu booking sesuai kebutuhan)" },
-  { icon: "🚐", text: "Transport full AC antar-jemput dari stasiun/bandara Jogja/Semarang/Solo ke Dieng (Elf/Hiace/Bus Mini)" },
-  { icon: "🏨", text: "Penginapan Dieng (homestay, villa, hotel sesuai request)" },
-  { icon: "🍽️", text: "Makan selama tour (3x/hari untuk paket inap, menu lokal & tradisional)" },
-  { icon: "🎟️", text: "Tiket masuk destinasi utama & objek wisata Dieng" },
-  { icon: "🥤", text: "Air mineral free sepanjang trip" },
-  { icon: "🧑‍✈️", text: "Driver + guide lokal profesional, ramah & informatif" },
-  { icon: "📸", text: "Free dokumentasi standar (kamera HP/DSLR, siap bantu spot foto)" },
-  { icon: "🧳", text: "Bisa custom itinerary, fleksibel meeting point & rute" },
-];
-
-const faq = [
-  {
-    q: "Apa itu paket wisata Dieng?",
-    a: "Paket wisata Dieng adalah layanan wisata terpadu di mana semua kebutuhan liburan—mulai transportasi, penginapan, tiket masuk, hingga makan dan itinerary—sudah diatur oleh penyelenggara. Cocok untuk semua kalangan yang ingin liburan nyaman dan praktis."
-  },
-  {
-    q: "Bisa request custom destinasi atau itinerary?",
-    a: "Bisa banget! Hampir semua penyelenggara paket wisata Dieng bisa menyesuaikan rute, destinasi, hingga waktu berangkat dan pulang sesuai kebutuhan peserta."
-  },
-  {
-    q: "Apakah aman untuk keluarga dan anak-anak?",
-    a: "Aman. Paket sudah diatur agar nyaman untuk keluarga, anak-anak, maupun lansia. Guide dan driver siap membantu ekstra untuk kebutuhan khusus."
-  },
-  {
-    q: "Bagaimana cara memesan paket?",
-    a: "Tinggal pilih penyelenggara terpercaya, konsultasikan kebutuhan, dan lakukan booking sesuai instruksi. Biasanya bisa via WhatsApp, website, atau telepon."
-  },
-  {
-    q: "Apakah harga sudah termasuk semua fasilitas?",
-    a: "Ya, harga sudah termasuk semua yang tertulis di fasilitas (transport, penginapan, tiket masuk, makan, guide, air mineral, dll). Biasanya hanya pengeluaran pribadi yang belum termasuk."
-  },
-  {
-    q: "Kapan waktu terbaik ke Dieng?",
-    a: "Dieng bisa dikunjungi sepanjang tahun. Untuk cuaca cerah, puncak sunrise, dan festival budaya, biasanya Mei-September adalah musim favorit."
-  },
-];
 ---
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang | Direktori Paket Wisata Dieng</title>
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://dieng.travel/about" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
+      a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      header {
+        background: #003366;
+        color: #fff;
+        padding: 1.2rem 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      header p {
+        margin-top: 0.3rem;
+        font-size: 0.95rem;
+        color: #cce0ff;
+      }
+      h2 {
+        font-size: 1.4rem;
+        color: #003366;
+        margin-top: 2rem;
+      }
+      footer {
+        background: #f9f9f9;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 3rem;
+        border-top: 1px solid #eee;
+      }
+      footer nav {
+        margin-bottom: 0.5rem;
+      }
+      footer nav a {
+        color: #0066cc;
+        margin: 0 10px;
+        font-weight: 500;
+        font-size: 0.92rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Tentang Halaman Ini</h1>
+        <p>Penjelasan singkat mengenai direktori situs paket wisata ke Dieng</p>
+      </div>
+    </header>
 
-<Layout title="Apa Itu Paket Wisata Dieng? Penjelasan & Panduan Praktis 2025">
-  <section class="about-hero">
-    <h1 class="about-title">Tentang <span>Paket Wisata Dieng</span></h1>
-    <p class="about-desc">
-      Belum pernah ke Dieng? Atau masih bingung paket wisata itu apa dan bagaimana sistemnya?<br/>
-      Di halaman ini, kamu akan menemukan penjelasan **paling lengkap dan mudah dimengerti** tentang dunia paket wisata Dieng. Cocok buat keluarga, pemula, atau siapa pun yang mau liburan praktis, nyaman, dan tanpa ribet.
-    </p>
-  </section>
-  
-  <nav class="about-toc">
-    <h2>Daftar Isi</h2>
-    <ul>
-      {toc.map((item) => (
-        <li><a href={`#${item.id}`}>{item.title}</a></li>
-      ))}
-    </ul>
-  </nav>
-  
-  <section id="apa-itu">
-    <h2>Apa Itu Paket Wisata Dieng?</h2>
-    <p>
-      <b>Paket wisata Dieng</b> adalah layanan liburan di mana semua kebutuhan perjalanan—mulai dari transportasi, penginapan, tiket masuk destinasi, hingga makan—sudah diatur dan disediakan dalam satu harga all-in.  
-      Peserta tinggal duduk manis, berangkat, dan menikmati semua destinasi tanpa perlu repot atur itinerary sendiri.
-    </p>
-  </section>
-  
-  <section id="kenapa-paket">
-    <h2>Kenapa Memilih Paket Wisata?</h2>
-    <p>
-      Banyak orang pengen ke Dieng, tapi kadang bingung harus mulai dari mana:  
-      “Nginep di mana? Destinasi apa aja? Makan di mana? Aman buat keluarga gak?”  
-      <br/><br/>
-      Dengan paket wisata, semua jawaban itu sudah dijamin—jadi kamu bisa liburan lebih santai, tanpa was-was soal detail perjalanan.
-    </p>
-  </section>
-  
-  <section id="isi-paket">
-    <h2>Apa Saja Isi Paket Wisata Dieng?</h2>
-    <ul class="about-fasilitas-list">
-      {fasilitas.map((f) => (
-        <li><span class="about-fasilitas-emoji">{f.icon}</span>{f.text}</li>
-      ))}
-    </ul>
-  </section>
-  
-  <section id="siapa-cocok">
-    <h2>Siapa Saja yang Cocok?</h2>
-    <ul>
-      <li>Keluarga kecil & besar, dari anak-anak hingga lansia</li>
-      <li>Rombongan teman sekolah, kampus, kantor, atau komunitas</li>
-      <li>Pemula yang baru pertama ke Dieng</li>
-      <li>Pasangan honeymoon, solo traveler, hingga grup gathering perusahaan</li>
-      <li>Semua yang mau liburan nyaman, tinggal duduk, tanpa pusing urus detail</li>
-    </ul>
-  </section>
-  
-  <section id="jenis-paket">
-    <h2>Jenis-Jenis Paket Wisata Dieng</h2>
-    <ul>
-      <li><b>Private Trip:</b> Hanya untuk rombonganmu, itinerary bisa diatur sesuai keinginan.</li>
-      <li><b>Open Trip:</b> Gabung bareng peserta lain, harga lebih hemat, tetap fasilitas lengkap.</li>
-      <li><b>One Day Trip:</b> Wisata seharian, start pagi pulang malam.</li>
-      <li><b>Family Trip:</b> Fokus pada kenyamanan keluarga & anak-anak.</li>
-      <li><b>Paket Honeymoon:</b> Suasana romantis, itinerary santai, penginapan istimewa.</li>
-      <li><b>Paket Instansi/Perusahaan:</b> Bisa sekalian gathering, outing, atau acara tim di Dieng.</li>
-    </ul>
-  </section>
-  
-  <section id="destinasi">
-    <h2>Destinasi Favorit Paket Wisata Dieng</h2>
-    <ul>
-      <li>Telaga Warna & Telaga Pengilon</li>
-      <li>Komplek Candi Arjuna</li>
-      <li>Kawah Sikidang</li>
-      <li>Batu Pandang Ratapan Angin</li>
-      <li>Bukit Sikunir (sunrise view)</li>
-      <li>Dieng Plateau Theater</li>
-      <li>Telaga Merdada, Telaga Dringo</li>
-      <li>Kawah Candradimuka</li>
-      <li>Kebun Teh, Gardu Pandang Tieng</li>
-      <li>Berburu kuliner & oleh-oleh khas Dieng</li>
-    </ul>
-  </section>
-  
-  <section id="keuntungan">
-    <h2>Keuntungan Memilih Paket Wisata Dieng</h2>
-    <ul>
-      <li><b>Hemat waktu & tenaga:</b> Semua sudah diatur, tinggal berangkat.</li>
-      <li><b>Harga jelas & transparan:</b> Tidak ada biaya dadakan, semua dijelaskan dari awal.</li>
-      <li><b>Ramah pemula & keluarga:</b> Itinerary disusun supaya semua peserta nyaman & happy.</li>
-      <li><b>Fleksibel:</b> Bisa request destinasi, upgrade penginapan, atau custom agenda.</li>
-      <li><b>Tim lokal profesional:</b> Siap membantu selama perjalanan, termasuk dokumentasi & info destinasi.</li>
-    </ul>
-  </section>
-  
-  <section id="tips">
-    <h2>Tips Memilih Paket Wisata Dieng</h2>
-    <ul>
-      <li>Pilih penyelenggara yang jelas & berpengalaman</li>
-      <li>Cek testimoni dan review peserta sebelumnya</li>
-      <li>Tanyakan detail fasilitas, biaya, dan yang termasuk/exclude</li>
-      <li>Pilih durasi & jenis paket sesuai kebutuhan & budget</li>
-      <li>Jangan ragu konsultasi kebutuhan khusus (anak-anak, lansia, dll)</li>
-    </ul>
-  </section>
-  
-  <section id="faq" class="about-faq">
-    <h2>FAQ Paket Wisata Dieng</h2>
-    <div class="about-faq-list" itemscope itemtype="https://schema.org/FAQPage">
-      {faq.map((item, i) => (
-        <details class="about-faq-card" { ...(i === 0 && { open: true }) } itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <summary itemprop="name">{item.q}</summary>
-          <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <span itemprop="text">{item.a}</span>
-          </div>
-        </details>
-      ))}
-    </div>
-  </section>
+    <main class="container">
+      <p>Halaman ini dibuat untuk membantu siapa saja yang sedang mencari referensi situs web yang membahas perjalanan ke kawasan Dieng. Fokus utamanya adalah menyusun direktori digital yang ringkas, netral, dan mudah diakses — tanpa afiliasi langsung dengan penyedia jasa tertentu.</p>
 
-  <style>
-.about-hero {
-  background: linear-gradient(90deg, #fffdf4 0%, #f4fbff 100%);
-  padding: 2.6rem 1.5rem 1.4rem 1.5rem;
-  border-radius: 0 0 2rem 2rem;
-  box-shadow: 0 3px 32px #c7eaff19;
-  margin: 0 auto 2rem auto;
-  max-width: 820px;
-}
-.about-title {
-  font-size: 2.15rem;
-  font-weight: 900;
-  color: #19335a;
-  margin-bottom: .9rem;
-  line-height: 1.14;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-.about-title span {
-  color: #2ab7ca;
-  font-weight: 900;
-  text-shadow: 0 2px 12px #fff8;
-  margin-left: 7px;
-}
-.about-desc {
-  font-size: 1.12rem;
-  color: #223a4f;
-  margin: 0 0 1.3rem 0;
-  line-height: 1.7;
-  max-width: 700px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.about-toc {
-  background: #f4fbff;
-  border-radius: 16px;
-  margin: 0 auto 2.3rem auto;
-  padding: 1.1rem 1.3rem 1.1rem 1.5rem;
-  max-width: 500px;
-  box-shadow: 0 1px 16px #2ab7ca0a;
-  border: 1px solid #e3ecfa;
-}
-.about-toc h2 {
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: #19335a;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0;
-}
-.about-toc ul {
-  padding-left: 17px;
-  margin: 0;
-  list-style: decimal-leading-zero;
-}
-.about-toc li {
-  margin-bottom: 3px;
-  font-size: 1.01rem;
-  line-height: 1.5;
-}
-.about-toc a {
-  color: #2ab7ca;
-  text-decoration: underline;
-  border-radius: 8px;
-  padding: 1px 6px;
-  transition: background .14s, color .14s;
-}
-.about-toc a:hover {
-  color: #fff;
-  background: #2ab7ca;
-  text-decoration: none;
-}
+      <p>Setiap situs yang ditampilkan dalam daftar dikumpulkan secara manual berdasarkan kebermanfaatannya dalam memberikan gambaran tentang perjalanan ke Dieng. Beberapa menawarkan fitur cek harga otomatis, sementara yang lain menyajikan informasi umum, itinerary, atau peta interaktif.</p>
 
-section[id] {
-  max-width: 710px;
-  margin: 0 auto 2.4rem auto;
-  padding: 0 1.2rem;
-}
-section[id] h2 {
-  font-size: 1.17rem;
-  font-weight: 800;
-  color: #19335a;
-  margin-bottom: .8rem;
-  margin-top: 0;
-  letter-spacing: 0;
-}
-section[id] ul, section[id] ol {
-  padding-left: 1.3em;
-  margin: .15rem 0 0 0;
-  font-size: 1.08rem;
-  color: #2a3d4d;
-}
-section[id] li {
-  margin-bottom: .22em;
-  line-height: 1.6;
-}
-.about-fasilitas-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-  max-width: 440px;
-}
-.about-fasilitas-emoji {
-  font-size: 1.24em;
-  margin-right: 12px;
-}
-.about-fasilitas-list li {
-  font-size: 1.07rem;
-  color: #213a4d;
-  font-weight: 600;
-  background: #f4fbff;
-  padding: 9px 18px;
-  border-radius: 13px;
-  box-shadow: 0 2px 8px #2ab7ca11;
-  display: flex;
-  align-items: center;
-  border-left: 4px solid #2ab7ca30;
-}
-.about-faq {
-  max-width: 720px;
-  margin: 2.6rem auto 2.1rem auto;
-  padding: 0 1.2rem 2.1rem 1.2rem;
-}
-.about-faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.about-faq-card {
-  background: linear-gradient(90deg, #f4fbff 80%, #fffdf4 100%);
-  border-radius: 1.1rem;
-  padding: 15px 23px 8px 23px;
-  box-shadow: 0 2px 14px #2ab7ca0e;
-  border: 1px solid #e3ecfa;
-  font-size: 1.04rem;
-  font-weight: 500;
-  color: #213a4d;
-  transition: box-shadow .14s, border .12s;
-  position: relative;
-  overflow: hidden;
-}
-.about-faq-card summary {
-  cursor: pointer;
-  font-weight: 800;
-  color: #2ab7ca;
-  outline: none;
-  margin-bottom: 7px;
-  font-size: 1.03rem;
-  letter-spacing: 0.2px;
-  transition: color .12s;
-  padding: 2px 0;
-  border-radius: 6px;
-}
-.about-faq-card[open] {
-  box-shadow: 0 6px 22px #2ab7ca1a;
-  border-color: #2ab7ca;
-}
-.about-faq-card[open] summary {
-  color: #19335a;
-  background: #e4faff;
-}
-.about-faq-card div {
-  padding-top: 4px;
-  color: #213a4d;
-  font-weight: 400;
-  font-size: 1.01rem;
-}
-@media (max-width: 720px) {
-  .about-hero {
-    padding: 1.5rem 4vw 1rem 4vw;
-    border-radius: 0 0 1rem 1rem;
-    max-width: 99vw;
-  }
-  .about-title {
-    font-size: 1.13rem;
-    margin-bottom: 7px;
-  }
-  .about-desc {
-    font-size: 1.01rem;
-    padding: 0 2vw;
-    max-width: 99vw;
-  }
-  .about-toc {
-    padding: 12px 4vw 10px 5vw;
-    border-radius: 10px;
-    max-width: 99vw;
-  }
-  section[id] {
-    max-width: 99vw;
-    padding: 0 3vw;
-  }
-  .about-fasilitas-list {
-    max-width: 99vw;
-    gap: 10px;
-  }
-  .about-faq {
-    max-width: 99vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-  }
-}
+      <p>Direktori ini tidak menjual paket atau menerima reservasi. Tujuannya murni sebagai panduan awal bagi siapa saja yang ingin merencanakan liburan ke Dieng dengan cara yang lebih leluasa dan sesuai kebutuhan pribadi.</p>
 
-  </style>
-</Layout>
+      <h2>Kebijakan Penayangan Situs</h2>
+      <p>Situs yang ditampilkan bersifat informatif. Apabila Anda merasa ada situs yang perlu ditambahkan atau diperbarui informasinya, silakan hubungi kami melalui halaman <a href="/kontak">Kontak</a>.</p>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="/about">Tentang</a>
+        <a href="/kontak">Kontak</a>
+        <a href="/privasi">Privasi</a>
+      </nav>
+      <div>&copy; 2025 Dieng.Travel</div>
+    </footer>
+  </body>
+</html>
